@@ -1,0 +1,87 @@
+body {
+    line-height: 1;
+    background: #f6c5d2;
+  }
+  h2 {
+    color: #333333;
+    font-size: 45px;
+    font-family: impact, helvetica;
+    font-weight: lighter;
+    padding-left: 114px;
+    display: inline-block;
+    vertical-align: top;
+    margin-top:15px;
+    }
+    a {
+      color: #222222;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #000;
+    }
+    a:active {
+      text-decoration: underline;
+    }
+  h3 {
+      font-family: helvetica, arial;
+      font-size: 28pt;
+      line-height: 0%;
+      text-transform: lowercase;
+  }
+  h4 {
+      line-height: 5px;
+      margin: 6px;
+  }
+  h5 {
+      display: inline;
+      font-size:18px;
+      bottom:3px;
+      margin:auto;
+      position: relative;
+      left:91%;
+      top:8px;
+  }
+
+.contenu {
+  position: relative;
+  margin:auto;
+  width:820px;
+}
+
+.intime {
+    overflow: hidden;
+    border-radius: 10px;
+}
+.talkshit {
+  font-size: 26px;
+  text-align: justify;
+}
+p {
+  padding:0;
+  margin: 0;
+}
+p img {
+    width:100%;
+    height: auto;
+}
+.bg_overlay{
+  display:inline-block;
+  position:absolute;
+  top:0;
+  width:auto;
+}
+.libre {
+  position: absolute;
+  margin: auto;
+}
+.date {
+  text-align: right;
+}
+.repit {
+  padding:60px;
+}
+
+footer {
+  position:relative;
+  text-align: center;
+}

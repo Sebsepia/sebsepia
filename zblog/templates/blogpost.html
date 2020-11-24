@@ -1,0 +1,18 @@
+<div class="post infinite-item">
+      <div class="specific_bg_color"
+      style="
+        background-color: {{post.bg_overlay_color}};"></div>
+    <h3><a href="{% url 'details' post.slug %}">{{post.title}}</a></h3>
+    <div class="date">{{post.post_date|date:'d | j | Y'}}</div>
+      {% for free_image in post.freeimage_set.all %}
+        <img class="libre" src="{{ free_image.f_img.url }}"
+        alt="{{free_image.f_img_alt}}" title="{{free_image.f_img_alt}}"
+        style="transform: translate({{free_image.posi_X}}px, {{free_image.posi_Y}}px);">
+      {% endfor %}
+        <div class="intime" style="
+        background-color:{{post.bg_color}};
+        color:{{post.text_color}};">
+            {{post.talkshit_md | safe}}
+        </div>
+</div>
+<div class="repit"></div>

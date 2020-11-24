@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+  Portfolio
+{% endblock %}
+{% block titlecard %}
+  SebBégin
+{% endblock %}
+{% block main %}
+  <div class="repit">
+  </div>
+  <div class="contenu">
+  {% for post in posts%}
+    {% include 'blogpost.html' %}
+  {% endfor %}
+  </div>
+{% endblock %}

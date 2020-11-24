@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block main %}
+
+<div class="contenu">
+  {% for post in posts%}
+    {% include 'blogpost.html' %}
+  {% endfor %}
+</div>
+{% if page_obj.has_next %}
+<a class="infinite-more-link" href="?page={{page_obj.next_page_number}}"></a>
+{% endif %}
+<div class="loader" role="status">
+  <h6>Loading</h6>
+</div>
+{% endblock %}
