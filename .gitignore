@@ -1,4 +1,3 @@
 sebsepia/settings.py
 RunVirtualServer.sh
 **/migrations/*
-**/db.sqlite3
