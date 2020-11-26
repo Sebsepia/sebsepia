@@ -5,7 +5,7 @@ from django.utils.text import slugify
 from datetime import datetime, date
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+import markdown
 
 class Home(ListView):
     model = Post
@@ -29,7 +29,7 @@ class Tagged(ListView):
 
 #vieille version
 def home_view(request):
-    posts = range(1, 1000)
+
     posts = Post.objects.order_by('-id')
     paginator = Paginator(posts, 4)
     freeimgs = FreeImage.objects.all()
@@ -48,11 +48,14 @@ def home_view(request):
     return render(request, 'home.html', context)
 
 def detail_view(request, slug):
+    md = markdown.Markdown()
     post = get_object_or_404(Post, slug=slug)
+#    postcontent = md.convert(post.talkshit)
     freeimgs = FreeImage.objects.all()
     context = {
         'post':post,
         'freeimgs' :freeimgs,
+#        'postcontent':postcontent,
     }
     return render(request, 'details.html', context)
 
@@ -67,9 +70,11 @@ def contact_view(request):
 def tagged(request, slug):
     posts = Post.objects.filter(tags__name__in=[slug])
     freeimgs = FreeImage.objects.all()
+#    postcontent = md.convert(posts.talkshit)
     context = {
         'posts':posts,
         'freeimgs' :freeimgs,
+#        'postcontent':postcontent,
     }
     return render(request, 'tag.html', context)
 

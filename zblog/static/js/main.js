@@ -11,9 +11,6 @@ $(document).ready(function () {
     $(this).attr("id", "title" +n);
   });
 
-/*  bgOverlayHeight = img In P;
-*/
-
 
   var infinite = new Waypoint.Infinite({
       element: $('.contenu')[0],
@@ -29,6 +26,5 @@ $(document).ready(function () {
         $('.loader').hide();
       }
     });
-
 
 });

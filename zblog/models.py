@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
 from django.utils.text import slugify
+from django.utils.html import mark_safe
 from taggit.managers import TaggableManager
 #import uuid
 import markdown
@@ -48,6 +49,8 @@ class Post(models.Model):
     title = models.CharField(max_length=100, unique=True)
     title_tag = models.CharField(max_length=100, blank=True, null = True)
 
+    def get_talkshit_as_markdown(self):
+        return mark_safe(markdown(self.talkshit, safe_mode='escape'))
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title)
