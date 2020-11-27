@@ -29,21 +29,15 @@ class Tagged(ListView):
 
 #vieille version
 def home_view(request):
-
     posts = Post.objects.order_by('-id')
     paginator = Paginator(posts, 4)
     freeimgs = FreeImage.objects.all()
-    page = request.GET.get('page',1)
-    try:
-        numbers = paginator.page(page)
-    except PageNotAnInteger:
-        numbers = paginator.page(1)
-    except EmptyPage:
-        numbers = paginator.page(paginator.num_pages)
+    page = request.GET.get('page')
+    page_obj = paginator.get_page(page)
     context = {
-    'posts':posts,
-    'freeimgs':freeimgs,
-    'numbers':numbers,
+    'posts': posts,
+    'freeimgs': freeimgs,
+    'page_obj': page_obj,
     }
     return render(request, 'home.html', context)
 
