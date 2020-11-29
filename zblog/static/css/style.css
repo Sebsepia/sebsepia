@@ -71,16 +71,13 @@ h5 {
 h6 {
 
 }
-p {
+p { display: block;
     font-size: 17px;
     font-weight: bolder;
     width:inherit;
-    display:inline-flex;
-    flex-direction: column;
-    align-self: flex-start;
   }
   p img {
-    display:flex;
+    display: block;
     width:auto;
     height: auto;
     max-width: 1500px;
@@ -109,7 +106,6 @@ p {
   top:99px;
   left:-71px;
 }
-
 .intime {
     overflow: hidden;
     border-radius: 6px;
@@ -122,6 +118,10 @@ p {
   margin: auto;
   z-index:-100;
   max-width: 750px;
+}
+.linktree{
+  position:absolute;
+  height:1000px;
 }
 .post, .infinite-item{
   position: relative;
