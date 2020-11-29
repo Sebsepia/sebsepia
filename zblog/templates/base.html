@@ -38,6 +38,7 @@
             <h2><a class="{% active_link 'contact' %}" href="{% url 'contact' %}">contact</a></h2>
         </nav>
     </header>
+    {% include 'linktree.html' %}
     <div class="repit"></div>
       {% block main %}
       {% endblock %}

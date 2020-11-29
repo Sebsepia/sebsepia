@@ -1,2 +1,10 @@
 {% load static %}
-<img src="{% static 'svg/linktree.svg' %}" alt="linktree" class="linktree">
+<div class="linktree">
+  <button type="button" name="expand" id="expandbtn">
+    <span>links</span>
+  </button>
+  <button type="button" name="collapse" id="collapsebtn">
+    <span>blog</span>
+  </button>
+  <img src="{% static 'svg/linktree.svg' %}" alt="linktree" class="linktreeimg">
+</div>

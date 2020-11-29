@@ -1,0 +1,73 @@
+header {
+  position: absolute;
+  left:150px;
+  z-index: 100;
+  }header nav {
+  position:relative;
+  }
+  h1{
+    font-size: 48px;
+    display: inline-block;
+    margin-left: 20px;
+  }h1 a {
+    color:#3d3d3b;
+    text-decoration: none;
+  }h1 span{
+    position:relative;
+    }
+    #title0 {font-size: 84px; top:12px;}
+    #title1 {font-size: 55px; top:-10px;}
+    #title2 {font-size: 62px; top:-10px;}
+    #title3 {font-size: 50px; top:30px;}
+    #title4 {font-size: 50px; top:50px;}
+    #title5 {font-size: 55px; top:50px;}
+    #title6 {font-size: 40px; top:50px;}
+    #title7 {font-size: 37px; top:50px;}
+    #title8 {font-size: 30px; top:50px;}
+    #title9 {font-size: 28px; top:50px;
+  }
+  h2 {
+    background-color:#e9d5af;
+    font-size: 36px;
+    font-stretch: ultra-condensed;
+    font-style: italic;
+    margin-left: 114px;
+    display: inline-block;
+    position: relative;
+    vertical-align: center;
+    z-index:99;
+    }h2 a {
+      color: #2b2b29;
+      text-decoration: none;
+    }h2 a:hover {
+      color: #FFF;
+    }h2 a.active {
+      text-decoration: underline;
+  }
+button {
+  width: 180px;
+  height:30px;
+  top:175px;
+  -webkit-transform: rotate(90deg);
+  }#expandbtn{
+  background-color: #f9f5f5;
+  right:-105px;
+  position:absolute;
+  }#collapsebtn{
+    background-color: #f2f2f2;
+    right:-75px;
+    position:absolute;
+  }#collapsebtn span{
+    color: red;
+    -webkit-transform: rotate(180deg);
+  }
+
+.linktree{
+  position:absolute;
+  width:366px;
+  z-index:20;
+}
+.linktreeimg{
+  max-width: 100%;
+  max-height: 100%;
+}
