@@ -121,7 +121,8 @@ p { display: block;
 }
 .linktree{
   position:absolute;
-  height:1000px;
+
+  height:1100px;
 }
 .post, .infinite-item{
   position: relative;
