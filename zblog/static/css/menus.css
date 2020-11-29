@@ -1,7 +1,8 @@
 header {
   position: absolute;
+  display:flex;
   left:150px;
-  z-index: 100;
+  z-index: 19;
   }header nav {
   position:relative;
   }
@@ -44,30 +45,39 @@ header {
     }h2 a.active {
       text-decoration: underline;
   }
-button {
+#collapsebtn {
+  background-color: #f9f5f5;
+  right:-105px;
   width: 180px;
   height:30px;
   top:175px;
-  -webkit-transform: rotate(90deg);
-  }#expandbtn{
-  background-color: #f9f5f5;
-  right:-105px;
   position:absolute;
-  }#collapsebtn{
-    background-color: #f2f2f2;
-    right:-75px;
-    position:absolute;
-  }#collapsebtn span{
-    color: red;
-    -webkit-transform: rotate(180deg);
+  -webkit-transform: rotate(90deg);
+  z-index: 21;
   }
 
 .linktree{
   position:absolute;
   width:366px;
   z-index:20;
+  left:-366px;
+
+}
+.linktree.switch{
+  left:0;
 }
 .linktreeimg{
   max-width: 100%;
   max-height: 100%;
+}
+@media screen and (max-width: 1080px) {
+  #collapsebtn{
+    right:0;
+  }
+  .linktree{
+    width: 100vw;
+    left:0;
+  }.linktree.switch{
+    left:100vw;
+  }
 }

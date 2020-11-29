@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+
+  const linkTree = $('.linktree');
+
+  $('#expandbtn', '#collapsebtn').click(function()  {
+    console.log("hey atleast it works");
+  });
+
+
   /*isolates title letters in separate spans*/
   title = $("#titlecard");
   title.html(function(index, html) {
@@ -10,9 +18,6 @@ $(document).ready(function () {
   titleLetters.each(function(n) {
     $(this).attr("id", "title" +n);
   });
-
-/*  bgOverlayHeight = img In P;
-*/
 
 
   var infinite = new Waypoint.Infinite({
@@ -29,6 +34,5 @@ $(document).ready(function () {
         $('.loader').hide();
       }
     });
-
 
 });

@@ -5,7 +5,7 @@ body {
     line-height: 1;
     background: #e6e3db;
     font-family: 'Bitter', serif;
-    overflow-x: hidden
+    overflow-x: hidden;
     z-index: 50;
   }
 
@@ -20,9 +20,21 @@ body {
   display:inline-flex;
   flex-direction:column;
   z-index: 50;
-  padding-left:366px;
+  padding-left:420px;
 }
 
 .repit {
   padding:100px;
+}
+
+@media screen and (max-width: 1080px) {
+  body{
+    background: #6e9fba;
+  }
+  .contenu, .infinite-container{
+    padding-left:5vw;
+  }
+  .contenu.switch, .infinite-container.switch{
+    padding-left:105vw;
+  }
 }
