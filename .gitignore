@@ -1,7 +1,0 @@
-sebsepia/settings.py
-RunVirtualServer.sh
-**/migrations/*
-zblog/migrations
-**/db.sqlite3
-**/__pycache__/
-db.sqlite3
