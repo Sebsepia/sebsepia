@@ -1,39 +1,39 @@
 h3 {
       font-family: 'Open sans', sans-serif;
-      font-size: 16pt;
+      font-size: 2rem;
       font-weight: 900;
-      margin-bottom: 15px;
+      margin-bottom: 1em;
       font-stretch:ultra-expanded;
-      line-height: 0%;
+      line-height: 0;
+      
   }h3 a{color: #181817;
       text-decoration: none;
   }
 p { display: block;
-    font-size: 17px;
+    font-size: 1rem;
     font-weight: bolder;
-    width:inherit;
-  }
+    }
   p img {
     display: block;
-    width:auto;
+    width: auto;
     height: auto;
-    max-width: 1500px;
-    max-height:850px;
+    max-width: 100rem;
+    max-height:60rem;
 }
 .date {
   font-family: 'Open sans', sans-serif;
-  font-size: 17px;
+  font-size: 1rem;
   font-weight: 300;
   text-align: left;
   transform: rotate(270deg);
-  margin-top: 4px;
+  margin-top: 0.25em;
   position:absolute;
-  top:99px;
-  left:-71px;
+  top:6em;
+  left:-6em;
 }
 .intime {
     overflow: hidden;
-    border-radius: 6px;
+    border-radius: 0.25em;
     display:inline-flex;
     flex-direction:column;
     z-index:20;
@@ -42,7 +42,7 @@ p { display: block;
   position: absolute;
   margin: auto;
   z-index:1;
-  max-width: 750px;
+  max-width: 47em;
 }
 .post, .infinite-item{
   position: relative;
