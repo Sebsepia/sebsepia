@@ -1,31 +1,31 @@
 header {
   position: absolute;
   display:flex;
-  left:150px;
+  left:10rem;
   z-index: 19;
   }header nav {
   position:relative;
   }
   h1{
-    font-size: 48px;
+    font-size: 3rem;
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 1em;
   }h1 a {
     color:#3d3d3b;
     text-decoration: none;
   }h1 span{
     position:relative;
     }
-    #title0 {font-size: 84px; top:12px;}
-    #title1 {font-size: 55px; top:-10px;}
-    #title2 {font-size: 62px; top:-10px;}
-    #title3 {font-size: 50px; top:30px;}
-    #title4 {font-size: 50px; top:50px;}
-    #title5 {font-size: 55px; top:50px;}
-    #title6 {font-size: 40px; top:50px;}
-    #title7 {font-size: 37px; top:50px;}
-    #title8 {font-size: 30px; top:50px;}
-    #title9 {font-size: 28px; top:50px;
+    #title0 {font-size: 2em; top:0.5em;}
+    #title1 {font-size: 1.5em; top:0.75em;}
+    #title2 {font-size: 62px; top:0.65em;}
+    #title3 {font-size: 50px; top:1.25em;}
+    #title4 {font-size: 50px; top:1.5em;}
+    #title5 {font-size: 55px; top:1.25em;}
+    #title6 {font-size: 40px; top:1.75em;}
+    #title7 {font-size: 37px; top:2em;}
+    #title8 {font-size: 30px; top:2.2em;}
+    #title9 {font-size: 28px; top:3em;
   }
   h2 {
     background-color:#e9d5af;
@@ -45,31 +45,33 @@ header {
     }h2 a.active {
       text-decoration: underline;
   }
+
 #collapsebtn {
   background-color: #f9f5f5;
-  right:-105px;
+  left:0;
+  top:245px;
   width: 180px;
   height:30px;
-  top:175px;
   position:absolute;
   -webkit-transform: rotate(90deg);
+  transform-origin: bottom left;
   z-index: 21;
   }
 
 .linktree{
   position:absolute;
-  width:366px;
+  width:18vw;
+  left:-18vw;
   z-index:20;
-  left:-366px;
 
+}.linktreeimg{
+  max-width: 100%;
+  max-height: 100%;
 }
 .linktree.switch{
   left:0;
 }
-.linktreeimg{
-  max-width: 100%;
-  max-height: 100%;
-}
+
 @media screen and (max-width: 1080px) {
   #collapsebtn{
     right:0;
