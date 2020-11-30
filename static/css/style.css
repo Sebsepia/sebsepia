@@ -1,0 +1,41 @@
+@import "menus.css";
+@import "posts.css";
+
+body {
+    line-height: 1;
+    background: #e6e3db;
+    font-family: 'Bitter', serif;
+    font-size: 100%;
+    overflow-x: hidden;
+    z-index: 50;
+  }
+
+
+.bg_overlay{
+    display:inline-flex;
+    position:absolute;
+    top:0;
+    width:auto;
+  }
+.contenu, .infinite-container{
+  display:inline-flex;
+  flex-direction:column;
+  z-index: 50;
+  padding-left:26rem;
+}
+
+.repit {
+  padding:7rem;
+}
+
+@media screen and (max-width: 1080px) {
+  body{
+    background: #6e9fba;
+  }
+  .contenu, .infinite-container{
+    padding-left:5vw;
+  }
+  .contenu.switch, .infinite-container.switch{
+    padding-left:105vw;
+  }
+}
