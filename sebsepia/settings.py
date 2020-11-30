@@ -40,7 +40,6 @@ INSTALLED_APPS = [
     'zblog',
     'taggit',
     'markdown',
-    'markdownify',
     'active_link',
 ]
 
