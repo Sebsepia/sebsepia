@@ -5,7 +5,7 @@ h3 {
       margin-bottom: 1em;
       font-stretch:ultra-expanded;
       line-height: 0;
-      
+
   }h3 a{color: #181817;
       text-decoration: none;
   }
@@ -48,11 +48,9 @@ p { display: block;
   position: relative;
 }
 .specific_bg_color{
-  -webkit-filter: blur(17px);
-  width:5000px;
-  height:900px;
-  left:-2500px;
-  top:12px;
+  -webkit-filter: blur(1.25em);
+  height:56em; //changer pour se faire dynamiquement par rapport a img
+  top:1em;
   position:absolute;
   z-index: 0;
 }

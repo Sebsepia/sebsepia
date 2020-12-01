@@ -2,10 +2,18 @@ $(document).ready(function () {
 
 
   $('#collapsebtn').click(function()  {
-   console.log("hey atleast it works");
    $('.linktree').toggleClass('switch');
+   $('#collapsebtn').toggleClass('switch');
   });
 
+  $('#mobilecollapsebtn').click(function()  {
+   $('.linktree').toggleClass('switch');
+   $('#collapsebtn').toggleClass('switch');
+  });
+
+  $('#menubtn').click(function()  {
+   $('.menu').toggleClass('switch');
+  });
   /*isolates title letters in separate spans*/
   title = $("#titlecard");
   title.html(function(index, html) {

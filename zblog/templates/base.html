@@ -26,19 +26,8 @@
     </title>
   </head>
   <body style = "background-image: url('media/img/site/testbeton.png');">
-    <header>
-        <nav>
-            <h1><a id="titlecard" class="{% active_link 'home' %}" href="{% url 'home' %}">
-              {% block titlecard %}
-                SEBSEPIA!
-              {%endblock%}
-            </a></h1>
-            <h2><a class="{% active_link 'portfolio' %}" href="{% url 'portfolio' %}">portfolio</a></h2>
-            <h2><a class="{% active_link 'info' %}" href="{% url 'info' %}">info</a></h2>
-            <h2><a class="{% active_link 'contact' %}" href="{% url 'contact' %}">contact</a></h2>
-        </nav>
-    </header>
-    {% include 'linktree.html' %}
+
+    {% include 'menu.html' %}
       {% block main %}
       {% endblock %}
   </body>

@@ -1,39 +1,41 @@
 header {
-  position: absolute;
+  width: 100%;
+  z-index: 15;
+  }
+  nav {
+  left:3.75em;
   display:flex;
-  left:10rem;
-  z-index: 19;
-  }header nav {
-  position:relative;
+  position:absolute;
+  flex-direction: row;
+  align-items: flex-start;
   }
   h1{
-    font-size: 3rem;
-    display: inline-block;
-    margin-left: 1em;
-  }h1 a {
+    font-size: 3em;
+    margin-left: 0;
+    }h1 a {
     color:#3d3d3b;
     text-decoration: none;
-  }h1 span{
+    }h1 span{
     position:relative;
     }
-    #title0 {font-size: 2em; top:0.5em;}
-    #title1 {font-size: 1.5em; top:0.75em;}
-    #title2 {font-size: 62px; top:0.65em;}
-    #title3 {font-size: 50px; top:1.25em;}
-    #title4 {font-size: 50px; top:1.5em;}
-    #title5 {font-size: 55px; top:1.25em;}
-    #title6 {font-size: 40px; top:1.75em;}
-    #title7 {font-size: 37px; top:2em;}
-    #title8 {font-size: 30px; top:2.2em;}
-    #title9 {font-size: 28px; top:3em;
+    #title0 {font-size: 2.75em; top:-0.25em; font-weight: 400;}
+    #title1 {font-size: 1.5em; top:-0.5em;}
+    #title2 {font-size: 1.75em; top:0.1em;}
+    #title3 {font-size: 1.25em; top:0.5em;}
+    #title4 {font-size: 1.5em; top:0.5em;}
+    #title5 {font-size: 1.5em; top:0.25em;}
+    #title6 {font-size: 1em; top:0.75em;}
+    #title7 {font-size: 1em; top:1em;}
+    #title8 {font-size: 1em; top:1.25em;}
+    #title9 {font-size: 0.5em; top:3em;
   }
   h2 {
     background-color:#e9d5af;
-    font-size: 36px;
+    font-size: 2.25em;
     font-stretch: ultra-condensed;
     font-style: italic;
-    margin-left: 114px;
-    display: inline-block;
+    margin: 3em;
+    display: flex;
     position: relative;
     vertical-align: center;
     z-index:99;
@@ -45,23 +47,11 @@ header {
     }h2 a.active {
       text-decoration: underline;
   }
-
-#collapsebtn {
-  background-color: #f9f5f5;
-  left:0;
-  top:245px;
-  width: 180px;
-  height:30px;
-  position:absolute;
-  -webkit-transform: rotate(90deg);
-  transform-origin: bottom left;
-  z-index: 21;
-  }
-
 .linktree{
   position:absolute;
-  width:18vw;
-  left:-18vw;
+  width:26em;
+  left:-26em;
+  top:6em;
   z-index:20;
 
 }.linktreeimg{
@@ -71,15 +61,88 @@ header {
 .linktree.switch{
   left:0;
 }
+.menu{
+  visibility: visible;
+  display:flex;
+  align-self: center;
+}
+.title {
+  display:flex;
+  align-self: flex-start;
+}
+#collapsebtn {
+  background-color: #f9f5f5;
+  font-size: 2em;
+  left:0;
+  top:18.5em;
+  width:5em;
+  height:2em;
+  position:absolute;
+  -webkit-transform: rotate(270deg);
+  transform-origin: top left;
+  z-index: 21;
+  }
+#collapsebtn.switch{
+  left:24rem;
+}
+#mobilecollapsebtn{
+  visibility:hidden;
+  }
+
+#menubtn{
+  visibility: hidden;
+}
+
 
 @media screen and (max-width: 1080px) {
-  #collapsebtn{
-    right:0;
+  header {
+position: relative;
   }
+  nav {
+  left:-1em;
+  font-size: 1.5em;
+  display:flex;
+  position:relative;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+}
+.menu{
+  flex-direction: column;
+}
+  #collapsebtn{
+      visibility: hidden;
+    }
+  #menubtn{
+    visibility: visible;
+    position: absolute;
+    right:0;
+    z-index:99;
+  }
+  #mobilecollapsebtn{
+    background-color: #f9f5f5;
+    font-size: 2em;
+    right:0;
+    top:18.5em;
+    width:5em;
+    height:2em;
+    position:absolute;
+    -webkit-transform: rotate(90deg);
+    transform-origin: top right;
+    visibility: visible;
+    z-index: 21;
+    }
+
   .linktree{
     width: 100vw;
     left:0;
   }.linktree.switch{
     left:100vw;
+  }
+  .menu{
+    visibility: hidden;
+  }
+  .menu.switch{
+    visibility:visible;
+    z-index:100;
   }
 }

@@ -16,12 +16,13 @@ body {
     position:absolute;
     top:0;
     width:auto;
+    z-index:0;
   }
 .contenu, .infinite-container{
   display:inline-flex;
   flex-direction:column;
   z-index: 50;
-  padding-left:26rem;
+  padding-left:30rem;
 }
 
 .repit {
