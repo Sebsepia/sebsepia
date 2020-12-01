@@ -43,13 +43,12 @@ $(document).ready(function () {
 
 });
   /* stops Posts from making images stretch by having too much text  */
-/*  var alignTextToImg = function(){
+/*      var alignTextToImg = function(){
       var setter;
       $("div.intime").each(function(obj){
         var target = $(this).find("p");
         var setter = target.find("img");
         target.css("max-width", setter.width()+"px");
         console.log(setter.width(), target.text());
-      });
-  };
-  alignTextToImg();*/
+        });
+      };*/

@@ -24,7 +24,7 @@ class FreeImage(models.Model):
 class BlogImage(models.Model):
     b_img_date = models.DateField(auto_now_add=False,blank=True, null = True)
     b_img = models.ImageField("Blog Image", null=True, blank=True, upload_to="img/b")
-    post = models.ForeignKey('Post', on_delete=models.SET_NULL, null=True)
+    postimg = models.ForeignKey('Post', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         return self.b_img.name
@@ -59,6 +59,7 @@ class Post(models.Model):
         md = markdown.Markdown()
         text1 = self.talkshit
         html1 = md.convert(text1)
+        html1 = html1.replace("<p>","").replace("</p>","")
         self.talkshit_md = html1
 
         #ajoute un alpha a la couleur en hexadecimal si checked

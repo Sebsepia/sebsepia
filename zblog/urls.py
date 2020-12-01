@@ -1,6 +1,5 @@
 from django.urls import path, include
 from . import views
-from zblog.views import Home, Details, Tagged
 
 urlpatterns = [
     path('tag/<str:slug>/', views.tagged, name='post_by_tag'),

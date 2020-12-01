@@ -7,36 +7,12 @@ from datetime import datetime, date
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import markdown
 
-class Home(ListView):
-    model = Post
-    paginate_by = 4
-    context_object_name = 'posts'
-    template_name = 'home.html'
-    ordering = ['-post_date']
-
-class Details(DetailView):
-    model = Post
-    context_object_name = 'posts'
-    template_name = 'details.html'
-
-class Tagged(ListView):
-    model = Post
-    paginate_by = 4
-    context_object_name = 'posts'
-    template_name = 'tag.html'
-    ordering = ['-id']
-
-
-#vieille version
 def home_view(request):
     posts = Post.objects.order_by('-id')
     paginator = Paginator(posts, 4)
-    freeimgs = FreeImage.objects.all()
     page = request.GET.get('page')
     page_obj = paginator.get_page(page)
     context = {
-    'posts': posts,
-    'freeimgs': freeimgs,
     'page_obj': page_obj,
     }
     return render(request, 'home.html', context)
@@ -45,10 +21,8 @@ def detail_view(request, slug):
     md = markdown.Markdown()
     post = get_object_or_404(Post, slug=slug)
 #    postcontent = md.convert(post.talkshit)
-    freeimgs = FreeImage.objects.all()
     context = {
         'post':post,
-        'freeimgs' :freeimgs,
 #        'postcontent':postcontent,
     }
     return render(request, 'details.html', context)
