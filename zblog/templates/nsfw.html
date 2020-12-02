@@ -1,8 +1,8 @@
 {% extends 'base.html' %}
 {% block main %}
+
 <div class="contenu">
-  <div class="repit"></div>
-  {% for post in page_obj %}
+  {% for post in posts%}
     {% include 'blogpost.html' %}
   {% endfor %}
 </div>
@@ -12,5 +12,6 @@
   <h6>Loading</h6>
 </div>
 {% endif %}
+
 
 {% endblock %}

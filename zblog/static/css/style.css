@@ -9,8 +9,6 @@ body {
     overflow-x: hidden;
     z-index: 50;
   }
-
-
 .bg_overlay{
     display:inline-flex;
     position:absolute;
@@ -21,8 +19,6 @@ body {
 .contenu, .infinite-container{
   z-index: 50;
   padding-left:30rem;
-  display: flex;
-  flex-direction: column;
 }
 
 .repit {
