@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, RedirectView
 from .models import Post, BlogImage, FreeImage
 from django.utils.text import slugify
 from datetime import datetime, date
@@ -18,6 +18,11 @@ def home_view(request):
     'posts': posts,
     }
     return render(request, 'home.html', context)
+
+class HomeRedirectView(RedirectView):
+    pattern_name = 'redirect-to-blog'
+    def get_redirect_url(self, *args, **kwargs):
+        return '/blog'
 
 def detail_view(request, slug):
     md = markdown.Markdown()

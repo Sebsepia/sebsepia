@@ -37,7 +37,7 @@ class BlogImage(models.Model):
 
 class Post(models.Model):
     bg_color = ColorField(default='#FFFFFF')
-    bg_color_a = models.BooleanField()
+    bg_color_a = models.BooleanField(default=True)
     bg_overlay_color = ColorField(default='#FFFFFF00')
     bg_overlay_check = models.BooleanField(blank=True, null = True)
     post_date = models.DateField(auto_now_add=False,blank=True, null = True)

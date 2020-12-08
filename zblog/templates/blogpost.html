@@ -2,7 +2,7 @@
       <div class="specific_bg_color"
       style="
         background-color: {{post.bg_overlay_color}};"></div>
-    <h3><a href="{% url 'details' post.slug %}">{{post.title}}</a></h3>
+
     <div class="date">{{post.post_date|date:'d | j | Y'}}</div>
       {% for free_image in post.freeimage_set.all %}
         <img class="libre" src="{{ free_image.f_img.url }}"
@@ -12,7 +12,10 @@
         <div class="intime" style="
         background-color:{{post.bg_color}};
         color:{{post.text_color}};">
-            {{ post.talkshit_md | safe}}
+          <h3><a href="{% url 'details' post.slug %}"
+          style="color:{{post.text_color}};"
+          >{{post.title}}</a></h3>
+          {{ post.talkshit_md | safe}}
         </div>
         <div class="repit"></div>
 </div>
