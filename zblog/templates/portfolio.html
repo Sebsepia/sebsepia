@@ -1,16 +1,33 @@
 {% extends 'base.html' %}
-{% block title %}
-  Portfolio
-{% endblock %}
-{% block titlecard %}
-  SebBégin
-{% endblock %}
 {% block main %}
-  <div class="repit">
-  </div>
+
   <div class="contenu">
-  {% for post in posts%}
-    {% include 'blogpost.html' %}
-  {% endfor %}
+    <div class="categories">
+
+      <div class="portitem">
+        <h3><a href="{% url 'tag' slug='digital' %}">digital 2D</a></h3>
+          {% for post in hashtagdigital %}
+            {% include 'portfolio_cat.html' %}
+          {% endfor %}
+      </div>
+
+      <div class="portitem">
+        <h3><a href="{% url 'tag' slug='illustration' %}">illustration</a></h3>
+        {% for post in hashtagillustration %}
+        {% include 'portfolio_cat.html' %}
+        {% endfor %}
+      </div>
+
+      <div class="portitem">
+        <h3><a href="{% url 'tag' slug='photo' %}">photo</a></h3>
+        {% for post in hashtagphoto %}
+        {% include 'portfolio_cat.html' %}
+        {% endfor %}
+      </div>
+
+      <div class="portitem">
+
+      </div>
+    </div>
   </div>
 {% endblock %}

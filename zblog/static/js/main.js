@@ -15,8 +15,8 @@ $(document).ready(function () {
    $('.menu').toggleClass('switch');
   });
   /*isolates title letters in separate spans*/
-  title = $("#titlecard");
-  title.html(function(index, html) {
+
+   $("#titlecard").html(function(index, html) {
     return html.replace(/\S/g, '<span>$&</span>');
   });
   /*gives each span an ID*/
@@ -24,6 +24,13 @@ $(document).ready(function () {
   titleLetters.each(function(n) {
     $(this).attr("id", "title" +n);
   });
+
+
+  $('div.portintime').each(function (){
+    $('img').not('img:first-of-type').hide();
+  });
+
+
 
 
   var infinite = new Waypoint.Infinite({

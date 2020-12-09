@@ -8,7 +8,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import markdown
 
 def home_view(request):
-    posts = Post.objects.exclude(tags__name="nsfw").order_by('-id')
+    posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
     #posts = Post.objects.order_by('-id')
     paginator = Paginator(posts, 4)
     page = request.GET.get('page')
@@ -43,30 +43,40 @@ def contact_view(request):
     return render(request, 'contact.html', context)
 
 def tagged(request, slug):
-    posts = Post.objects.filter(tags__name__in=[slug]).order_by('-id')
-    freeimgs = FreeImage.objects.all()
+    exclude = ('nsfw', )
+    posts = Post.objects.filter(tags__name__in=[slug]).exclude(tags__name__in=exclude).order_by('-id')
     context = {
         'posts':posts,
-        'freeimgs' :freeimgs,
     }
     return render(request, 'tag.html', context)
 
 def portfolio(request):
-    portfolio_catalog = ('test', )
-    posts = Post.objects.filter(tags__name__in=portfolio_catalog)
-    freeimgs = FreeImage.objects.all()
+    exclude = ('nsfw', )#'study'
+    digital = ('digital',)
+    photo = ('photo',)
+    illustration = ('illustration',)
+    hashtagdigital = Post.objects.filter(tags__name__in=digital).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
+    hashtagillustration = Post.objects.filter(tags__name__in=illustration).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
+    hashtagphoto = Post.objects.filter(tags__name__in=photo).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
     context = {
-        'posts':posts,
-        'freeimgs' :freeimgs,
-        'portfolio_catalog': portfolio_catalog,
+        'hashtagdigital': hashtagdigital,
+        'hashtagillustration': hashtagillustration,
+        'hashtagphoto': hashtagphoto,
     }
     return render(request, 'portfolio.html', context)
 
+def shop(request):
+    shop_catalog = ('objet', )
+    posts = Post.objects.filter(tags__name__in=shop_catalog)
+    context = {
+        'posts':posts,
+        'shop_catalog': shop_catalog,
+    }
+    return render(request, 'la_shop.html', context)
+
 def nsfw_view(request):
     posts = Post.objects.filter(tags__name="nsfw").order_by('-id')
-    freeimgs = FreeImage.objects.all()
     context = {
     'posts':posts,
-    'freeimgs' :freeimgs,
     }
     return render(request, 'nsfw.html', context)

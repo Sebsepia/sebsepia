@@ -53,11 +53,13 @@ class Post(models.Model):
         return mark_safe(markdown(self.talkshit, safe_mode='escape'))
 
     def save(self, *args, **kwargs):
+        media_path = "/media/img/b/"
         self.slug = slugify(self.title)
         self.title_tag = self.title
         #convert markdown to HTML in .talkshit_md while keeping pure markdown text in .talkshit
         md = markdown.Markdown()
         text1 = self.talkshit
+        text1 = text1.replace("](..", "]("+media_path)
         html1 = md.convert(text1)
         html1 = html1.replace("<p>","").replace("</p>","")
         self.talkshit_md = html1
