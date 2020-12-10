@@ -57,7 +57,8 @@ header {
 
 }.linktreeimg{
   max-width: 100%;
-  max-height: 100%;
+  max-height: 100%;cd é.
+
 }
 .linktree.switch{
   left:0;
@@ -82,7 +83,7 @@ header {
   z-index: 21;
   }
 #collapsebtn.switch{
-  left:24rem;
+  /*left:24rem;*/
 }
 #mobilecollapsebtn{
   visibility:hidden;

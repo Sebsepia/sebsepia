@@ -4,11 +4,11 @@
 
 body {
     line-height: 1;
-    background: #e6e3db;
+    background: #d9d1c5;
     font-family: 'Bitter', serif;
     font-size: 100%;
     z-index: 50;
-    
+
   }
 .bg_overlay{
     display:inline-flex;
