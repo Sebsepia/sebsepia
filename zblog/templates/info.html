@@ -1,7 +1,31 @@
 {% extends 'base.html' %}
+{% load static %}
+  {% block title %}
+    Seb?
+  {% endblock %}
+
+  {% block titlecard %}
+    Seb Bégin
+  {%endblock%}
+  {% block linktree %}
+    <div class="linktree switch">
+
+      <img src="{% static 'svg/linktree.svg' %}" alt="linktree" class="linktreeimg">
+    </div>
+
+  {%endblock%}
+
 {% block main %}
 <div class="contenu">
+  <h3>info</h3>
+  <p>
+Hi there,
 
+I'm an illustrator and concept artist working in video games.
+My clients include Warner Bros., 20th Century Fox, Disney, Paramount, Bungie,
+NCSoft, Blizzard, National Geographic, Harper Collins, Penguin Books, Macmillan Publishers and Wizards of the Coast.</p>
+<br>
+<br>
+<a href="#">CV</a>
 </div>
-<h2>info</h2>
 {% endblock %}

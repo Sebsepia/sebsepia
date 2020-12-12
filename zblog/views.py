@@ -72,7 +72,7 @@ def shop(request):
         'posts':posts,
         'shop_catalog': shop_catalog,
     }
-    return render(request, 'la_shop.html', context)
+    return render(request, 'shop.html', context)
 
 def nsfw_view(request):
     posts = Post.objects.filter(tags__name="nsfw").order_by('-id')

@@ -22,12 +22,33 @@
     <title>
       {% block title %}
         Sebsepia!
-      {%endblock%}
+      {% endblock%}
     </title>
   </head>
   <body style = "background-image: url('media/img/site/testbeton.png');">
+    <header>
+        <nav>
+          <div class="title">
+            <h1><a id="titlecard" class="{% active_link 'home' %}" href="{% url 'home' %}">
+              {% block titlecard %}
+                SEBSEPIA!
+              {%endblock%}
+            </a></h1>
+          </div>
+          <div class="menu">
+              <h2><a class="{% active_link 'portfolio' %}" href="{% url 'portfolio' %}">portfolio</a></h2>
+              <h2><a class="{% active_link 'info' %}" href="{% url 'info' %}">info</a></h2>
+              <h2><a class="{% active_link 'shop' %}" href="{% url 'shop' %}">la shop</a></h2>
+          </div>
+        </nav>
+        <button type="button" name="menu" id="menubtn">
+          <h3>menu</h3>
+        </button>
+        {% block linktree %}
 
-    {% include 'menu.html' %}
+        {% endblock %}
+
+        </header>
       {% block main %}
       {% endblock %}
   </body>

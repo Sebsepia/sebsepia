@@ -1,4 +1,17 @@
 {% extends 'base.html' %}
+
+{% block title %}
+posts with tag {{request.resolver_match.kwargs.slug}}
+{% endblock %}
+
+{% block titlecard %}
+SebBégin
+{%endblock%}
+
+{%block linktree%}
+  {% include 'linktree.html' %}
+{%endblock%}
+
 {% block main %}
 <div class="contenu">
   {% for post in posts%}
@@ -11,6 +24,5 @@
   <h6>Loading</h6>
 </div>
 {% endif %}
-
 
 {% endblock %}

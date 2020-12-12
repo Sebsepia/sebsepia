@@ -1,4 +1,18 @@
 {% extends 'base.html' %}
+
+{% block title %}
+Sebsepia!
+{% endblock %}
+
+{% block titlecard %}
+Sebsepia!
+{%endblock%}
+
+{%block linktree%}
+  {% include 'linktree.html' %}
+{%endblock%}
+
+
 {% block main %}
 <div class="contenu">
   {% for post in page_obj %}

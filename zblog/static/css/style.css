@@ -7,6 +7,7 @@ body {
     background: #d9d1c5;
     font-family: 'Bitter', serif;
     font-size: 100%;
+    overflow-x: hidden;
     z-index: 50;
 
   }
