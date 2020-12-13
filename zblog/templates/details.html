@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
+
+{% block title %}
+Sebsepia!
+{% endblock %}
+
+{% block titlecard %}
+Sebsepia!
+{%endblock%}
+
+{%block linktree%}
+  {% include 'linktree.html' %}
+{%endblock%}
 {% block main %}
-{% include 'menu.html' %}
 <div class="contenu">
     {% include 'blogpost.html' %}
 </div>
