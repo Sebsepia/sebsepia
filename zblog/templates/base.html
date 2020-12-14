@@ -12,12 +12,12 @@
 
     {% load static %}
     {% load active_link_tags %}
-    <link rel="icon" href="{% static 'zblog/icon.gif' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-    <script src="{% static 'js/jquery.waypoints.js' %}"></script>
-    <script src="{% static 'js/infinite.js' %}"></script>
-    <script src="{% static 'js/main.js' %}"></script>
+    <link rel="icon" href="{% static '#' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'zblog/css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'zblog/css/style.css' %}">
+    <script src="{% static 'zblog/js/jquery.waypoints.js' %}"></script>
+    <script src="{% static 'zblog/js/infinite.js' %}"></script>
+    <script src="{% static 'zblog/js/main.js' %}"></script>
 
     <title>
       {% block title %}
@@ -25,7 +25,7 @@
       {% endblock%}
     </title>
   </head>
-  <body style = "background-image: url('media/img/site/testbeton.png');">
+  <body>
     <header>
         <nav>
           <div class="title">
