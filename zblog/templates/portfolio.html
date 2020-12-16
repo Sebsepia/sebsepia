@@ -13,10 +13,10 @@ Les humbles créations de Seb
 {%endblock%}
 
 {% block main %}
-  <div class="contenu">
+  <div class="contenu overflow">
     <div class="categories">
 
-      <div class="portitem">
+      <div class="portitem expand">
         <h3><a href="{% url 'tag' slug='digital' %}">digital 2D</a></h3>
           {% for post in hashtagdigital %}
             {% include 'portfolio_cat.html' %}

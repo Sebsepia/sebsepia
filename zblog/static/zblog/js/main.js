@@ -14,8 +14,8 @@ $(document).ready(function () {
   $('#menubtn').click(function()  {
    $('.menu').toggleClass('switch');
   });
-  /*isolates title letters in separate spans*/
 
+  /*isolates title letters in separate spans*/
    $("#titlecard").html(function(index, html) {
     return html.replace(/\S/g, '<span>$&</span>');
   });
@@ -25,11 +25,10 @@ $(document).ready(function () {
     $(this).attr("id", "title" +n);
   });
 
-
+  /*Creates simpler preview of posts in  Portfolio */
   $('div.portintime').each(function (){
     $('img').not('img:first-of-type').hide();
   });
-
 
 
 

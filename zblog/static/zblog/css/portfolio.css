@@ -10,9 +10,13 @@
   position:relative;
   flex-direction: column;
   width: 39em;
-  margin-right: 2em;
+  padding-right: 2em;
 }.portitem h3 {
   margin-bottom: 2em;
+}.portitem.expand{
+  background-color: black;
+  width:50em;
+  z-index:100;
 }
  h4 {
   font-size: 1.75rem;
@@ -29,7 +33,7 @@
   flex-direction: column;
 }
 .portintime {
-  width:39rem;
+/*  width:55rem;*/
   font-size: 0;
   display: flex;
   flex-direction: column;
