@@ -1,6 +1,11 @@
 $(document).ready(function () {
 
 
+  $('.expandcat').click(function(){
+    $
+  });
+
+
   $('#collapsebtn').click(function()  {
    $('.linktree').toggleClass('switch');
    $('#collapsebtn').toggleClass('switch');
