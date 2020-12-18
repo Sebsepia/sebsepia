@@ -26,7 +26,7 @@ Les humbles créations de Seb
 
       <div class="portitem">
         <h3><a href="{% url 'tag' slug='illustration' %}">illustration</a></h3>
-        <button type="button" name="expand">+</button>
+        <button type="button" name="expand"class="expandcat">+</button>
         {% for post in hashtagillustration %}
         {% include 'portfolio_cat.html' %}
         {% endfor %}
@@ -34,7 +34,7 @@ Les humbles créations de Seb
 
       <div class="portitem">
         <h3><a href="{% url 'tag' slug='photo' %}">photo</a></h3>
-        <button type="button" name="expand">+</button>
+        <button type="button" name="expand"class="expandcat">+</button>
         {% for post in hashtagphoto %}
         {% include 'portfolio_cat.html' %}
         {% endfor %}

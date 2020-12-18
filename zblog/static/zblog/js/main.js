@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
 
-  $('.expandcat').click(function(){
-    $
+  $('.expandcat').click(function(e){
+    $(this).parent().toggleClass('expand');
   });
 
 
