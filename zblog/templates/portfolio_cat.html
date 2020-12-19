@@ -1,11 +1,8 @@
-<div class="portpost">
-  <h4><a href="{% url 'details' post.slug %}"
-    style="color:{{post.text_color}};"
-    >{{post.title}}</a></h4>
-  <div class="portdate">{{post.post_date|date:'Y'}}</div>
-  <div class="portintime" style="
-  background-color:{{post.bg_color}};
-  color:{{post.text_color}};">
-    {{ post.talkshit_md | safe}}
-  </div>
-</div>
+      <h2>{{post.title}}</h2>
+      <div class="portitem expand" style="background-color:{{post.text_color}};">
+        <h3><a href="{% url 'tag' slug='digital' %}">digital 2D</a></h3>
+        <button type="button" name="expand" class="expandcat">+</button>
+          {% for post in hashtagdigital %}
+            {% include 'portfolio_post.html' %}
+          {% endfor %}
+      </div>

@@ -3,6 +3,7 @@ $(document).ready(function () {
 
   $('.expandcat').click(function(e){
     $(this).parent().toggleClass('expand');
+    $('img.portintime').show();
   });
 
 
