@@ -32,7 +32,7 @@ $(document).ready(function () {
   });
 
   /*Creates simpler preview of posts in  Portfolio */
-  $('div.portintime').each(function (){
+  $('div.portfoliointime').each(function (){
     $('img').not('img:first-of-type').hide();
   });
 

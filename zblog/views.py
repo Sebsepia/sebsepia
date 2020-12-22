@@ -55,13 +55,16 @@ def portfolio(request):
     digital = ('digital',)
     photo = ('photo',)
     illustration = ('illustration',)
-    hashtagdigital = Post.objects.filter(tags__name__in=digital).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
-    hashtagillustration = Post.objects.filter(tags__name__in=illustration).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
-    hashtagphoto = Post.objects.filter(tags__name__in=photo).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
+    digitalcat = Post.objects.filter(tags__name__in=digital).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
+    illustrationcat = Post.objects.filter(tags__name__in=illustration).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
+    photocat = Post.objects.filter(tags__name__in=photo).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
+    #the order of portfoliocat will be the order of the categories on the website
+    portfoliocat = (digitalcat, illustrationcat, photocat,)
     context = {
-        'hashtagdigital': hashtagdigital,
-        'hashtagillustration': hashtagillustration,
-        'hashtagphoto': hashtagphoto,
+        'portfoliocat': portfoliocat,
+        'digitalcat': digitalcat,
+        'illustrationcat': illustrationcat,
+        'photocat': photocat,
     }
     return render(request, 'portfolio.html', context)
 

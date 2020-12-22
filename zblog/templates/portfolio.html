@@ -14,35 +14,29 @@ Les humbles créations de Seb
 
 {% block main %}
   <div class="contenu">
-    <div class="categories">
+    <div class="portfolio">
 
-      <div class="portitem">
-        <h3><a href="{% url 'tag' slug='digital' %}">digital 2D</a></h3>
-        <button type="button" name="expand" class="expandcat">+</button>
-          {% for post in hashtagdigital %}
-            {% include 'portfolio_post.html' %}
-          {% endfor %}
-      </div>
+    {% for obj in portfoliocat %}
+    <div class="categories {% cycle "digital" "illustration" "photo" as category %}">
+      <h2><a href="{% url 'tag' slug=category %}">{{category}}</a></h2>
 
-      <div class="portitem">
-        <h3><a href="{% url 'tag' slug='illustration' %}">illustration</a></h3>
-        <button type="button" name="expand"class="expandcat">+</button>
-        {% for post in hashtagillustration %}
-        {% include 'portfolio_post.html' %}
+        {% for post in obj %}
+        <div class="portfoliopost ">
+            <div class="" style="background-color:{{post.bg_color}}">
+              <h4><a href="{% url 'tag' slug=category %}#{{post.slug}}"
+                style="color:{{post.text_color}};"
+                >{{post.title}}</a></h4>
+              <div class="portfoliodate">{{post.post_date|date:'Y'}}</div>
+              <div class="portfoliointime" style="
+              background-color:{{post.bg_color}};
+              color:{{post.text_color}};">
+                {{ post.talkshit_md | safe}}
+              </div>
+            </div>
+          </div>
         {% endfor %}
       </div>
-
-      <div class="portitem">
-        <h3><a href="{% url 'tag' slug='photo' %}">photo</a></h3>
-        <button type="button" name="expand"class="expandcat">+</button>
-        {% for post in hashtagphoto %}
-        {% include 'portfolio_post.html' %}
-        {% endfor %}
-      </div>
-
-      <div class="portitem">
-
-      </div>
+    {% endfor %}
     </div>
   </div>
 {% endblock %}
