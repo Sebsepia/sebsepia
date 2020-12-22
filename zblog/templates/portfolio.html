@@ -23,9 +23,9 @@ Les humbles créations de Seb
         {% for post in obj %}
         <div class="portfoliopost ">
             <div class="" style="background-color:{{post.bg_color}}">
-              <h4><a href="{% url 'tag' slug=category %}#{{post.slug}}"
+              <h3><a href="{% url 'tag' slug=category %}#{{post.slug}}"
                 style="color:{{post.text_color}};"
-                >{{post.title}}</a></h4>
+                >{{post.title}}</a></h3>
               <div class="portfoliodate">{{post.post_date|date:'Y'}}</div>
               <div class="portfoliointime" style="
               background-color:{{post.bg_color}};

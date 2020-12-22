@@ -1,15 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter);
 @import "menus.css";
 @import "portfolio.css";
 
 
 :root {
-  --clr-primary-300: #e1e2b1;
+  --clr-primary-300: #d9d1c5;
   --clr-primary-400: #948b67;
   --clr-primary-100: #fff;
   --clr-neutral-900: #2a2825;
-
-  --ff-primary:'Bitter', serif;
-  --ff-accent: 'Playfair Display', serif;
+  --ff-primary: 'Bitter', serif;
 }
 
 *,
@@ -21,13 +20,13 @@
 body {
     font-family: var(--ff-primary);
     line-height: 1;
-    background: #d9d1c5;
+    background: var(--clr-primary-300);
     font-size: 1.3125rem;
     z-index: 50;
 
   }
 h1{
-  font-size: 2rem;
+  font-size: 1.75em;
   margin-left: 0;
   }h1 a {
   color:#3d3d3b;
@@ -48,8 +47,7 @@ h1{
 }
 h2 {
   background-color:#e9d5af;
-  font-size: 1.5em;
-  font-stretch: ultra-condensed;
+  font-size: 1.15em;
   font-style: italic;
   margin-top: 2em;
   margin-left: 2.25em;
@@ -58,6 +56,7 @@ h2 {
   vertical-align: center;
   z-index:99;
   }h2 a {
+    font-weight: 900;
     color: #2b2b29;
     text-decoration: none;
   }h2 a:hover {
@@ -67,26 +66,38 @@ h2 {
 }
 h3 {
       font-size: 2.25rem;
-      font-weight: 300;
-      margin-bottom: 1em;
-      font-stretch:ultra-expanded;
+      font-weight: 100;
+      font-stretch: extra-expanded;
+
+      margin-bottom: 0.75em;
       line-height: 0;
 
-  }h3 a{color: #181817;
+      }h3 a{
+      color: #181817;
       text-decoration: none;
   }
 h4 {
- font-size: 1.75rem;
- font-weight: 600;
+ font-size: 1.5rem;
+ font-weight: bolder;
  margin:0;
  margin-top: 1em;
  padding: 0;
 
-} h4 a {
+ } h4 a {
  text-decoration: none;
+}
+h5 {
+
+}
+h6 {
+  font-size: 0.75em;
+  margin-top: 0;
 }
 img {
   max-width: 100%;
+}
+p {
+  font-size: 0.75em;
 }
 .bg_overlay{
     display:inline-flex;
@@ -112,8 +123,7 @@ img {
   left:-4.5em;
 }
 .intime {
-    font-size: 1rem;
-    font-weight: bolder;
+    font-size: 0.75em;
     border-radius: 0.25em;
     width: max-content;
     display: flex;
