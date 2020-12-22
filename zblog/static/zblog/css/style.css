@@ -5,7 +5,8 @@
 
 :root {
   --clr-primary-300: #d9d1c5;
-  --clr-primary-400: #948b67;
+  --clr-primary-400: #706649;
+  --clr-accent-500: #f6e3a4;
   --clr-primary-100: #fff;
   --clr-neutral-900: #2a2825;
   --ff-primary: 'Bitter', serif;
@@ -15,6 +16,7 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
@@ -23,14 +25,13 @@ body {
     background: var(--clr-primary-300);
     font-size: 1.3125rem;
     z-index: 50;
-
   }
+a {
+  color: var(--clr-neutral-900);
+}
 h1{
   font-size: 1.75em;
   margin-left: 0;
-  }h1 a {
-  color:#3d3d3b;
-  text-decoration: none;
   }h1 span{
   position:relative;
   }
@@ -46,48 +47,39 @@ h1{
   #title9 {font-size: 0.5em; top:3em;
 }
 h2 {
-  background-color:#e9d5af;
+  background-color: var(--clr-accent-500);
   font-size: 1.15em;
-  font-style: italic;
+  font-style: oblique;
+  font-weight: 900;
   margin-top: 2em;
   margin-left: 2.25em;
   display: flex;
   position: relative;
   vertical-align: center;
   z-index:99;
-  }h2 a {
-    font-weight: 900;
-    color: #2b2b29;
-    text-decoration: none;
   }h2 a:hover {
     color: #FFF;
   }h2 a.active {
     text-decoration: underline;
 }
 h3 {
-      font-size: 2.25rem;
-      font-weight: 100;
+      font-size: 2rem;
+      font-weight: 400;
       font-stretch: extra-expanded;
-
-      margin-bottom: 0.75em;
+      text-transform: uppercase;
+      margin-bottom: 0.35em;
       line-height: 0;
-
-      }h3 a{
-      color: #181817;
-      text-decoration: none;
-  }
+      }
 h4 {
  font-size: 1.5rem;
  font-weight: bolder;
- margin:0;
  margin-top: 1em;
  padding: 0;
-
- } h4 a {
- text-decoration: none;
-}
+ }
 h5 {
-
+  font-size: 1.25em;
+  text-transform: lowercase;
+  margin-inline: 0;
 }
 h6 {
   font-size: 0.75em;
@@ -95,6 +87,7 @@ h6 {
 }
 img {
   max-width: 100%;
+  max-height: 100%;
 }
 p {
   font-size: 0.75em;
@@ -108,7 +101,7 @@ p {
   }
 .contenu, .infinite-container{
   z-index: 50;
-  padding-left:30rem;
+  padding-left:25rem;
   padding-top: 8rem;
 }
 .date {
@@ -122,8 +115,11 @@ p {
   top:8em;
   left:-4.5em;
 }
+.info {
+  padding-right: 5em;
+}
 .intime {
-    font-size: 0.75em;
+    font-size: 1em;
     border-radius: 0.25em;
     width: max-content;
     display: flex;
@@ -133,12 +129,12 @@ p {
     display:flex;
     position:relative;
     padding: auto;
-    padding-top:1em;
+    padding-top:0.5em;
     padding-bottom: 0.5em;
     width: auto;
     height: auto;
-    max-width: 73vw;
-    max-height:85vh;
+    max-width: 70rem;
+    max-height:45rem;
     object-fit: contain;
     object-position: 0% 15%;
     }

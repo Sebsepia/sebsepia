@@ -9,21 +9,19 @@ header {
   flex-direction: row;
   align-items: flex-start;
   }
-  
+
 .linktree{
   position:absolute;
   width:26em;
-  left:-100%;
+  left:-120%;
   top:6em;
   z-index:20;
 
 }.linktreeimg{
-  max-width: 100%;
-  max-height: 75vh%;
-
+  max-height: 40rem;
 }
 .linktree.switch{
-  left:-03em;
+  left:1em;
 }
 .menu{
   visibility: visible;

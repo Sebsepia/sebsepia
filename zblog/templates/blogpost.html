@@ -1,4 +1,5 @@
-<div class="post" id="{{post.slug}}">
+{% load active_link_tags %}
+  <div class="post" id="{{post.slug}}">
       <div class="specific_bg_color"
       style="
         background-color: {{post.bg_overlay_color}};"></div>
@@ -11,7 +12,7 @@
       {% endfor %}
         <div class="intime" style="
         color:{{post.text_color}};">
-          <h3><a href="{% url 'details' post.slug %}"
+          <h3><a class="{% active_link 'details' %}" href="{% url 'details' post.slug %}"
           style="color:{{post.text_color}};"
           >{{post.title}}</a></h3>
           {{ post.talkshit_md | safe}}

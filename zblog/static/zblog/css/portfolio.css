@@ -41,6 +41,6 @@ button[name="expand"]{
   object-position: 0% 15%;
 }.portfoliodate {
   font-size: 0.85rem;
-  margin-top: 0.75em;
-  margin-bottom: 1em;
+  margin-top: 0.25em;
+  margin-bottom: 0.5em;
 }
