@@ -59,9 +59,10 @@ class Post(models.Model):
         #convert markdown to HTML in .talkshit_md while keeping pure markdown text in .talkshit
         md = markdown.Markdown()
         text1 = self.talkshit
+
         text1 = text1.replace("](..", "]("+media_path)
         html1 = md.convert(text1)
-        html1 = html1.replace("<p>","").replace("</p>","")
+        #html1 = html1.replace("<p>","").replace("</p>","")
         self.talkshit_md = html1
 
         #ajoute un alpha a la couleur en hexadecimal si checked
