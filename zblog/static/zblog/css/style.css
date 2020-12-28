@@ -87,7 +87,7 @@ h6 {
   font-size: 0.75em;
   line-height: 0;
   font-weight: bolder;
-  margin: 0.5em;
+  margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
 img {
@@ -125,24 +125,32 @@ p {
   padding-right: 5em;
 }
 .intime {
-    font-size: 1em;
+    font-size: 1.1em;
     display: flex;
     flex-direction: column;
     z-index:20;
 }.intime img{
-    max-height:45rem;
+    max-height:50em;
     margin-top: 0.75em;
     object-fit: contain;
     object-position: 0% 15%;
+    }.intime h4 {
+    font-size:1.5em;
+    font-weight: bolder;
+    text-align: left;
+    padding-left: 0.5em;
+  }.intime h5{
+    font-size: 1.25em;
+    background-color: transparent;
+    margin-left: 1em;
+    }.intime h6{
+    margin-left: 3em;
     }
-  .intime h1 {
-    
-  }
 .libre {
   position: absolute;
   margin: auto;
   z-index:1;
-  max-width: 47em;
+  max-width: 35rem;
 }
 .post {
   position: relative;
