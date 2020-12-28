@@ -1,14 +1,4 @@
-header {
-  width: 100%;
-  z-index: 15;
-  }
-  nav {
-  left:3.75em;
-  display:flex;
-  position:absolute;
-  flex-direction: row;
-  align-items: flex-start;
-  }
+
 
 .linktree{
   position:absolute;
@@ -29,10 +19,7 @@ header {
   align-self: center;
   margin-left: 2em;
 }
-.title {
-  display:flex;
-  align-self: flex-start;
-}
+
 #collapsebtn {
   background-color: #f9f5f5;
   font-size: 2em;
@@ -59,7 +46,7 @@ header {
 position: relative;
   }
   nav {
-  left:-1em;
+  left:-1rem;
   font-size: 1.5em;
   display:flex;
   position:relative;

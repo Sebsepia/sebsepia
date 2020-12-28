@@ -5,11 +5,14 @@
 
 
 :root {
-  --clr-primary-300: #d9d1c5;
-  --clr-primary-400: #706649;
-  --clr-accent-500: #f6e3a4;
-  --clr-primary-100: #fff;
-  --clr-neutral-900: #2a2825;
+  --clr-primary-1000: #fff;
+  --clr-primary-900: #fff1c1;
+  --clr-primary-500: #6c5e32;
+  --clr-primary-200: #1f1406;
+  --clr-primary-0: #000;
+  --clr-accent-900: #d9d1c5;
+  --clr-accent-500: #8f8e8c;
+  --clr-accent-300: #2e2a25;
   --ff-primary: 'Bitter', serif;
   --ff-accent: 'Roboto', sans-serif;
 }
@@ -24,15 +27,14 @@
 body {
     font-family: var(--ff-primary);
     line-height: 1;
-    background: var(--clr-primary-300);
+    background: var(--clr-accent-900);
     font-size: 1.3125rem;
     z-index: 50;
   }
-a {
-  color: var(--clr-neutral-900);
-}
-h1{
-    font-size: 1.75em;
+
+h1 a{
+    font-size: 1em;
+    color: var(--clr-accent-300);
     margin-left: 0;
     }h1 span{
       position:relative;
@@ -46,10 +48,22 @@ h1{
       #title6 {font-size: 1em; top:0.75em;}
       #title7 {font-size: 1em; top:1em;}
       #title8 {font-size: 1em; top:1.25em;}
-      #title9 {font-size: 0.5em; top:3em;
-}
-h2 {
-    background-color: var(--clr-accent-500);
+      #title9 {font-size: 0.5em; top:3em;}
+      #title0:hover,
+        #title1:hover,
+         #title2:hover,
+          #title3:hover,
+           #title4:hover,
+            #title5:hover,
+             #title6:hover,
+              #title7:hover,
+               #title8:hover,
+                #title9:hover{
+                             color: var(--clr-primary-0);
+       }
+h2 a{
+    color: var(--clr-accent-300);
+    background-color: var(--clr-primary-900);
     font-size: 1.15em;
     font-style: oblique;
     font-weight: 900;
@@ -59,11 +73,11 @@ h2 {
     position: relative;
     vertical-align: center;
     z-index:99;
-    }h2 a:hover {
-      color: #FFF;
     }h2 a.active {
       text-decoration: underline;
-}
+    }h2 a:focus{
+      color:var(--clr-primary-1000);
+    }
 h3 {
     font-size: 2.5rem;
     font-weight: 400;
@@ -90,6 +104,10 @@ h6 {
   margin-top: 0.5em;
   margin-bottom: 1.5em;
 }
+header {
+  width: 100%;
+  z-index: 15;
+  }
 img {
   margin: 0;
   padding: 0;
@@ -104,6 +122,14 @@ p {
   margin:0;
   padding:0;
   text-align: justify;
+}
+
+nav {
+left:3.75em;
+display:flex;
+position:absolute;
+flex-direction: row;
+align-items: flex-start;
 }
 .contenu, .infinite-container{
   z-index: 50;
@@ -125,27 +151,35 @@ p {
   padding-right: 5em;
 }
 .intime {
-    font-size: 1.1em;
-    display: flex;
-    flex-direction: column;
-    z-index:20;
-}.intime img{
-    max-height:50em;
-    margin-top: 0.75em;
-    object-fit: contain;
-    object-position: 0% 15%;
-    }.intime h4 {
-    font-size:1.5em;
-    font-weight: bolder;
-    text-align: left;
-    padding-left: 0.5em;
-  }.intime h5{
-    font-size: 1.25em;
-    background-color: transparent;
-    margin-left: 1em;
-    }.intime h6{
-    margin-left: 3em;
-    }
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  z-index:20;
+  }.intime p a{
+    text-decoration: underline;
+    color: var(--clr-primary-500);
+    text-decoration-style: double;
+    }.intime p a:hover{
+    color: var(--clr-primary-200);
+    }.intime p a:visited {
+      color: var(--clr-accent-500);
+  }.intime img{
+  max-height:50em;
+  margin-top: 0.75em;
+  object-fit: contain;
+  object-position: 0% 15%;
+  }.intime h4 {
+  font-size:1.5em;
+  font-weight: bolder;
+  text-align: left;
+  padding-left: 0.5em;
+}.intime h5{
+  font-size: 1.25em;
+  background-color: transparent;
+  margin-left: 1em;
+  }.intime h6{
+  margin-left: 3em;
+  }
 .libre {
   position: absolute;
   margin: auto;

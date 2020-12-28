@@ -44,3 +44,7 @@ button[name="expand"]{
   margin-top: 0.25em;
   margin-bottom: 0.5em;
 }
+.title {
+  display:flex;
+  align-self: flex-start;
+}
