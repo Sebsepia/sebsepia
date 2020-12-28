@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
 @import "menus.css";
 @import "portfolio.css";
 
@@ -10,6 +11,7 @@
   --clr-primary-100: #fff;
   --clr-neutral-900: #2a2825;
   --ff-primary: 'Bitter', serif;
+  --ff-accent: 'Roboto', sans-serif;
 }
 
 *,
@@ -30,51 +32,51 @@ a {
   color: var(--clr-neutral-900);
 }
 h1{
-  font-size: 1.75em;
-  margin-left: 0;
-  }h1 span{
-  position:relative;
-  }
-  #title0 {font-size: 2.25em; top:-0.15em; font-weight: 400;}
-  #title1 {font-size: 1.5em; top:-0.5em;}
-  #title2 {font-size: 1.75em; top:0.1em;}
-  #title3 {font-size: 1.25em; top:0.5em;}
-  #title4 {font-size: 1.5em; top:0.5em;}
-  #title5 {font-size: 1.5em; top:0.25em;}
-  #title6 {font-size: 1em; top:0.75em;}
-  #title7 {font-size: 1em; top:1em;}
-  #title8 {font-size: 1em; top:1.25em;}
-  #title9 {font-size: 0.5em; top:3em;
+    font-size: 1.75em;
+    margin-left: 0;
+    }h1 span{
+      position:relative;
+    }
+      #title0 {font-size: 2.25em; top:-0.15em; font-weight: 400;}
+      #title1 {font-size: 1.5em; top:-0.5em;}
+      #title2 {font-size: 1.75em; top:0.1em;}
+      #title3 {font-size: 1.25em; top:0.5em;}
+      #title4 {font-size: 1.5em; top:0.5em;}
+      #title5 {font-size: 1.5em; top:0.25em;}
+      #title6 {font-size: 1em; top:0.75em;}
+      #title7 {font-size: 1em; top:1em;}
+      #title8 {font-size: 1em; top:1.25em;}
+      #title9 {font-size: 0.5em; top:3em;
 }
 h2 {
-  background-color: var(--clr-accent-500);
-  font-size: 1.15em;
-  font-style: oblique;
-  font-weight: 900;
-  margin-top: 2em;
-  margin-left: 2.25em;
-  display: flex;
-  position: relative;
-  vertical-align: center;
-  z-index:99;
-  }h2 a:hover {
-    color: #FFF;
-  }h2 a.active {
-    text-decoration: underline;
+    background-color: var(--clr-accent-500);
+    font-size: 1.15em;
+    font-style: oblique;
+    font-weight: 900;
+    margin-top: 2em;
+    margin-left: 2.25em;
+    display: flex;
+    position: relative;
+    vertical-align: center;
+    z-index:99;
+    }h2 a:hover {
+      color: #FFF;
+    }h2 a.active {
+      text-decoration: underline;
 }
 h3 {
-  font-size: 2rem;
-  font-weight: 400;
-  font-stretch: extra-expanded;
-  text-transform: uppercase;
-  margin-bottom: 0.35em;
-  line-height: 0;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-stretch: extra-expanded;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    line-height: 0;
 }
 h4 {
- font-size: 1.5rem;
- font-weight: bolder;
- margin-top: 1em;
- padding: 0;
+   font-size: 1.5rem;
+   font-weight: bolder;
+   margin-top: 1em;
+   padding: 0;
 }
 h5 {
   font-size: 1.25em;
@@ -83,24 +85,26 @@ h5 {
 }
 h6 {
   font-size: 0.75em;
-  font-weight: bold;
-  margin-top: 0;
+  line-height: 0;
+  font-weight: bolder;
+  margin: 0.5em;
+  margin-bottom: 1.5em;
 }
 img {
+  margin: 0;
+  padding: 0;
   max-width: 100%;
   max-height: 100%;
 }
 p {
-  font-size: 1em;
+  font-size: 1.1em;
+  font-family: var(--ff-accent);
   max-width: 45em;
+  line-height: 1em;
+  margin:0;
+  padding:0;
+  text-align: justify;
 }
-.bg_overlay{
-    display:inline-flex;
-    position:absolute;
-    top:0;
-    width:auto;
-    z-index:0;
-  }
 .contenu, .infinite-container{
   z-index: 50;
   padding-left:25rem;
@@ -111,35 +115,29 @@ p {
   font-size: 1rem;
   font-weight: 300;
   text-align: left;
-  transform: rotate(270deg);
   margin-top: 0.25em;
   position:absolute;
   top:8em;
   left:-4.5em;
+  transform: rotate(270deg);
 }
 .info {
   padding-right: 5em;
 }
 .intime {
     font-size: 1em;
-    border-radius: 0.25em;
-    width: max-content;
     display: flex;
     flex-direction: column;
     z-index:20;
 }.intime img{
-    display:flex;
-    position:relative;
-    padding: auto;
-    padding-top:0.5em;
-    padding-bottom: 0.5em;
-    width: auto;
-    height: auto;
-    max-width: 70rem;
     max-height:45rem;
+    margin-top: 0.75em;
     object-fit: contain;
     object-position: 0% 15%;
     }
+  .intime h1 {
+    
+  }
 .libre {
   position: absolute;
   margin: auto;
@@ -153,13 +151,7 @@ p {
 .repit {
   padding:4em;
 }
-.specific_bg_color{
-  -webkit-filter: blur(1.25em);
-  height:56em; //changer pour se faire dynamiquement par rapport a img
-  top:1em;
-  position:absolute;
-  z-index: 0;
-}
+
 
 @media screen and (max-width: 1080px) {
   body{
