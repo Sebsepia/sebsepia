@@ -1,9 +1,5 @@
 {% load active_link_tags %}
   <div class="post" id="{{post.slug}}">
-      <div class="specific_bg_color"
-      style="
-        background-color: {{post.bg_overlay_color}};"></div>
-
     <div class="date">{{post.post_date|date:'d | j | Y'}}</div>
       {% for free_image in post.freeimage_set.all %}
         <img class="libre" src="{{ free_image.f_img.url }}"
@@ -17,5 +13,5 @@
           >{{post.title}}</a></h3>
           {{ post.talkshit_md | safe}}
         </div>
+      </div>
         <div class="repit"></div>
-</div>

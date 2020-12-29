@@ -19,6 +19,7 @@ $(document).ready(function () {
 
   $('#menubtn').click(function()  {
    $('.menu').toggleClass('switch');
+   $('nav').toggleClass('switch');
   });
 
   /*isolates title letters in separate spans*/

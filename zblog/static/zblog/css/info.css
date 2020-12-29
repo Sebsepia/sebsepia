@@ -1,0 +1,38 @@
+
+
+.linktree{
+  position:absolute;
+  top:6em;
+  z-index:1000;
+
+}.linktreeimg{
+  max-height:81vh;
+}
+.linktree.switch{
+  left:1em;
+}
+
+
+
+@media screen and (max-width: 1080px) {
+
+    }
+
+  #mobilecollapsebtn{
+    background-color: #f9f5f5;
+    font-size: 2em;
+    right:0;
+    top:18.5em;
+    width:5em;
+    height:2em;
+    -webkit-transform: rotate(90deg);
+    transform-origin: top right;
+    visibility: visible;
+    z-index: 21;
+    }
+
+  .linktree{
+  }.linktree.switch{
+  }
+
+}
