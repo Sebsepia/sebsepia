@@ -1,8 +1,10 @@
-
+.info{
+}
 
 .linktree{
   position:absolute;
-  top:6em;
+  top:5.5em;
+  left:2em;
   z-index:1000;
 
 }.linktreeimg{
@@ -15,8 +17,6 @@
 
 
 @media screen and (max-width: 1080px) {
-
-    }
 
   #mobilecollapsebtn{
     background-color: #f9f5f5;
@@ -31,7 +31,18 @@
     z-index: 21;
     }
 
+  .description {
+    position:absolute;
+    top:100vh;
+
+
+  }
+  .info{
+    margin-left: 2vw;
+    margin-right: 4vw;
+  }
   .linktree{
+    display: flex;
   }.linktree.switch{
   }
 

@@ -30,15 +30,14 @@ body {
     line-height: 1;
     background: var(--clr-accent-900);
     font-size: 1.3125rem;
-    z-index: 50;
   }
 
-h1 a{
-    font-size: 0.8em;
-    color: var(--clr-accent-300);
+h1 {
+    font-size: 2em;
     margin-left: 0;
     }h1 span{
       position:relative;
+      color: var(--clr-accent-300);
     }
       #title0 {font-size: 2.25em; top:-0.15em; font-weight: 400;}
       #title1 {font-size: 1.5em; top:-0.5em;}
@@ -60,21 +59,19 @@ h1 a{
               #title7:hover,
                #title8:hover,
                 #title9:hover{
-                             color: var(--clr-primary-0);
+                  color: var(--clr-primary-0);
        }
-h2 a{
-    color: var(--clr-accent-300);
+h2 {
     background-color: var(--clr-primary-900);
-    font-size: 0.8em;
+    font-size: 1.5em;
     font-style: oblique;
     font-weight: 900;
-    margin-top: 2em;
+    margin-top: 3em;
     margin-left: 2.25em;
-    display: flex;
-    position: relative;
-    vertical-align: center;
-    z-index:99;
-    }h2 a.active {
+    }h2 a {
+      color: var(--clr-accent-300);
+    }
+    h2 a.active {
       text-decoration: underline;
     }h2 a:focus{
       color:var(--clr-primary-1000);
@@ -87,7 +84,6 @@ h3 {
     font-stretch: extra-expanded;
     text-transform: uppercase;
     margin-bottom: 1em;
-    line-height: 0;
 }
 h4 {
    font-size: 1.5em;
@@ -110,7 +106,6 @@ h6 {
 header {
   position:relative;
   width: 100%;
-  z-index: 15;
   }
 
 img {
@@ -135,13 +130,11 @@ nav {
   left:2em;
   display:flex;
   flex-direction: row;
-  align-items: flex-start;
 }
 
 .contenu{
-  z-index: 50;
-  margin-left:18vw;
-  margin-top: 8rem;
+  margin-left:20vw;
+  margin-top: 15rem;
   margin-right: 2.5em;
 }
 .date {
@@ -164,7 +157,6 @@ nav {
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
-  z-index:20;
   }.intime p a{
     text-decoration: underline;
     color: var(--clr-primary-500);
@@ -175,8 +167,6 @@ nav {
       color: var(--clr-accent-500);
   }
   .intime img{
-    display: flex;
-    flex-direction: column;
     max-height: 90vh;
     max-width: 150%;
     margin-top: 0.75em;
@@ -198,7 +188,6 @@ nav {
 .libre {
   position: absolute;
   margin: auto;
-  z-index:1;
   max-width: 35rem;
 }
 .menu{
@@ -221,6 +210,10 @@ nav {
 #menubtn{
   visibility: hidden;
 }
+#hamburgericon{
+
+  height:0;
+}
 
 @media screen and (max-width: 100vh) {
   body{
@@ -228,27 +221,31 @@ nav {
   header {
     overflow: hidden;
   }
+  h1{
+    font-size: 1.5em;
+  }
   h2{
-    font-size: 1em;
-    padding-right:0.5em;
+    font-size: 0.7em;
+    padding-right:2em;
     margin:0;
   }
   nav {
-  font-size: 5vw;
-  position: relative;
-  display: block;
-  height: 9em;
-  top: 0;
-  left:1em;
-  }nav.switch{
-    height:13em
+    font-size: 5vw;
+    position: relative;
+    display: block;
+    height: 9em;
+    top: 0;
+    left:1em;
+    }nav.switch{
+      height:13em
   }
   p {
-    width: 95vw;
+    width: 100%;
   }
   .contenu{
     margin-top:0;
-    margin-left: 1rem;
+    margin-left: 2vw;
+    margin-right: 4vw;
   }
   .menu{
   font-size: 1.5em;
@@ -259,32 +256,33 @@ nav {
   top:5em;
   right:0;
   visibility: hidden;
-  z-index: 1;
-  }h2 a{
+  }h2 {
     margin:0.5em;
+    line-height: 1em;
     }.menu.switch{
     visibility:visible;
   }
-  #hamburgericon {
-    fill: var(--clr-accent-300);
-  }
-  #hamburgericon:hover{
-    fill:var(--clr-primary-0);
-    cursor:pointer;}
-  #menubtn{
-    visibility: visible;
-    position: absolute;
-    width: 6vw;
-    right:7vw;
-    top:3.5em;
-    padding:0;
-    background-color: transparent;
-    border:none;
-    z-index:99; }
   .intime img {
     max-width: 100%;
   }
   .title {
     height:8em;
   }
+  #hamburgericon {
+    height:auto;
+    fill: var(--clr-accent-300);
+  }
+  #hamburgericon:hover{
+    fill:var(--clr-primary-0);
+    cursor:pointer;}
+    #menubtn{
+      visibility: visible;
+      position: absolute;
+      width: 6vw;
+      right:7vw;
+      top:3.5em;
+      padding:0;
+      background-color: transparent;
+      border:none;
+    }
 }
