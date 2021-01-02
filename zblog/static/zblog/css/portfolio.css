@@ -34,7 +34,7 @@ button[name="expand"]{
   font-size: 0;
   display: flex;
   flex-direction: column;
-}.portfoliointime img{
+}.portfoliointime p, .portfoliointime img{
   display: flex;
   max-height:39rem;
   object-fit: contain;
