@@ -126,11 +126,7 @@ nav {
 p {
   font-size: 1.1em;
   font-family: var(--ff-accent);
-  width: 50vw;
   line-height: 1em;
-  margin:0;
-  padding:0;
-  text-align: justify;
 }
 
 
@@ -164,7 +160,12 @@ p {
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
-  }.intime p a{
+  }.intime p {
+    width: 50vw;
+    margin:0;
+    padding:0;
+    text-align: justify;
+    }.intime p a{
     text-decoration: underline;
     color: var(--clr-primary-500);
     text-decoration-style: double;
