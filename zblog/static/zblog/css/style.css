@@ -276,7 +276,7 @@ p {
   overflow:hidden;
 }
 .repit {
-  padding:4em;
+  margin:4em;
 }
 .title {
   position: relative;
@@ -336,6 +336,9 @@ p {
   .info{
     margin-top:85vh;
     }
+    .intime img {
+      max-width: 100%;
+    }
   .linktree{
     position:static;
     display: flex;
@@ -345,21 +348,21 @@ p {
     height:100%;
   }
   .menu{
-    font-size: 1.5em;
+    font-size: 2em;
     position: absolute;
     display:flex;
     flex-direction: column;
-    top:5em;
+    top:3em;
     right:0;
     visibility: hidden;
     }.menu.switch{
     visibility: visible;
     }
-  .intime img {
-    max-width: 100%;
-  }
   .title {
     height:8em;
+  }
+  .repit {
+    margin:1.5em;
   }
   #hamburgericon {
     height:auto;
