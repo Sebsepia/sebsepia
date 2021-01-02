@@ -23,8 +23,7 @@ Les humbles créations de Seb
         {% for post in obj %}
         <div class="portfoliopost ">
           <a href="{% url 'tag' slug=category %}#{{post.slug}}"
-            style="color:{{post.text_color}};"
-            >
+            style="color:{{post.text_color}};">
               <h5>{{post.title}}</h5>
               <div class="portfoliodate">{{post.post_date|date:'Y'}}</div>
               <div class="portfoliointime" style="

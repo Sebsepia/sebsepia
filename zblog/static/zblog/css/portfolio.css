@@ -52,4 +52,8 @@ button[name="expand"]{
   .portfoliopost {
     width:70vw;
   }
+  .portfoliointime {
+    height: auto;
+    width:100%;
+  }
 }
