@@ -31,7 +31,9 @@ body {
     background: var(--clr-accent-900);
     font-size: 1.3125rem;
   }
-
+a {
+  color:var(--clr-primary-200);
+}
 h1 {
     font-size: 2em;
     margin-left: 0;
@@ -93,7 +95,7 @@ h4 {
 h5 {
   font-size: 1.25em;
   margin-top: 0.5em;
-  margin-bottom: : 0.25em;
+  margin-bottom: 0.25em;
   text-transform: lowercase;
 }
 h6 {
@@ -106,6 +108,7 @@ h6 {
 header {
   position:relative;
   width: 100%;
+  z-index:6;
   }
 
 img {
@@ -115,7 +118,7 @@ img {
 }
 
 nav {
-  position:absolute;
+  position: absolute;
   left:2em;
   display:flex;
   flex-direction: row;
@@ -195,8 +198,8 @@ p {
   max-width: 35rem;
 }
 .linktree{
-position: relative;
-font-size: 1.1vw;
+  position: relative;
+  font-size: 1.1vw;
   }.linktreeimg{
     position:absolute;
     height:37.8em;
@@ -213,55 +216,54 @@ font-size: 1.1vw;
     position:absolute;
     width: 1em;
     height:1em;
-    z-index: 100;
-  }
-  #lt0{
-    top:11em;
-    left:12em;
-    width: 5em;
-    height:5.5em;
-  }
-  #lt1{
-    top:19.5em;
-    left:12em;
-    width: 3.6em;
-    height:3.5em;
-  }
-  #lt2{
-    top:24.2em;
-    left:11em;
-    width: 5.5em;
-    height:3.1em;
-  }
-  #lt3{
-    top: 26.5em;
-    left: 21.2em;
-    width: 2.5em;
-    height: 3.3em;
-  }
-  #lt4{
-    top: 31.8em;
-    left: 11.5em;
-    width: 2.4em;
-    height: 2.4em;
-  }
-  #lt5{
-    top: 35.2em;
-    left: 8em;
-    width: 2.4em;
-    height: 2.4em;
-  }
-  #lt6{
-    top: 38.3em;
-    left: 16em;
-    width: 2.4em;
-    height: 2.4em;
-  }
-  #lt7{
-    top: 38.8em;
-    left: 20.5em;
-    width: 2.4em;
-    height: 2.4em;
+    z-index: 5;
+  }#lt0{
+      top:11em;
+      left:12em;
+      width: 5em;
+      height:5.5em;
+    }
+    #lt1{
+      top:19.5em;
+      left:12em;
+      width: 3.6em;
+      height:3.5em;
+    }
+    #lt2{
+      top:24.2em;
+      left:11em;
+      width: 5.5em;
+      height:3.1em;
+    }
+    #lt3{
+      top: 26.5em;
+      left: 21.2em;
+      width: 2.5em;
+      height: 3.3em;
+    }
+    #lt4{
+      top: 31.8em;
+      left: 11.5em;
+      width: 2.4em;
+      height: 2.4em;
+    }
+    #lt5{
+      top: 35.2em;
+      left: 8em;
+      width: 2.4em;
+      height: 2.4em;
+    }
+    #lt6{
+      top: 38.3em;
+      left: 16em;
+      width: 2.4em;
+      height: 2.4em;
+    }
+    #lt7{
+      top: 38.8em;
+      left: 20.5em;
+      width: 2.4em;
+      height: 2.4em;
   }
 .menu{
   visibility: visible;
@@ -284,9 +286,8 @@ font-size: 1.1vw;
   visibility: hidden;
 }
 #hamburgericon{
-
   height:0;
-}
+  }
 
 @media screen and (max-width: 100vh) {
   body{
@@ -298,15 +299,13 @@ font-size: 1.1vw;
     font-size: 1.5em;
   }
   h2{
-    font-size: 0.7em;
+    font-size: 0.8em;
     padding-right:2em;
     margin:0.5em;
     line-height: 1em;
     }
-  }
-    .menu.switch{
   nav {
-    font-size: 5vw;
+    font-size: 4vw;
     position: relative;
     display: block;
     height: 9em;
@@ -319,37 +318,43 @@ font-size: 1.1vw;
     width: 100%;
   }
   .contenu{
-    margin-top:0;
+    display: flex;
+    flex-direction: column;
     margin-left: 2vw;
     margin-right: 4vw;
+    margin-top: 0;
+  }.deets{
+    margin-left: 3vw;
   }
-
   .description {
-    position:absolute;
-    top:100vh;
-
-
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+  }.description p {
+    max-width:90vw;
   }
   .info{
-    margin-left: 2vw;
-    margin-right: 4vw;
-  }
+    margin-top:85vh;
+    }
   .linktree{
+    position:static;
     display: flex;
   }.linktree.switch{
+  }.linktreeimg {
+    width:94vw;
+    height:100%;
   }
-
   .menu{
-  font-size: 1.5em;
-  position: absolute;
-  display:flex;
-  flex-direction: column;
-
-  top:5em;
-  right:0;
-  visibility: hidden;
-    visibility:visible;
-  }
+    font-size: 1.5em;
+    position: absolute;
+    display:flex;
+    flex-direction: column;
+    top:5em;
+    right:0;
+    visibility: hidden;
+    }.menu.switch{
+    visibility: visible;
+    }
   .intime img {
     max-width: 100%;
   }
@@ -363,7 +368,7 @@ font-size: 1.1vw;
   #hamburgericon:hover{
     fill:var(--clr-primary-0);
     cursor:pointer;}
-    #menubtn{
+  #menubtn{
       visibility: visible;
       position: absolute;
       width: 6vw;

@@ -22,13 +22,13 @@ button[name="expand"]{
   flex-direction: column;
   width: 39em;
   padding-right: 2em;
+  margin-bottom: 1em;
 }.portfoliopost h3 {
   margin-bottom: 2em;
-}.portfoliopost.expand{
-  width:80em;
-  z-index:100;
-}
-
+}.portfoliopost h5 {
+  }.portfoliopost:focus {
+    cursor: crosshair;
+  }
 .portfoliointime {
 /*  width:55rem;*/
   font-size: 0;
@@ -47,4 +47,9 @@ button[name="expand"]{
 .title {
   display:flex;
   align-self: flex-start;
+}
+@media screen and (max-width: 100vh) {
+  .portfoliopost {
+    width:70vw;
+  }
 }
