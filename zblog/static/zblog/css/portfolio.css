@@ -34,11 +34,13 @@ button[name="expand"]{
   font-size: 0;
   display: flex;
   flex-direction: column;
-}.portfoliointime p, .portfoliointime img{
+}.portfoliointime img{
   display: flex;
   max-height:39rem;
   object-fit: contain;
   object-position: 0% 15%;
+  height: auto;
+  width:100%;
 }.portfoliodate {
   font-size: 0.85rem;
   margin-top: 0.25em;
@@ -53,7 +55,6 @@ button[name="expand"]{
     width:70vw;
   }
   .portfoliointime img{
-    height: auto;
-    width:100%;
+
   }
 }
