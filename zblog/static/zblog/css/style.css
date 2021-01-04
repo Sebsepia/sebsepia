@@ -133,6 +133,9 @@ p {
   margin-top: 15rem;
   margin-right: 2.5rem;
   position:relative;
+
+  display:flex;
+  flex-direction: column;
 }
 .date {
   font-family: var(--ff-accent);
