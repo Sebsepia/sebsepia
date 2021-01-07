@@ -17,7 +17,7 @@ Les humbles créations de Seb
     <div class="portfolio">
 
     {% for obj in portfoliocat %}
-    <div class="categories {% cycle "digital" "illustration" "photo" as category %}">
+    <div class="categories {% cycle 'digital' 'illustration' 'photo' as category %}">
       <h3><a href="{% url 'tag' slug=category %}">{{category}}</a></h3>
 
         {% for post in obj %}
