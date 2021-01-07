@@ -55,7 +55,7 @@ def portfolio(request):
     digital = ('digital',)
     photo = ('photo',)
     illustration = ('illustration',)
-    digitalcat = Post.objects.filter(tags__name__in=digital).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
+    digitalcat = Post.objects.filter(tags__name__in=digital).exclude(tags__name__in=exclude).order_by('-post_date', '-id')[5]
     illustrationcat = Post.objects.filter(tags__name__in=illustration).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
     photocat = Post.objects.filter(tags__name__in=photo).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
     #the order of portfoliocat will be the order of the categories on the website
