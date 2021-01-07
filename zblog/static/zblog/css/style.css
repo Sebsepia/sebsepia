@@ -276,6 +276,7 @@ p {
   position: relative;
   display: flex;
   overflow:hidden;
+  flex-direction:column;
 }
 .repit {
   margin:4em;
