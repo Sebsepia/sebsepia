@@ -51,6 +51,7 @@ def tagged(request, slug):
     return render(request, 'tag.html', context)
 
 def portfolio(request):
+    posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
     exclude = ('nsfw', )#'study'
     digital = ('digital',)
     photo = ('photo',)
@@ -65,6 +66,7 @@ def portfolio(request):
         'digitalcat': digitalcat,
         'illustrationcat': illustrationcat,
         'photocat': photocat,
+        'posts': posts,
     }
     return render(request, 'portfolio.html', context)
 

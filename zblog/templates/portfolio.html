@@ -20,7 +20,7 @@ portfolio de Seb Bégin
         <div class="categories {% cycle 'digital' 'illustration' 'photo' as category %}">
           <h3><a href="{% url 'tag' slug=category %}">{{category}}</a></h3>
 
-            {% for post in obj %}
+{#            {% for post in obj %}
             <div class="portfoliopost ">
               <a href="{% url 'tag' slug=category %}#{{post.slug}}"
                 style="color:{{post.text_color}};">
@@ -35,6 +35,7 @@ portfolio de Seb Bégin
               </div>
             {% endfor %}
         </div>
+#}
     {% endfor %}
     </div>
   </div>
