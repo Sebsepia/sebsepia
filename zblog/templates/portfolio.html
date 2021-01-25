@@ -8,29 +8,33 @@ portfolio de Seb Bégin
   Seb Bégin
 {%endblock%}
 
-{%block linktree%}
-    {#{% include 'linktree.html' %}#}
-{%endblock%}
 
 {% block main %}
   <div class="contenu">
-    {% load active_link_tags %}
-      <div class="post" id="titre">
-        <div class="date">{{post.post_date|date:'d | j | Y'}}</div>
-          {% for free_image in post.freeimage_set.all %}
-            <img class="libre" src="{{ free_image.f_img.url }}"
-            alt="{{free_image.f_img_alt}}" title="{{free_image.f_img_alt}}"
-            style="transform: translate({{free_image.posi_X}}px, {{free_image.posi_Y}}px);">
-          {% endfor %}
-            <div class="intime" style="
-            color:{{post.text_color}};">
-              <h3><a class="{% active_link 'details' %}" href="{% url 'details' post.slug %}"
-              style="color:{{post.text_color}};"
-              >{{post.title}}</a></h3>
-              {{ post.talkshit_md | safe}}
-            </div>
-            <div class="repit"></div>
-          </div>
+    <div class="portfolio">
+
+    {% for obj in portfoliocat %}
+        <div class="categories {% cycle 'digital' 'illustration' 'photo' as category %}">
+          <h3><a href="{% url 'tag' slug=category %}">{{category}}</a></h3>
+
+            {% for post in obj %}
+            <div class="portfoliopost ">
+              <a href="{% url 'tag' slug=category %}#{{post.slug}}"
+                style="color:{{post.text_color}};">
+                  <h5>{{post.title}}</h5>
+                  <div class="portfoliodate">{{post.post_date|date:'Y'}}</div>
+                  <div class="portfoliointime" style="
+                  background-color:{{post.bg_color}};
+                  color:{{post.text_color}};">
+                    {{ post.talkshit_md | safe}}
+                  </div>
+                </a>
+              </div>
+            {% endfor %}
+        </div>
+
+    {% endfor %}
+    </div>
 
   </div>
 {% endblock %}

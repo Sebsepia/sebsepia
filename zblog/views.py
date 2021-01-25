@@ -53,9 +53,9 @@ def tagged(request, slug):
 def portfolio(request):
     posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
     exclude = ('nsfw', )#'study'
-    digital = ('digital',)
-    photo = ('photo',)
-    illustration = ('illustration',)
+    digital = ('a',)
+    photo = ('b',)
+    illustration = ('c',)
     digitalcat = Post.objects.filter(tags__name__in=digital).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
     illustrationcat = Post.objects.filter(tags__name__in=illustration).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
     photocat = Post.objects.filter(tags__name__in=photo).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
