@@ -10,7 +10,7 @@ import markdown
 def home_view(request):
     posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
     #posts = Post.objects.order_by('-id')
-    paginator = Paginator(posts, 4)
+    paginator = Paginator(posts, 5)
     page = request.GET.get('page')
     page_obj = paginator.get_page(page)
     context = {

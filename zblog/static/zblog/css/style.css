@@ -1,4 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 @import "portfolio.css";
@@ -15,7 +16,7 @@
   --clr-accent-500: #8f8e8c;
   --clr-accent-300: #2e2a25;
   --ff-primary: 'Bitter', serif;
-  --ff-accent: 'Roboto', sans-serif;
+  --ff-accent: 'Raleway', sans-serif;
 }
 
 *,
@@ -29,7 +30,7 @@ body {
     font-family: var(--ff-primary);
     line-height: 1;
     background: var(--clr-accent-900);
-    font-size: 1.3125rem;
+    font-size: 1.5rem;
   }
 a {
   color:var(--clr-primary-200);
@@ -112,6 +113,8 @@ header {
   }
 
 img {
+  color: var(--clr-accent-500);
+  font-family: var(--ff-accent);
   margin: 0;
   margin-bottom: 1.2em;
   padding: 0;
@@ -129,51 +132,48 @@ p {
   line-height: 1em;
 }
 .contenu{
+  display:flex;
+  flex-direction: column;
   margin-left:20vw;
   margin-top: 15rem;
   margin-right: 2.5rem;
+  margin-bottom: 1em;
   position:relative;
-
-  display:flex;
-  flex-direction: column;
+  overflow-x:hidden;
 }
 .date {
   font-family: var(--ff-accent);
   color: var(--clr-accent-500);
-  font-size: 1rem;
+  font-size: 1.35rem;
   font-weight: 300;
   text-align: left;
-  margin-top: 0.25em;
+  margin-top: -3em;
   position:absolute;
   top:8em;
   left:-4.5em;
   transform: rotate(270deg);
 }
-.description,
-.deets{
-  margin-left: 12vw;
-}.deets img{
-  left:0;
-}.description p{
-  max-width: 40vw;
+.description p{margin-left: 12vw;
+}.deets {margin-left: 12vw;
+}.deets img{left:0;
+}.description p{max-width: 40vw;
 }
 .intime {
   font-size: 1.1em;
   display: flex;
   flex-direction: column;
-  }.intime p {
-    width: 50vw;
-    margin:0.25em ;
-    padding:0;
-    text-align: justify;
-    }.intime p a{
-    text-decoration: underline;
-    color: var(--clr-primary-500);
-    text-decoration-style: double;
-    }.intime p a:hover{
-    color: var(--clr-primary-200);
-    }.intime p a:visited {
-      color: var(--clr-accent-500);
+  }
+  .intime h4 {
+  text-align: left;
+  margin: 0.5em;
+  }.intime h5{
+  background-color: transparent;
+  margin-left: 1em;
+  margin-bottom: 1em;
+  }.intime h6{
+    margin-left: 2em;
+    margin-bottom: 1em;
+    transform: translateY(-1.8em);
   }
   .intime img{
     max-height: 90vh;
@@ -181,18 +181,20 @@ p {
     margin-top: 0.75em;
     object-fit: contain;
     object-position: 0% 15%;
+    line-height:2em;
+    color:var(--clr-accent-300);
   }
-  .intime h4 {
-    text-align: left;
-    margin: 0.5em;
-  }.intime h5{
-    background-color: transparent;
-    margin-left: 1em;
-    margin-bottom: 1em;
-  }.intime h6{
-    margin-left: 2em;
-    margin-bottom: 1em;
-    transform: translateY(-1.8em);
+  .intime p {
+    width: 50vw;
+    margin:0.25em ;
+    padding:0;
+    text-align: justify;
+  }.intime p a{
+    text-decoration: underline;
+    color: var(--clr-primary-500);
+    text-decoration-style: double;
+  }.intime p a:hover{color: var(--clr-primary-200);
+  }.intime p a:visited {color: var(--clr-accent-500);
   }
 .libre {
   position: absolute;
@@ -275,7 +277,6 @@ p {
 .post {
   position: relative;
   display: flex;
-  overflow:hidden;
   flex-direction:column;
 }
 .repit {
@@ -326,6 +327,8 @@ p {
     margin-left: 2vw;
     margin-right: 4vw;
     margin-top: 0;
+    margin-bottom: 0;
+    overflow:hidden;
     }.deets{
     margin-left: 3vw;
     }
@@ -336,6 +339,7 @@ p {
     }.description p {
     max-width:90vw;
   }
+
   .info{
     margin-top:85vh;
     }

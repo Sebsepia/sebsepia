@@ -15,16 +15,16 @@ Sebsepia!
 
 
 {% block main %}
-<div class="contenu">
+<div class="contenu infinite-container">
   {% for post in page_obj %}
     {% include 'blogpost.html' %}
   {% endfor %}
-</div>
 {% if page_obj.has_next %}
 <a class="infinite-more-link" href="?page={{page_obj.next_page_number}}"></a>
 <div class="loader" role="status">
   <h6>Loading</h6>
 </div>
 {% endif %}
+</div>
 
 {% endblock %}

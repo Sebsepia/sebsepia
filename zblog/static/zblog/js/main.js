@@ -41,7 +41,7 @@ $(document).ready(function () {
 
 
   var infinite = new Waypoint.Infinite({
-      element: $('.contenu')[0],
+      element: $('.contenu'),
       handler:function(direction){
 
       },
