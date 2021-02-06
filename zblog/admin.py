@@ -13,11 +13,11 @@ class BImageInline(admin.TabularInline):
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'post_date' )
-    fields = [('title', 'title_tag', 'slug'),('talkshit'),('text_color','bg_color', 'bg_color_a' ),('bg_overlay_color', 'bg_overlay_check' ),('tags','post_date')]
+    fields = [('title', 'title_tag', 'slug'),('talkshit'),('tags','post_date')]
     inlines = [FImageInline, BImageInline]
 admin.site.register(Post, PostAdmin)
 
 class BImageAdmin(admin.ModelAdmin):
-    list_display = ('b_img', 'b_img_date')
-    fields = [('b_img', 'b_img_date')]
+    list_display = ('b_img',)
+    fields = [('b_img', )]
 admin.site.register(BlogImage, BImageAdmin)

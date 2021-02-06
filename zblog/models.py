@@ -22,7 +22,6 @@ class FreeImage(models.Model):
 
 
 class BlogImage(models.Model):
-    b_img_date = models.DateField(auto_now_add=False,blank=True, null = True)
     b_img = models.ImageField("Blog Image", null=True, blank=True, upload_to="img/b")
     postimg = models.ForeignKey('Post', on_delete=models.SET_NULL, null=True)
 
@@ -34,17 +33,11 @@ class BlogImage(models.Model):
         super(BlogImage, self).save()
 
 
-
 class Post(models.Model):
-    bg_color = ColorField(default='#FFFFFF')
-    bg_color_a = models.BooleanField(default=True)
-    bg_overlay_color = ColorField(default='#FFFFFF00')
-    bg_overlay_check = models.BooleanField(blank=True, null = True)
     post_date = models.DateField(auto_now_add=False,blank=True, null = True)
     slug = models.SlugField(unique=True, max_length=100,blank=True, null = True)
     talkshit = models.TextField(blank=True, null = True)
     talkshit_md = models.TextField(blank=True, null = True)
-    text_color = ColorField(default='#000000')
     tags = TaggableManager(blank=True)
     title = models.CharField(max_length=100, unique=True)
     title_tag = models.CharField(max_length=100, blank=True, null = True)
