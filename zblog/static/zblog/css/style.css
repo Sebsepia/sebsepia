@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Bitter:200,300,400,500,600,700,900);
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
@@ -36,22 +36,24 @@ a {
   color:var(--clr-primary-200);
 }
 h1 {
-    font-size: 2em;
+    font-size: 1em;
+    letter-spacing: 0.2em;
     margin-left: 0;
+    margin-top: 1.5em;
     }h1 span{
       position:relative;
       color: var(--clr-accent-300);
     }
-      #title0 {font-size: 2.25em; top:-0.15em; font-weight: 400;}
-      #title1 {font-size: 1.5em; top:-0.5em;}
-      #title2 {font-size: 1.75em; top:0.1em;}
-      #title3 {font-size: 1.25em; top:0.5em;}
-      #title4 {font-size: 1.5em; top:0.5em;}
-      #title5 {font-size: 1.5em; top:0.25em;}
-      #title6 {font-size: 1em; top:0.75em;}
-      #title7 {font-size: 1em; top:1em;}
-      #title8 {font-size: 1em; top:1.25em;}
-      #title9 {font-size: 0.5em; top:3em;}
+    #title0 {font-size: 2.5em; top:-0.05em; font-weight: 300;letter-spacing: 0.06em;}
+    #title1 {font-size: 1.2em; top:-0.5em; font-weight: 900;letter-spacing: 0.1em;}
+    #title2 {font-size: 1.75em; top: 0em; font-weight: 600; letter-spacing: 0.4em;}
+    #title3 {font-size: 2em; top:0.4em;font-weight: 700;letter-spacing: 0.05em;}
+    #title4 {font-size: 2.4em; top:0.5em;font-weight: 800;letter-spacing: -0.05em;}
+    #title5 {font-size: 2em; top:0.25em;font-weight: 400;letter-spacing: 0.1em;}
+    #title6 {font-size: 1em; top:0.75em;font-weight: 900;letter-spacing: -0.1em;}
+    #title7 {font-size: 1.8em; top:0.7em;font-weight: 300;letter-spacing: 0.1em;}
+    #title8 {font-size: 1.1em; top:1em;font-weight: 500;letter-spacing: 0.1em;}
+    #title9 {font-size: 0.6em; top:3em;font-weight: 500;letter-spacing: 0em;}
       #title0:hover,
         #title1:hover,
          #title2:hover,
@@ -65,13 +67,14 @@ h1 {
                   color: var(--clr-primary-0);
        }
 h2 {
-    background-color: var(--clr-primary-900);
-    font-size: 1.5em;
+  /*  background-color: var(--clr-primary-900);*/
+    font-size: 1.25em;
     font-style: oblique;
     font-weight: 900;
     margin-top: 3em;
     margin-left: 2.25em;
     }h2 a {
+      font-family: var(--ff-accent);
       color: var(--clr-accent-300);
     }
     h2 a.active {
@@ -139,7 +142,6 @@ p {
   margin-right: 2.5rem;
   margin-bottom: 1em;
   position:relative;
-  overflow-x:hidden;
 }
 .date {
   font-family: var(--ff-accent);
@@ -153,9 +155,10 @@ p {
   left:-4.5em;
   transform: rotate(270deg);
 }
-.description p{margin-left: 12vw;
-}.deets {margin-left: 12vw;
-}.deets img{left:0;
+.deets{
+  font-size: 0.8em;
+}
+.deets img{left:0;
 }.description p{max-width: 40vw;
 }
 .intime {
@@ -321,15 +324,10 @@ p {
   .intime p {
     width: 99%;
   }
-  .contenu{
-    display: flex;
-    flex-direction: column;
-    margin-left: 2vw;
-    margin-right: 4vw;
-    margin-top: 0;
-    margin-bottom: 0;
-    overflow:hidden;
-    }.deets{
+  .blog {
+    overflow-x: hidden;
+  }
+  .deets{
     margin-left: 3vw;
     }
     .description {
