@@ -12,8 +12,23 @@ portfolio de Seb Bégin
 {% block main %}
   <div class="contenu">
     <div class="portfolio">
-
-    {% for obj in portfoliocat %}
+      {% for category in categories %}
+        <div class="categories">
+          <h3>{{category}}</h3>
+          {% for post in category.post_set.all %}
+          <div class="portfoliopost ">
+            <a href="{% url 'details' slug=post.slug%}">
+                <h5>{{post.title}}</h5>
+                <div class="portfoliodate">{{post.post_date|date:'Y'}}</div>
+                <div class="portfoliointime">
+                  {{ post.talkshit_md | safe}}
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+      {% endfor %}
+    {% comment %}{% for obj in portfoliocat %}
         <div class="categories {% cycle 'digital' 'illustration' 'photo' as category %}">
           <h3><a href="{% url 'tag' slug=category %}">{{category}}</a></h3>
 
@@ -33,8 +48,8 @@ portfolio de Seb Bégin
             {% endfor %}
         </div>
 
-    {% endfor %}
+    {% endfor %}{% endcomment %}
     </div>
 
   </div>
-{% endblock %}
+  {% endblock %}

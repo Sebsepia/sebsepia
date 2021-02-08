@@ -17,7 +17,7 @@ class PostInline(admin.TabularInline):
 
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title', 'post_date' )
-    fields = [('title', 'title_tag', 'slug'),('talkshit'),('tags','post_date')]
+    fields = [('title', 'title_tag', 'slug'),('talkshit'),('tags','post_date'),('category')]
     inlines = [FImageInline, BImageInline]
 admin.site.register(Post, PostAdmin)
 

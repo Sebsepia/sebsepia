@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, RedirectView
-from .models import Post, BlogImage, FreeImage
+from .models import Post, BlogImage, FreeImage, PortfolioCategory
 from django.utils.text import slugify
 from datetime import datetime, date
 
@@ -51,6 +51,18 @@ def tagged(request, slug):
     return render(request, 'tag.html', context)
 
 def portfolio(request):
+    categories = PortfolioCategory.objects.all().order_by('category_name')
+    exclude = ('nsfw', )#'study'
+    
+
+    #the order of portfoliocat will be the order of the categories on the website
+
+    context = {
+    'categories': categories,
+    }
+    return render(request, 'portfolio.html', context)
+
+def portfolio2(request):
     posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
     exclude = ('nsfw', )#'study'
     digital = ('a',)
