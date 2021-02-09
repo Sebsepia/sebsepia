@@ -13,6 +13,8 @@ class BImageInline(admin.TabularInline):
 
 class PostInline(admin.TabularInline):
     model = Post
+    
+    exclude = ('title_tag','slug','talkshit','talkshit_md','tags')
     extra = 0
 
 class PostAdmin(admin.ModelAdmin):
@@ -20,11 +22,6 @@ class PostAdmin(admin.ModelAdmin):
     fields = [('title', 'title_tag', 'slug'),('talkshit'),('tags','post_date'),('category')]
     inlines = [FImageInline, BImageInline]
 admin.site.register(Post, PostAdmin)
-
-class BImageAdmin(admin.ModelAdmin):
-    list_display = ('b_img',)
-    fields = [('b_img', )]
-admin.site.register(BlogImage, BImageAdmin)
 
 class PCAdmin(admin.ModelAdmin):
     list_display = ('category_name',)

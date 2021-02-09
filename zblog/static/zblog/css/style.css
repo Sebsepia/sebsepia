@@ -66,7 +66,7 @@ h1 {
                 #title9:hover{
                   color: var(--clr-primary-0);
        }
-h2 {
+   h2 {
   /*  background-color: var(--clr-primary-900);*/
     font-size: 1.25em;
     font-style: oblique;
@@ -84,29 +84,29 @@ h2 {
     }h2 a:hover{
       color:var(--clr-primary-0);
     }
-h3 {
+    h3 {
     font-size: 2.5rem;
     font-weight: 400;
     font-stretch: extra-expanded;
     text-transform: uppercase;
     margin:0 0 0.5em 0;
-}
-h4 {
+    }
+    h4 {
    font-size: 1.5em;
    font-weight: bolder;
    margin-top: 1em;
-}
-h5 {
-  font-size: 1.25em;
-  margin-top: 0.5em;
-  margin-bottom: 0.25em;
-  text-transform: lowercase;
-}
-h6 {
-  font-size: 0.75em;
-  line-height: 1em;
-  font-weight: bolder;
-  margin-top: 0.5em;
+    }
+    h5 {
+    font-size: 1.25em;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+    text-transform: lowercase;
+    }
+    h6 {
+    font-size: 0.75em;
+    line-height: 1em;
+    font-weight: bolder;
+    margin-top: 0.5em;
 }
 
 header {
@@ -122,7 +122,13 @@ img {
   margin-bottom: 1.2em;
   padding: 0;
 }
-
+li {
+  font-family: var(--ff-accent);
+  line-height: 1.5em;
+}li:before {
+  content: "\25C9";
+  margin:0.3em;
+}
 nav {
   position: absolute;
   left:2em;
@@ -133,6 +139,12 @@ p {
   font-size: 1.1em;
   font-family: var(--ff-accent);
   line-height: 1em;
+  margin-bottom: 0.5em;
+}
+ul {
+  list-style-type: none;
+  padding-left: 0.25em;
+  margin:0;
 }
 .contenu{
   display:flex;
@@ -160,6 +172,19 @@ p {
 }
 .deets img{left:0;
 }.description p{max-width: 40vw;
+}
+#info-list {
+  position:absolute;
+  top: 15rem;
+  padding-left: 1em;
+  font-size:90%;
+}
+#info-me {
+  position: absolute;
+  right: 2.7em;
+  top: 6em;
+  height: auto;
+  width: clamp(9em,25em,45vw);
 }
 .intime {
   font-size: 1.1em;
@@ -224,7 +249,7 @@ p {
     width: 1em;
     height:1em;
     z-index: 5;
-  }#lt0{
+    }#lt0{
       top:11em;
       left:12em;
       width: 5em;
@@ -271,11 +296,14 @@ p {
       left: 20.5em;
       width: 2.4em;
       height: 2.4em;
-  }
+}
 .menu{
   visibility: visible;
   display:flex;
   margin-left: 2em;
+}
+#menubtn{
+  visibility: hidden;
 }
 .post {
   position: relative;
@@ -289,9 +317,6 @@ p {
   position: relative;
 }
 
-#menubtn{
-  visibility: hidden;
-}
 #hamburgericon{
   height:0;
   }
