@@ -7,7 +7,6 @@
 
 
 :root {
-  --clr-primary-1000: #fff;
   --clr-primary-900: #fff1c1;
   --clr-primary-500: #6c5e32;
   --clr-primary-200: #120c04;
@@ -65,7 +64,7 @@ h1 {
                #title8:hover,
                 #title9:hover{
                   color: var(--clr-primary-0);
-       }
+ }
    h2 {
   /*  background-color: var(--clr-primary-900);*/
     font-size: 1.25em;
@@ -79,10 +78,13 @@ h1 {
     }
     h2 a.active {
       text-decoration: underline;
-    }h2 a:focus{
-      color:var(--clr-primary-1000);
     }h2 a:hover{
       color:var(--clr-primary-0);
+      position:relative;
+      top:-0.07em;
+    }h2 a:active{
+      position:relative;
+      top:0.05em;
     }
     h3 {
     font-size: 2.5rem;
@@ -122,12 +124,18 @@ img {
   margin-bottom: 1.2em;
   padding: 0;
 }
-li {
+li{
   font-family: var(--ff-accent);
   line-height: 1.5em;
-}li:before {
-  content: "\25C9";
-  margin:0.3em;
+  font-size:90%;
+}.li-symbols{
+  color:var(--clr-accent-300);
+}.li-symbols:hover{
+  color:var(--clr-primary-200);
+}.li-text{
+  color:var(--clr-primary-500);
+}.li-text:hover{
+  color:var(--clr-accent-300);
 }
 nav {
   position: absolute;
@@ -177,11 +185,10 @@ ul {
   position:absolute;
   top: 15rem;
   padding-left: 1em;
-  font-size:90%;
 }
 #info-me {
   position: absolute;
-  right: 2.7em;
+  right: -1em;
   top: 6em;
   height: auto;
   width: clamp(9em,25em,45vw);
@@ -316,7 +323,11 @@ ul {
 .title {
   position: relative;
 }
-
+#django {
+  color: #0C4B33;
+}#django:hover{
+  color: #128358;
+}
 #hamburgericon{
   height:0;
   }
