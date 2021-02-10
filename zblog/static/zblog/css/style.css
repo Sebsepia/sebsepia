@@ -211,13 +211,14 @@ ul {
     transform: translateY(-1.8em);
   }
   .intime img{
+    color:var(--clr-accent-300);
+    display: flex;
     max-height: 90vh;
     max-width: 150%;
     margin-top: 0.75em;
     object-fit: contain;
     object-position: 0% 15%;
     line-height:2em;
-    color:var(--clr-accent-300);
   }
   .intime p {
     width: 50vw;
