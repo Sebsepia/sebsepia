@@ -33,6 +33,7 @@ body {
   }
 a {
   color:var(--clr-primary-200);
+  z-index:100;
 }
 h1 {
     font-size: 1em;
@@ -128,6 +129,7 @@ li{
   font-family: var(--ff-accent);
   line-height: 1.5em;
   font-size:90%;
+  z-index:10;
 }.li-symbols{
   color:var(--clr-accent-300);
 }.li-symbols:hover{
@@ -157,10 +159,10 @@ ul {
 .contenu{
   display:flex;
   flex-direction: column;
-  margin-left:20vw;
-  margin-top: 15rem;
-  margin-right: 2.5rem;
-  margin-bottom: 1em;
+  padding-left:20vw;
+  padding-top: 15rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1em;
   position:relative;
 }
 .date {
@@ -174,9 +176,11 @@ ul {
   top:8em;
   left:-4.5em;
   transform: rotate(270deg);
+  overflow:visible;
 }
 .deets{
   font-size: 0.8em;
+  width:clamp(20vh,50%,20em);
 }
 .deets img{left:0;
 }.description p{max-width: 40vw;
@@ -188,8 +192,7 @@ ul {
 }
 #info-me {
   position: absolute;
-  right: -1em;
-  top: 6em;
+  bottom:-1em;
   height: auto;
   width: clamp(9em,25em,45vw);
 }
@@ -352,17 +355,31 @@ ul {
     font-size: 4vw;
     position: relative;
     display: block;
-    height: 9em;
+    height: 5em;
     top: 0;
     left:1em;
     }nav.switch{
       height:13em
   }
+  .contenu {
+    padding-left: 5vw;
+    padding-top: 5rem;
+    padding-right: 0.75rem;
+  }
+  .info {
+    margin-top:35vh;
+  }
   .intime p {
     width: 99%;
+  }.intime img {
+    margin-top:0;
   }
   .blog {
-    overflow-x: hidden;
+    overflow: hidden;
+  }
+  .date{
+    top:8.5em;
+    left:-3.5em;
   }
   .deets{
     margin-left: 3vw;
@@ -374,10 +391,6 @@ ul {
     }.description p {
     max-width:90vw;
   }
-
-  .info{
-    margin-top:85vh;
-    }
     .intime img {
       max-width: 100%;
     }
