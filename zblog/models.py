@@ -41,7 +41,7 @@ class Post(models.Model):
     tags = TaggableManager(blank=True)
     title = models.CharField(max_length=100, unique=True)
     title_tag = models.CharField(max_length=100, blank=True, null = True)
-    category = models.ForeignKey('PortfolioCategory', on_delete=models.SET_NULL, null=True)
+    category = models.ForeignKey('PortfolioCategory', on_delete=models.SET_NULL, blank=True, null=True)
 
     def get_talkshit_as_markdown(self):
         return mark_safe(markdown(self.talkshit, safe_mode='escape'))
