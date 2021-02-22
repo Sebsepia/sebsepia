@@ -51,7 +51,7 @@ h1 {
     #title4 {font-size: 2.4em; top:0.5em;font-weight: 800;letter-spacing: -0.05em;}
     #title5 {font-size: 2em; top:0.25em;font-weight: 400;letter-spacing: 0.1em;}
     #title6 {font-size: 1em; top:0.75em;font-weight: 900;letter-spacing: -0.1em;}
-    #title7 {font-size: 1.8em; top:0.7em;font-weight: 300;letter-spacing: 0.1em;}
+    #title7 {font-size: 1.8em; top:0.66em;font-weight: 300;letter-spacing: 0.1em;}
     #title8 {font-size: 1.1em; top:1em;font-weight: 500;letter-spacing: 0.1em;}
     #title9 {font-size: 0.6em; top:3em;font-weight: 500;letter-spacing: 0em;}
       #title0:hover,
@@ -66,7 +66,7 @@ h1 {
                 #title9:hover{
                   color: var(--clr-primary-0);
  }
-   h2 {
+ h2 {
   /*  background-color: var(--clr-primary-900);*/
     font-size: 1.25em;
     font-style: oblique;
@@ -127,7 +127,6 @@ img {
 }
 li{
   font-family: var(--ff-accent);
-  line-height: 1.5em;
   font-size:90%;
   z-index:10;
 }.li-symbols{
@@ -158,12 +157,13 @@ ul {
 }
 .contenu{
   display:flex;
+  position:relative;
   flex-direction: column;
   padding-left:20vw;
   padding-top: 15rem;
   padding-right: 2.5rem;
   padding-bottom: 1em;
-  position:relative;
+
 }
 .date {
   font-family: var(--ff-accent);
@@ -180,19 +180,25 @@ ul {
 }
 .deets{
   font-size: 0.8em;
-  width:clamp(20vh,50%,20em);
+  width:clamp(20vh,50%,30em);
 }
 .deets img{left:0;
 }.description p{max-width: 40vw;
 }
 #info-list {
-  position:absolute;
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  line-height: 2em;
   top: 15rem;
-  padding-left: 1em;
+  padding-left: 3em;
+  z-index: 100;
 }
 #info-me {
   position: absolute;
-  bottom:-1em;
+  bottom: 0;
+  right: 0;
   height: auto;
   width: clamp(9em,25em,45vw);
 }
@@ -367,7 +373,9 @@ ul {
     padding-right: 0.75rem;
   }
   .info {
-    margin-top:35vh;
+    position:absolute;
+    bottom: -85vh;
+/*    transform: translateY(-15rem)*/
   }
   .intime p {
     width: 99%;
@@ -394,22 +402,6 @@ ul {
     .intime img {
       max-width: 100%;
     }
-  .linktree{
-    position:static;
-    display: flex;
-    font-size:4.2vw;
-  }.linktree.switch{
-  }.linktreeimg {
-    top:4em;
-    width:20em;
-  }
-  .linktreebuttons{
-    top:3.3vw;
-    left:-2.2vw;
-    width: 20em;
-    font-size:3.8vw;
-
-  }
   .menu{
     font-size: 2em;
     position: absolute;
@@ -434,6 +426,14 @@ ul {
   #hamburgericon:hover{
     fill:var(--clr-primary-0);
     cursor:pointer;}
+  #info-list {
+      font-size: 6vw;
+      float: none;
+      line-height: 2em;
+      padding-left:0;
+      text-align: center;
+      transform: translateY(-5em);
+    }
   #menubtn{
       visibility: visible;
       position: absolute;
