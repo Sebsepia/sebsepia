@@ -233,7 +233,7 @@ ul {
     width: 50vw;
     margin:0.25em ;
     padding:0;
-    text-align: justify;
+    text-align: left;
   }.intime p a{
     text-decoration: underline;
     color: var(--clr-primary-500);
