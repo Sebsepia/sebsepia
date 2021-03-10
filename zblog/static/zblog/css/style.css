@@ -3,7 +3,6 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 @import "portfolio.css";
-@import "info.css";
 
 
 :root {
@@ -197,10 +196,10 @@ ul {
 }
 #info-me {
   position: absolute;
-  bottom: 0;
+  bottom: -10em;
   right: 0;
   height: auto;
-  width: clamp(9em,25em,45vw);
+  width: clamp(9em,23em,45vw);
 }
 .intime {
   font-size: 1.1em;
@@ -225,8 +224,6 @@ ul {
     max-height: 90vh;
     max-width: 150%;
     margin-top: 0.75em;
-    object-fit: contain;
-    object-position: 0% 15%;
     line-height:2em;
   }
   .intime p {
@@ -321,6 +318,13 @@ ul {
 }
 #menubtn{
   visibility: hidden;
+}
+.pano-image {
+  width:55em;
+  height:30em;
+  position: relative;
+  line-height: 2em;
+  margin-bottom: 0.25em;
 }
 .post {
   position: relative;

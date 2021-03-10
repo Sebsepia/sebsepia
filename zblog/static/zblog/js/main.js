@@ -55,6 +55,30 @@ $(document).ready(function () {
       }
     });
 
+
+
+  var panorama, viewer, container;
+  var panorama = ["panorama1", "panorama1", "panorama1", "panorama1", "panorama1", "panorama1", "panorama1", "panorama1", "panorama1", "panorama1", ]
+  $('.pano-image').each(function(n) {
+
+    panoLoc = "currentPano";
+    panoLoc = panoLoc.concat(n);
+
+    panorama[n] = new PANOLENS.ImagePanorama(eval(panoLoc));
+    viewer = new PANOLENS.Viewer( { container: this} );
+    viewer.add( panorama[n] );
+    n = n+1;
+    console.log(eval(panoLoc));
+  });
+
+//  panorama = new PANOLENS.ImagePanorama(currentPano);
+
+
+
+
+
+
+
 });
   /* stops Posts from making images stretch by having too much text  */
 /*      var alignTextToImg = function(){

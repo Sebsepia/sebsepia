@@ -11,7 +11,6 @@ from colorfield.fields import ColorField
 
 
 
-
 class BlogImage(models.Model):
     b_img = models.ImageField("Blog Image", null=True, blank=True, upload_to="img/b")
     postimg = models.ForeignKey('Post', on_delete=models.SET_NULL, null=True)
@@ -22,6 +21,14 @@ class BlogImage(models.Model):
     def save(self, **kwargs):
         self.b_img_date = datetime.now()
         super(BlogImage, self).save()
+
+class PanoImage(models.Model):
+    p_img = models.ImageField("Panorama Image", null=True, blank=True, upload_to="img/p")
+    postpanoimg = models.ForeignKey('Post', on_delete=models.SET_NULL, null=True)
+    order = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.p_img.name
 
 class FreeImage(models.Model):
     f_img = models.ImageField(null=True, blank=True, upload_to="img/f")
@@ -48,12 +55,13 @@ class Post(models.Model):
 
     def save(self, *args, **kwargs):
         media_path = "/media/img/b/"
+        pano_path = "/media/img/p/"
         self.slug = slugify(self.title)
         self.title_tag = self.title
         #convert markdown to HTML in .talkshit_md while keeping pure markdown text in .talkshit
         md = markdown.Markdown()
         text1 = self.talkshit
-
+        text1 = text1.replace("<panorama>", "<div class='pano-image'></div>")
         text1 = text1.replace("](..", "]("+media_path)
         html1 = md.convert(text1)
         self.talkshit_md = html1
