@@ -1,0 +1,52 @@
+.deets{
+  font-size: 0.8em;
+  width:clamp(20vh,50%,30em);
+}
+.deets img{left:0;
+}
+.description {
+  max-width: 40vw;
+}
+#django {
+  color: #0C4B33;
+}#django:hover{
+  color: #128358;
+}
+#info-list {
+  position:relative;
+  display: flex;
+  flex-direction: column;
+  float: left;
+  line-height: 2em;
+  top: 15rem;
+  padding-left: 3em;
+  z-index: 100;
+}
+#info-me {
+  position: absolute;
+  bottom: -10em;
+  right: 0;
+  height: auto;
+  width: clamp(9em,23em,45vw);
+}
+
+@media screen and (max-width: 100vh) {
+  .deets{
+    margin-left: 3vw;
+    }
+  .description {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1vw;
+    }.description p {
+    max-width:90vw;
+    }
+    #info-list {
+      font-size: 6vw;
+      float: none;
+      line-height: 2em;
+      padding-left:0;
+      text-align: center;
+      transform: translateY(-5em);
+    }
+}
