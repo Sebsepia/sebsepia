@@ -24,16 +24,18 @@
   box-sizing: border-box;
   text-decoration: none;
 }
-
+*{
+  margin:0;
+  padding:0;
+}
 body {
     font-family: var(--ff-primary);
     line-height: 1;
     background: var(--clr-accent-900);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
   }
 a {
   color:var(--clr-primary-200);
-  z-index:100;
 }
   h1 {
     font-size: 1em;
@@ -44,6 +46,7 @@ a {
       position:relative;
       color: var(--clr-accent-300);
     }
+    h1:hover {color: var(--clr-primary-0);}
     #title0 {font-size: 2.5em; top:-0.05em; font-weight: 300;letter-spacing: 0.06em;}
     #title1 {font-size: 1.2em; top:-0.5em; font-weight: 900;letter-spacing: 0.1em;}
     #title2 {font-size: 1.75em; top: 0em; font-weight: 600; letter-spacing: 0.4em;}
@@ -54,18 +57,6 @@ a {
     #title7 {font-size: 1.8em; top:0.66em;font-weight: 300;letter-spacing: 0.1em;}
     #title8 {font-size: 1.1em; top:1em;font-weight: 500;letter-spacing: 0.1em;}
     #title9 {font-size: 0.6em; top:3em;font-weight: 500;letter-spacing: 0em;}
-      #title0:hover,
-        #title1:hover,
-         #title2:hover,
-          #title3:hover,
-           #title4:hover,
-            #title5:hover,
-             #title6:hover,
-              #title7:hover,
-               #title8:hover,
-                #title9:hover{
-                  color: var(--clr-primary-0);
-                }
  h2 {
   /*  background-color: var(--clr-primary-900);*/
     font-size: 1.25em;
@@ -92,7 +83,7 @@ a {
     font-weight: 400;
     font-stretch: extra-expanded;
     text-transform: uppercase;
-    margin:0 0 0.5em 0;
+    margin:0 0 0.25em 0;
     }
     h4 {
    font-size: 1.6em;
@@ -111,6 +102,7 @@ a {
     line-height: 1em;
     font-weight: bolder;
     margin-top: 0.5em;
+    margin-bottom: 1em;
 }
 
 header {
@@ -122,9 +114,7 @@ header {
 img {
   color: var(--clr-accent-300);
   font-family: var(--ff-accent);
-  margin-bottom: 1.2em;
-  margin-top: 0.75em;
-  line-height:2em;
+  height:auto;
 }
 li{
   font-family: var(--ff-accent);
@@ -148,8 +138,6 @@ nav {
 p {
   font-size: 1.1em;
   font-family: var(--ff-accent);
-  line-height: 1em;
-  margin:0.25em ;
   text-align: left;
 }
 p a {
@@ -191,10 +179,16 @@ ul {
   display: flex;
   flex-direction: column;
   }.intime img{
+    display: inline-block;
+    width: clamp(16px, 93vw, 150%);
     max-height: 90vh;
-    max-width: 150%;
+    object-fit:contain;
+    object-position: 0 0;
   }.intime p {
+    display:flex;
+    flex-direction:column;
     width: 50vw;
+    margin-top:1em;
   }
 .menu{
   visibility: visible;
@@ -205,12 +199,10 @@ ul {
   visibility: hidden;
 }
 .pano-image {
-  width:55em;
-  height:30em;
+  width: clamp(16px, 90vw, 100%);
+  height:clamp(128px, 70vh, 98vh);
   position: relative;
-  line-height: 2em;
-  margin-bottom: 1.2em;
-  margin-top: 0.75em;
+  margin-top: 1em;
 }
 .post {
   position: relative;
@@ -260,7 +252,6 @@ ul {
   .info {
     position:absolute;
     bottom: -85vh;
-/*    transform: translateY(-15rem)*/
   }
   .intime p {
     width: 99%;
@@ -271,12 +262,11 @@ ul {
     overflow: hidden;
   }
   .date{
-    top:8.5em;
+    top:6em;
     left:-3.5em;
+    font-size: 1rem;
   }
-    .intime img {
-      max-width: 100%;
-    }
+
   .menu{
     font-size: 2em;
     position: absolute;
