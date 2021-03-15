@@ -179,14 +179,12 @@ ul {
   display: flex;
   flex-direction: column;
   }.intime img{
-    display: inline-block;
     width: clamp(16px, 93vw, 150%);
     max-height: 90vh;
     object-fit:contain;
     object-position: 0 0;
   }.intime p {
     display:flex;
-    flex-direction:column;
     width: 50vw;
     margin-top:1em;
   }
