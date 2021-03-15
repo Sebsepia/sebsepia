@@ -184,11 +184,13 @@ ul {
     object-fit:contain;
     object-position: 0 0;
     margin-bottom:0;
+  }.intime img:not(:first-child){
     margin-top: 1em;
-  }.intime p {
+    /* Pour pas que ca stack avec la marge que le paragraphe crée    */
+  }
+    .intime p {
     width: 50vw;
     margin-top:1em;
-    margin-bottom:0.75em;
   }
 .menu{
   visibility: visible;
