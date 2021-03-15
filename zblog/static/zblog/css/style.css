@@ -184,6 +184,7 @@ ul {
     object-fit:contain;
     object-position: 0 0;
     margin-bottom:0;
+    margin-top: 1em;
   }.intime p {
     width: 50vw;
     margin-top:1em;
