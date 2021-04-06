@@ -5,6 +5,7 @@
 @import "normalize.css";
 @import "portfolio.css";
 @import "info.css";
+@import "mobile2.css" (max-width: 100vh);
 
 :root {
   --clr-primary-900: #fff1c1;
@@ -36,8 +37,8 @@ body {
   }
 a {
   color:var(--clr-primary-200);
-}
-  h1 {
+  }
+h1 {
     font-size: 1em;
     letter-spacing: 0.2em;
     margin-left: 0;
@@ -62,7 +63,6 @@ a {
     font-size: 1.25em;
     font-style: oblique;
     font-weight: 900;
-    margin-top: 3em;
     margin-left: 2.25em;
     }h2 a {
       font-family: var(--ff-accent);
@@ -108,26 +108,12 @@ a {
 header {
   position:relative;
   width: 100%;
-  z-index:6;
   }
 
 img {
   color: var(--clr-accent-300);
   font-family: var(--ff-accent);
   height:auto;
-}
-li{
-  font-family: var(--ff-accent);
-  font-size:90%;
-  z-index:10;
-}.li-symbols{
-  color:var(--clr-accent-300);
-}.li-symbols:hover{
-  color:var(--clr-primary-200);
-}.li-text{
-  color:var(--clr-primary-500);
-}.li-text:hover{
-  color:var(--clr-accent-300);
 }
 nav {
   position: absolute;
@@ -141,17 +127,13 @@ p {
   text-align: left;
 }
 p a {
-  text-decoration: underline;
   color: var(--clr-primary-500);
+  text-decoration: underline;
   text-decoration-style: double;
 }p a:hover{color: var(--clr-primary-200);
 }p a:visited {color: var(--clr-accent-500);
 }
-ul {
-  list-style-type: none;
-  padding-left: 0.25em;
-  margin:0;
-}
+
 .contenu{
   display:flex;
   flex-direction: column;
@@ -167,11 +149,6 @@ ul {
   color: var(--clr-accent-500);
   font-size: 1.35rem;
   font-weight: 300;
-  text-align: right;
-  position:absolute;
-  top:4em;
-  left:-4.5em;
-  transform: rotate(270deg);
 }
 
 .intime {
@@ -186,7 +163,7 @@ ul {
     margin-bottom:0;
   }.intime img:not(:first-child){
     margin-top: 1em;
-    /* Pour pas que ca stack avec la marge que le paragraphe crée    */
+    /* Pour pas que ca stack avec la margin que le paragraphe crée    */
   }
     .intime p {
     width: 50vw;
@@ -196,6 +173,14 @@ ul {
   visibility: visible;
   display:flex;
   margin-left: 2em;
+  margin-top: 3em;
+}
+.menusvg {
+  display: flex;
+  align-self: flex-end;
+  height:1.25em;
+  width:1.25em;
+  margin-left: 2.75em;
 }
 #menubtn{
   visibility: hidden;
@@ -220,88 +205,6 @@ ul {
 #hamburgericon{
   height:0;
   }
-
 @media screen and (max-width: 100vh) {
-  body{
-  }
-  header {
-    overflow: hidden;
-  }
-  h1{
-    font-size: 1.5em;
-  }
-  h2{
-    font-size: 0.8em;
-    padding-right:2em;
-    margin:0.5em;
-    line-height: 1em;
-    }
-  nav {
-    font-size: 4vw;
-    position: relative;
-    display: block;
-    height: 5em;
-    top: 0;
-    left:1em;
-    }nav.switch{
-      height:13em
-  }
-  .contenu {
-    padding-left: 5vw;
-    padding-top: 5rem;
-    padding-right: 0.75rem;
-  }
-  .info {
-    position:absolute;
-    bottom: -85vh;
-  }
-  .intime p {
-    width: 99%;
-  }.intime img {
-    margin-top:0;
-  }
-  .blog {
-    overflow: hidden;
-  }
-  .date{
-    top:6em;
-    left:-3.5em;
-    font-size: 1rem;
-  }
-
-  .menu{
-    font-size: 2em;
-    position: absolute;
-    display:flex;
-    flex-direction: column;
-    top:3em;
-    right:0;
-    visibility: hidden;
-    }.menu.switch{
-    visibility: visible;
-    }
-  .title {
-    height:8em;
-  }
-  .repit {
-    margin:1.5em;
-  }
-  #hamburgericon {
-    height:auto;
-    fill: var(--clr-accent-300);
-  }
-  #hamburgericon:hover{
-    fill:var(--clr-primary-0);
-    cursor:pointer;}
-
-  #menubtn{
-      visibility: visible;
-      position: absolute;
-      width: 6vw;
-      right:7vw;
-      top:3.5em;
-      padding:0;
-      background-color: transparent;
-      border:none;
-    }
+  
 }

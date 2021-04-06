@@ -12,7 +12,7 @@
 }#django:hover{
   color: #128358;
 }
-#info-list {
+/*#info-list {
   position:relative;
   display: flex;
   flex-direction: column;
@@ -21,11 +21,11 @@
   top: 15rem;
   padding-left: 3em;
   z-index: 100;
-}
+}*/
 #info-me {
   position: absolute;
-  bottom: -10em;
-  right: 0;
+  bottom: -9em;
+  right: 4em;
   height: auto;
   width: clamp(9em,23em,45vw);
 }
@@ -38,7 +38,6 @@
     display: flex;
     flex-direction: column;
     margin-left: 1vw;
-    }.description p {
     max-width:90vw;
     }
     #info-list {
