@@ -118,6 +118,7 @@ nav {
   left:2em;
   display:flex;
   flex-direction: row;
+  z-index:10;
 }
 p {
   font-size: 1.1em;
@@ -254,11 +255,10 @@ height:0;
       visibility: visible;
       }
     .menusvg{
-
       width:0.8em;
       height:0.8em;
       line-height: 1;
-      padding-right:2em;
+      padding-right:2.25em;
       margin:0.5em;
 
     }
