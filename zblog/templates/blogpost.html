@@ -1,23 +1,17 @@
 {% load active_link_tags %}
   <div class="post" id="{{post.slug}}">
-      <!--{% for free_image in post.freeimage_set.all %}
-        <img class="libre" src="{{ free_image.f_img.url }}"
-        alt="{{free_image.f_img_alt}}" title="{{free_image.f_img_alt}}"
-        style="transform: translate({{free_image.posi_X}}px, {{free_image.posi_Y}}px);">
-      {% endfor %}-->
-        <div class="intime" style="
-        color:{{post.text_color}};">
+
+
           <h3><a class="{% active_link 'details' %}" href="{% url 'details' post.slug %}"
           style="color:{{post.text_color}};"
           >{{post.title}}</a></h3>
           <div class="date">{{post.post_date|date:'j | n | Y'}}</div>
           {{ post.talkshit_md | safe}}
-        </div>
+
         {% for pano_image in post.panoimage_set.all %}
           <script type="text/javascript">
               var currentPano{{pano_image.order}} = "{{ pano_image.p_img.url }}";
           </script>
         {% endfor %}
         <div class="repit"></div>
-
-      </div>
+  </div>

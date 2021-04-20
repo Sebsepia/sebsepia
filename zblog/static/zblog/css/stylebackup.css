@@ -1,0 +1,297 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter:200,300,400,500,600,700,900);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+@import "normalize.css";
+@import "portfolio.css";
+@import "info.css";
+@import url("mobile.css") screen and (max-width: 100vh);
+
+:root {
+  --clr-primary-900: #fff1c1;
+  --clr-primary-500: #6c5e32;
+  --clr-primary-200: #120c04;
+  --clr-primary-0: #000;
+  --clr-accent-900: #d9d1c5;
+  --clr-accent-500: #8f8e8c;
+  --clr-accent-300: #2e2a25;
+  --ff-primary: 'Bitter', serif;
+  --ff-accent: 'Raleway', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: content-box;
+  text-decoration: none;
+}
+*{
+  margin:0;
+  padding:0;
+}
+body {
+    font-family: var(--ff-primary);
+    line-height: 1;
+    background: var(--clr-accent-900);
+    font-size: 1.4rem;
+  }
+a {
+  color:var(--clr-primary-200);
+  }a.active {
+    text-decoration: underline;
+    text-decoration-style: double;
+  }
+h1 {
+    font-size: 1em;
+    letter-spacing: 0.2em;
+    margin-top: 1.5em;
+    }h1 span{
+      position:relative;
+      color: var(--clr-accent-300);
+    }
+    h1:hover {color: var(--clr-primary-0);}
+    #title0 {font-size: 2.5em; top:-0.05em; font-weight: 300;letter-spacing: 0.06em;}
+    #title1 {font-size: 1.2em; top:-0.5em; font-weight: 900;letter-spacing: 0.1em;}
+    #title2 {font-size: 1.75em; top: 0em; font-weight: 600; letter-spacing: 0.4em;}
+    #title3 {font-size: 2em; top:0.4em;font-weight: 700;letter-spacing: 0.05em;}
+    #title4 {font-size: 2.4em; top:0.5em;font-weight: 800;letter-spacing: -0.05em;}
+    #title5 {font-size: 2em; top:0.25em;font-weight: 400;letter-spacing: 0.1em;}
+    #title6 {font-size: 1em; top:0.75em;font-weight: 900;letter-spacing: -0.1em;}
+    #title7 {font-size: 1.8em; top:0.66em;font-weight: 300;letter-spacing: 0.1em;}
+    #title8 {font-size: 1.1em; top:1em;font-weight: 500;letter-spacing: 0.1em;}
+    #title9 {font-size: 0.6em; top:3em;font-weight: 500;letter-spacing: 0em;}
+ h2 {
+  /*  background-color: var(--clr-primary-900);*/
+    font-size: 1.25em;
+    font-style: oblique;
+    font-weight: 900;
+    margin-left: 2.25em;
+    }h2 a {
+      font-family: var(--ff-accent);
+      color: var(--clr-accent-300);
+    }
+    h2 a.active {
+      text-decoration: underline;
+    }h2 a:hover{
+      color:var(--clr-primary-0);
+      position:relative;
+      top:-0.07em;
+    }h2 a:active{
+      position:relative;
+      top:0.05em;
+    }
+    h3 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-stretch: extra-expanded;
+    text-transform: uppercase;
+    }
+    h4 {
+    font-size: 1.6em;
+    font-weight: bolder;
+    margin-top: 1em;
+    text-align: left;
+    }
+    h5 {
+    font-size: 1.25em;
+    margin-top: 0.5em;
+    margin-bottom: 0.25em;
+    text-transform: lowercase;
+    }
+    h6 {
+    font-size: 0.75em;
+    line-height: 1em;
+    font-weight: bolder;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+header {
+  position:relative;
+  width: 100%;
+  }
+
+img {
+  color: var(--clr-accent-300);
+  font-family: var(--ff-accent);
+  height:auto;
+}
+nav {
+  position: absolute;
+  left:2em;
+  display:flex;
+  flex-direction: row;
+  z-index:10;
+}
+p {
+  font-size: 1.1em;
+  font-family: var(--ff-accent);
+  text-align: left;
+}
+p a {
+  color: var(--clr-primary-500);
+  text-decoration: underline;
+  text-decoration-style: double;
+}p a:hover{color: var(--clr-primary-200);
+}p a:visited {color: var(--clr-accent-500);
+}
+
+.contenu{
+  position:relative;
+  display:flex;
+  flex-direction: column;
+  padding-left:20vw;
+  padding-top: 15rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1em;
+
+}
+.date {
+  font-family: var(--ff-accent);
+  color: var(--clr-accent-500);
+  font-size: 0.75em;
+  font-weight: 300;
+}
+
+.intime {
+  font-size: 1.25em;
+  display: flex;
+  flex-direction: column;
+  }.intime img{
+    width: clamp(16px, 93vw, 150%);
+    max-height: 90vh;
+    object-fit:contain;
+    object-position: 0 0;
+    margin-bottom:0;
+  }.intime img:not(:first-child){
+    margin-top: 1em;
+    /* Pour pas que ca stack avec la margin que le paragraphe crée    */
+  }
+    .intime p {
+    width: 50vw;
+    margin-top:1em;
+  }
+.menu{
+  visibility: visible;
+  display:flex;
+  margin-top: 3em;
+  margin-left: 2em;
+}
+.menusvg {
+  display: flex;
+  align-self: flex-end;
+  height:1.25em;
+  width:1.25em;
+  margin-left: 2.75em;
+}
+#menubtn{
+  visibility: hidden;
+  height:0;
+}
+.pano-image {
+  width: clamp(16px, 90vw, 100%);
+  height:clamp(128px, 70vh, 98vh);
+  position: relative;
+  margin-top: 1em;
+}
+.post {
+  position: relative;
+  display: flex;
+  flex-direction:column;
+}
+.repit {
+  margin:4em;
+}
+.title {
+  position: relative;
+}
+#hamburgericon{
+height:0;
+  }
+#titlecard{
+  text-decoration: none;
+}
+@media screen and (max-width: 100vh) {
+
+    header {
+      overflow: hidden;
+    }
+    h1{
+      font-size: 1.5em;
+    }
+    h2{
+      font-size: 0.8em;
+      padding-right:2em;
+      margin:0.5em;
+      line-height: 1em;
+      }
+    nav {
+      font-size: 4vw;
+      position: relative;
+      display: block;
+      height: 5em;
+      top: 0;
+      left:1em;
+      }nav.switch{
+        height:24em
+    }
+    .contenu {
+      padding-left: 2vw;
+      padding-top: 5rem;
+      padding-right: 2.5vw;
+      margin:0;
+    }
+
+    .intime p {
+      width: 99%;
+    }.intime img {
+      margin-top:0;
+    }
+
+
+    .menu{
+      font-size: 2em;
+      position: absolute;
+      flex-direction: column;
+      top:2em;
+      right:0;
+      align-items: end;
+      visibility: hidden;
+      }.menu.switch{
+      visibility: visible;
+      }
+    .menusvg{
+      width:0.8em;
+      height:0.8em;
+      line-height: 1;
+      padding-right:2.25em;
+      margin:0.5em;
+
+    }
+    .title {
+      height:8em;
+    }
+    .repit {
+      margin:1.5em;
+    }
+    #hamburgericon {
+      fill: var(--clr-accent-300);
+      height:3em;
+    }
+    #hamburgericon:hover{
+      fill:var(--clr-primary-0);
+      cursor:pointer;}
+
+    #menubtn{
+        visibility: visible;
+        position: absolute;
+        width: 12vw;
+        right:7vw;
+        top:3.5em;
+        padding:0;
+        background-color: transparent;
+        border:none;
+      }
+
+
+}

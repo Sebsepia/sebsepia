@@ -28,21 +28,27 @@
   <body>
     <header>
         <nav>
+          <div class="menutitle">
             <h1><a id="titlecard" class="{% active_link 'home' %}" href="{% url 'home' %}">
               {% block titlecard %}
                 SEBSEPIA!
               {%endblock%}
             </a></h1>
-          <div class="menu">
-              <h2><a class="{% active_link 'portfolio' %}" href="{% url 'portfolio' %}">portfolio</a></h2>
-              <h2><a class="{% active_link 'info' %}" href="{% url 'info' %}">info</a></h2>
-              {#<h2><a class="{% active_link 'shop' %}" href="{% url 'shop' %}">la shop</a></h2>#}
-              <a href="https://www.artstation.com/sebastienbegin" class="menusvg"><img src="{% static 'zblog/svg/artstation.svg' %}" alt=""></a>
-              <a href="https://www.instagram.com/sebsepia/"class="menusvg"><img src="{% static 'zblog/svg/insta.svg' %}" alt=""></a>
           </div>
-          {% block navbar %}
-            
-          {% endblock%}
+          <div class="menu">
+              <div class="menutop menuInner">
+                <h2><a class="{% active_link 'portfolio' %}" href="{% url 'portfolio' %}">portfolio</a></h2>
+                <h2><a class="{% active_link 'info' %}" href="{% url 'info' %}">info</a></h2>
+                {#<h2><a class="{% active_link 'shop' %}" href="{% url 'shop' %}">la shop</a></h2>#}
+                <a href="https://www.artstation.com/sebastienbegin" class="menusvg"><img src="{% static 'zblog/svg/artstation.svg' %}" alt=""></a>
+                <a href="https://www.instagram.com/sebsepia/"class="menusvg"><img src="{% static 'zblog/svg/insta.svg' %}" alt=""></a>
+              </div>
+              <div class="menusub menuInner">
+                {% block navbar %}
+
+                {% endblock%}
+              </div>
+          </div>
         </nav>
         <button type="button" name="menu" id="menubtn">
           <svg id="hamburgericon" viewBox="0 0 100 80">
@@ -52,7 +58,7 @@
           </svg>
         </button>
 
-        </header>
+      </header>
       {% block main %}
       {% endblock %}
   </body>
