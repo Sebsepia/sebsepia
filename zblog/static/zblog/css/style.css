@@ -22,10 +22,13 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: content-box;
   text-decoration: none;
 }
-
+*{
+  margin:0;
+  padding:0;
+}
 body {
     font-family: var(--ff-primary);
     line-height: 1;
@@ -34,48 +37,48 @@ body {
   }
 a {
   color:var(--clr-primary-200);
-  }a.active{
+  }a.active {
     text-decoration: underline;
+    text-decoration-style: double;
   }
-h1 {
-    font-size: 1em;
-    letter-spacing: 0.2em;
-    margin-top: 1.5em;
-    }h1 span{
-      position:relative;
-      color: var(--clr-accent-300);
-    }
-    h1:hover {color: var(--clr-primary-0);}
-    #title0 {font-size: 2.5em; top:-0.05em; font-weight: 300;letter-spacing: 0.06em;}
-    #title1 {font-size: 1.2em; top:-0.5em; font-weight: 900;letter-spacing: 0.1em;}
-    #title2 {font-size: 1.75em; top: 0em; font-weight: 600; letter-spacing: 0.4em;}
-    #title3 {font-size: 2em; top:0.4em;font-weight: 700;letter-spacing: 0.05em;}
-    #title4 {font-size: 2.4em; top:0.5em;font-weight: 800;letter-spacing: -0.05em;}
-    #title5 {font-size: 2em; top:0.25em;font-weight: 400;letter-spacing: 0.1em;}
-    #title6 {font-size: 1em; top:0.75em;font-weight: 900;letter-spacing: -0.1em;}
-    #title7 {font-size: 1.8em; top:0.66em;font-weight: 300;letter-spacing: 0.1em;}
-    #title8 {font-size: 1.1em; top:1em;font-weight: 500;letter-spacing: 0.1em;}
-    #title9 {font-size: 0.6em; top:3em;font-weight: 500;letter-spacing: 0em;}
- h2 {
-  /*  background-color: var(--clr-primary-900);*/
-    font-size: 1.25em;
-    font-style: oblique;
-    font-weight: 900;
-    margin-left: 2.25em;
-    }h2 a {
-      font-family: var(--ff-accent);
-      color: var(--clr-accent-300);
-    }
-    h2 a.active {
-      text-decoration: underline;
-    }h2 a:hover{
-      color:var(--clr-primary-0);
-      position:relative;
-      top:-0.07em;
-    }h2 a:active{
-      position:relative;
-      top:0.05em;
-    }
+  h1 {
+      font-size: 1em;
+      letter-spacing: 0.2em;
+      margin-top: 1.5em;
+      }h1 span{
+        position:relative;
+        color: var(--clr-accent-300);
+      }
+      h1:hover {color: var(--clr-primary-0);}
+      #title0 {font-size: 2.5em; top:-0.05em; font-weight: 300;letter-spacing: 0.06em;}
+      #title1 {font-size: 1.2em; top:-0.5em; font-weight: 900;letter-spacing: 0.1em;}
+      #title2 {font-size: 1.75em; top: 0em; font-weight: 600; letter-spacing: 0.4em;}
+      #title3 {font-size: 2em; top:0.4em;font-weight: 700;letter-spacing: 0.05em;}
+      #title4 {font-size: 2.4em; top:0.5em;font-weight: 800;letter-spacing: -0.05em;}
+      #title5 {font-size: 2em; top:0.25em;font-weight: 400;letter-spacing: 0.1em;}
+      #title6 {font-size: 1em; top:0.75em;font-weight: 900;letter-spacing: -0.1em;}
+      #title7 {font-size: 1.8em; top:0.66em;font-weight: 300;letter-spacing: 0.1em;}
+      #title8 {font-size: 1.1em; top:1em;font-weight: 500;letter-spacing: 0.1em;}
+      #title9 {font-size: 0.6em; top:3em;font-weight: 500;letter-spacing: 0em;}
+   h2 {
+      font-size: 1.25em;
+      font-style: oblique;
+      font-weight: 900;
+      margin-left: 2.25em;
+      }h2 a {
+        font-family: var(--ff-accent);
+        color: var(--clr-accent-300);
+      }
+      h2 a.active {
+        text-decoration: underline;
+      }h2 a:hover{
+        color:var(--clr-primary-0);
+        position:relative;
+        top:-0.07em;
+      }h2 a:active{
+        position:relative;
+        top:0.05em;
+      }
     h3 {
     font-size: 2.5rem;
     font-weight: 400;
@@ -102,6 +105,11 @@ h1 {
     margin-bottom: 1em;
 }
 
+header {
+  position:relative;
+  width: 100%;
+  }
+
 img {
   color: var(--clr-accent-300);
   font-family: var(--ff-accent);
@@ -125,16 +133,17 @@ p a {
   text-decoration-style: double;
 }p a:hover{color: var(--clr-primary-200);
 }p a:visited {color: var(--clr-accent-500);
-  }
+}
 
 .contenu{
   position:relative;
   display:flex;
   flex-direction: column;
-  margin-left: 11em;
-  margin-right: 1em;
-  margin-top: 2em;
-  margin-bottom: 3em;
+  padding-left:20vw;
+  padding-top: 15rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1em;
+
 }
 .date {
   font-family: var(--ff-accent);
@@ -143,32 +152,47 @@ p a {
   font-weight: 300;
 }
 
-.menu{
-  visibility: visible;
-  display:flex;
-  flex-direction: column;
-  margin-top: 3em;
-}
-.menuInner {
+.intime {
+  font-size: 1.25em;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-.menutop {
+  flex-direction: column;
+  }.intime img{
+    width: clamp(16px, 93vw, 150%);
+    max-height: 90vh;
+    object-fit:contain;
+    object-position: 0 0;
+    margin-bottom:0;
+  }.intime img:not(:first-child){
+    margin-top: 1em;
+    /* Pour pas que ca stack avec la margin que le paragraphe crée    */
+  }
+    .intime p {
+    width: 50vw;
+    margin-top:1em;
+  }
+  .menu{
+    visibility: visible;
+    display:flex;
+    flex-direction: column;
+    margin-top: 3em;
+  }
+  .menuInner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .menutop {
 
-}
-.menusub {
+  }
+  .menusub {
 
-}
+  } 
 .menusvg {
   display: flex;
+  align-self: flex-end;
   height:1.25em;
   width:1.25em;
   margin-left: 2.75em;
-}
-.menutitle{
-  width: 11em;
-  text-align: center;
 }
 #menubtn{
   visibility: hidden;
@@ -183,15 +207,14 @@ p a {
 .post {
   position: relative;
   display: flex;
-  flex-direction: column;
-}.post img {
-  max-height:90vh;
-  width: clamp(16px, 90vw, 100%);
+  flex-direction:column;
 }
 .repit {
   margin:4em;
 }
-
+.title {
+  position: relative;
+}
 #hamburgericon{
 height:0;
   }
@@ -199,6 +222,41 @@ height:0;
   text-decoration: none;
 }
 @media screen and (max-width: 100vh) {
+
+    header {
+      overflow: hidden;
+    }
+    h1{
+      font-size: 1.5em;
+    }
+    h2{
+      font-size: 0.8em;
+      padding-right:2em;
+      margin:0.5em;
+      line-height: 1em;
+      }
+    nav {
+      font-size: 4vw;
+      position: relative;
+      display: block;
+      height: 5em;
+      top: 0;
+      left:1em;
+      }nav.switch{
+        height:24em
+    }
+    .contenu {
+      padding-left: 2vw;
+      padding-top: 5rem;
+      padding-right: 2.5vw;
+      margin:0;
+    }
+
+    .intime p {
+      width: 99%;
+    }.intime img {
+      margin-top:0;
+    }
 
 
     .menu{
@@ -218,8 +276,14 @@ height:0;
       line-height: 1;
       padding-right:2.25em;
       margin:0.5em;
-    }
 
+    }
+    .title {
+      height:8em;
+    }
+    .repit {
+      margin:1.5em;
+    }
     #hamburgericon {
       fill: var(--clr-accent-300);
       height:3em;
