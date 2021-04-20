@@ -1,12 +1,5 @@
 $(document).ready(function () {
 
-
-  $('.expandcat').click(function(e){
-    $(this).parent().toggleClass('expand');
-    $('img.portintime').show();
-  });
-
-
   $('#collapsebtn').click(function()  {
    $('.linktree').toggleClass('switch');
    $('#collapsebtn').toggleClass('switch');
@@ -32,11 +25,7 @@ $(document).ready(function () {
     $(this).attr("id", "title" +n);
   });
 
-  /*Creates simpler preview of posts in  Portfolio */
-  $('div.portfoliointime').each(function (){
-    $('img').not('img:first-of-type').hide();
-    $('h4').hide();
-  });
+
 
 
 

@@ -1,11 +1,6 @@
 from django.contrib import admin
-from .models import Post, BlogImage, FreeImage, PanoImage, PortfolioCategory
+from .models import Post, BlogImage, PanoImage, PortfolioCategory
 
-
-
-class FImageInline(admin.TabularInline):
-    model = FreeImage
-    extra = 0
 
 class BImageInline(admin.TabularInline):
     model = BlogImage
@@ -22,9 +17,9 @@ class PostInline(admin.TabularInline):
     extra = 0
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'post_date' )
+    list_display = ('title', 'post_date', 'tags' )
     fields = [('title', 'title_tag', 'slug'),('talkshit'),('tags','post_date'),('category')]
-    inlines = [FImageInline, BImageInline, PImageInline]
+    inlines = [ BImageInline, PImageInline]
 admin.site.register(Post, PostAdmin)
 
 class PCAdmin(admin.ModelAdmin):

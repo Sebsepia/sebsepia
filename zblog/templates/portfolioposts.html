@@ -1,0 +1,5 @@
+{% for category in categories %}
+  {% for post in category.post_set.all %}
+    <h3>{{post.title}}</h3>
+  {% endfor %}
+{% endfor %}

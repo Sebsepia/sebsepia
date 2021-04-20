@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load active_link_tags %}
 
 {% block title %}
 portfolio de Seb Bégin
@@ -8,31 +9,25 @@ portfolio de Seb Bégin
   Seb Bégin
 {%endblock%}
 
+{% block navbar %}
+  <div class="portfoliomenu">
+    <div class="portfoliomenubtn">
+      <a class="{% active_link 'portfolio' %}" href="{% url 'portfolio'%}">All</a>
+    </div>
+    {% for category in categories %}
+      <div class="portfoliomenubtn">
+        <a href="{% url 'portfoliocat' slug=category%}">{{category}}</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
 
 {% block main %}
+
   <div class="contenu">
 
     <div class="portfolio">
-
-      {% for category in categories %}
-        <div class="categories">
-          <h3>{{category}}</h3>
-
-          {% for post in category.post_set.all %}
-          <div class="portfoliopost ">
-            <a href="{% url 'details' slug=post.slug%}">
-                <h5>{{post.title}}</h5>
-                <div class="portfoliodate">{{post.post_date|date:'Y'}}</div>
-                <div class="portfoliointime">
-                  {{ post.talkshit_md | safe}}
-                </div>
-              </a>
-            </div>
-          {% endfor %}
-
-        </div>
-      {% endfor %}
-
+      {% include 'portfolioposts.html' %}
     </div>
 
   </div>

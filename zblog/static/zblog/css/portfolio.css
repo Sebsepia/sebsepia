@@ -15,7 +15,14 @@ button[name="expand"]{
   display:flex;
   flex-direction: row;
 }
-
+.portfoliomenu{
+  display:flex;
+  position: absolute;
+  top:6em;
+  left:15em;
+}.portfoliomenubtn{
+  padding: 1em;
+}
 .portfoliopost {
   display: flex;
   position:relative;

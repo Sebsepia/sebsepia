@@ -37,6 +37,9 @@ body {
   }
 a {
   color:var(--clr-primary-200);
+  }a.active {
+    text-decoration: underline;
+    text-decoration-style: double;
   }
 h1 {
     font-size: 1em;
@@ -205,6 +208,9 @@ p a {
 #hamburgericon{
 height:0;
   }
+#titlecard{
+  text-decoration: none;
+}
 @media screen and (max-width: 100vh) {
 
     header {

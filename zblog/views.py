@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, RedirectView
-from .models import Post, BlogImage, FreeImage, PortfolioCategory
+from .models import Post, PortfolioCategory
 from django.utils.text import slugify
 from datetime import datetime, date
 
@@ -32,7 +32,7 @@ def detail_view(request, slug):
         'post':post,
 #        'postcontent':postcontent,
     }
-    return render(request, 'details.html', context)
+    return render(request, 'details.html', context,)
 
 def info_view(request):
     context = {}
@@ -53,7 +53,7 @@ def tagged(request, slug):
 def portfolio(request):
     categories = PortfolioCategory.objects.all().order_by('category_name')
     exclude = ('nsfw', )#'study'
-    
+
 
     #the order of portfoliocat will be the order of the categories on the website
 
@@ -62,25 +62,15 @@ def portfolio(request):
     }
     return render(request, 'portfolio.html', context)
 
-def portfolio2(request):
-    posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
-    exclude = ('nsfw', )#'study'
-    digital = ('a',)
-    photo = ('b',)
-    illustration = ('c',)
-    digitalcat = Post.objects.filter(tags__name__in=digital).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
-    illustrationcat = Post.objects.filter(tags__name__in=illustration).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
-    photocat = Post.objects.filter(tags__name__in=photo).exclude(tags__name__in=exclude).order_by('-post_date', '-id')
-    #the order of portfoliocat will be the order of the categories on the website
-    portfoliocat = (digitalcat, illustrationcat, photocat,)
+def portfoliocat(request, slug):
+    exclude = ('nsfw', )
+    allcategories = PortfolioCategory.objects.all().order_by('category_name')
+    categories = PortfolioCategory.objects.filter(category_name__in=[slug]).exclude(category_name__in=exclude).order_by('-id')
     context = {
-        'portfoliocat': portfoliocat,
-        'digitalcat': digitalcat,
-        'illustrationcat': illustrationcat,
-        'photocat': photocat,
-        'posts': posts,
+        'categories':categories,
+        'allcategories':allcategories,
     }
-    return render(request, 'portfolio.html', context)
+    return render(request, 'portfoliocat.html', context)
 
 def shop(request):
     shop_catalog = ('objet', )

@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load active_link_tags %}
+
+
+{% block title %}
+{{request.resolver_match.kwargs.slug}}
+{% endblock %}
+
+{% block titlecard %}
+ Seb Bégin
+{%endblock%}
+
+{% block navbar %}
+  <div class="portfoliomenu">
+    <div class="portfoliomenubtn">
+      <a href="{% url 'portfolio'%}">All</a>
+    </div>
+    {% for category in allcategories %}
+      <div class="portfoliomenubtn">
+        <a class="{% active_link 'portfoliocat' slug=category %}" href="{% url 'portfoliocat' slug=category%}">{{category}}</a>
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+{% block main %}
+ <div class="contenu">
+
+   <div class="portfolio">
+     {% include 'portfolioposts.html' %}
+   </div>
+   <div class="repit">
+
+   </div>
+ </div>
+{% endblock %}
