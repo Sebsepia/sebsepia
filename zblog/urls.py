@@ -14,6 +14,5 @@ urlpatterns = [
     path('shop', views.shop, name='shop'),
 ]
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', include('zblog.urls')),
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
