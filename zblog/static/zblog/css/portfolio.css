@@ -23,19 +23,50 @@ button[name="expand"]{
 }.portfoliomenubtn{
   padding: 1em;
 }
-.portfoliopost {
-  display: flex;
+.portfoliopost{
   position:relative;
+  display: flex;
   flex-direction: column;
-  width: 39em;
-  padding-right: 2em;
-  margin-bottom: 1em;
+  width:20vw;
+  height: auto;
 }.portfoliopost h3 {
   margin-bottom: 2em;
 }.portfoliopost h5 {
   }.portfoliopost:focus {
     cursor: crosshair;
   }
+.portfoliopost img{
+  display: flex;
+  position: relative;
+  width:inherit;
+}.portfoliopost img:hover + .p_post_hide{
+  visibility: visible;
+}
+
+.p_post_hide {
+  display: flex;
+  visibility: hidden;
+  position: absolute;
+  top:0;
+  left: 0;
+  width:100%;
+  height:100%;
+  ;
+}.p_post_hide h3{
+  top:1em;
+  left:1em;
+  margin:0;
+  padding:0;
+}.portfoliopost_bg{
+    position: absolute;
+    top:0;
+    left: 0;
+    width:100%;
+    height:100%;
+    background-color: black;
+    opacity: 0.3;
+}
+
 .portfoliointime {
 /*  width:55rem;*/
   font-size: 0;

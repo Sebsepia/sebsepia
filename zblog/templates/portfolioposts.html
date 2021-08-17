@@ -1,5 +1,20 @@
 {% for category in categories %}
+<div class="portfoliocategory">
+
   {% for post in category.post_set.all %}
-    <h3>{{post.title}}</h3>
+
+    <div class="portfoliopost">
+
+      {% for image in post.blogimage_set.all %}
+        {% if forloop.counter == 1 %}
+          <img src="{{image.b_img.url}}" alt="">
+        {% endif %}
+      {% endfor %}
+      <div class="p_post_hide">
+        <h3>{{post.title}}</h3>
+        <div class="portfoliopost_bg"></div>
+      </div>
+    </div>
   {% endfor %}
+</div>
 {% endfor %}

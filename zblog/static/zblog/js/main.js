@@ -25,10 +25,6 @@ $(document).ready(function () {
     $(this).attr("id", "title" +n);
   });
 
-
-
-
-
   var infinite = new Waypoint.Infinite({
       element: $('.contenu'),
       handler:function(direction){
@@ -60,22 +56,4 @@ $(document).ready(function () {
     console.log(eval(panoLoc));
   });
 
-//  panorama = new PANOLENS.ImagePanorama(currentPano);
-
-
-
-
-
-
-
 });
-  /* stops Posts from making images stretch by having too much text  */
-/*      var alignTextToImg = function(){
-      var setter;
-      $("div.intime").each(function(obj){
-        var target = $(this).find("p");
-        var setter = target.find("img");
-        target.css("max-width", setter.width()+"px");
-        console.log(setter.width(), target.text());
-        });
-      };*/
