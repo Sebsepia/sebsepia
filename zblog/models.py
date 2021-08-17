@@ -12,7 +12,7 @@ from colorfield.fields import ColorField
 
 
 class BlogImage(models.Model):
-    b_img = models.ImageField("Blog Image", null=True, blank=True, upload_to="img/b")
+    b_img = models.ImageField("Blog Image", null=True, blank=True, upload_to="img/b", default='imagedefault.jpg')
     postimg = models.ForeignKey('Post', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):

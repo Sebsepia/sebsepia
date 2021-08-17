@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="121.55713mm"
+   height="101.55762mm"
+   viewBox="0 0 121.55713 101.55762"
+   version="1.1"
+   id="svg8"
+   inkscape:version="1.0.1 (3bc2e813f5, 2020-09-07)"
+   sodipodi:docname="hamburgericon.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="326.77177"
+     inkscape:cy="167.47882"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     inkscape:document-rotation="0"
+     showgrid="false"
+     inkscape:window-width="1343"
+     inkscape:window-height="910"
+     inkscape:window-x="566"
+     inkscape:window-y="82"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-34.09346,-97.182274)">
+    <rect
+       style="fill:#1a1a1a;stroke-width:0.47476"
+       id="rect833"
+       width="121.55713"
+       height="22.355227"
+       x="34.09346"
+       y="97.182274"
+       ry="2.008812" />
+    <rect
+       style="fill:#1a1a1a;stroke-width:0.47476"
+       id="rect833-3"
+       width="121.55713"
+       height="22.355227"
+       x="34.09346"
+       y="136.78348"
+       ry="2.008812" />
+    <rect
+       style="fill:#1a1a1a;stroke-width:0.47476"
+       id="rect833-6"
+       width="121.55713"
+       height="22.355227"
+       x="34.09346"
+       y="176.38467"
+       ry="2.008812" />
+  </g>
+</svg>
