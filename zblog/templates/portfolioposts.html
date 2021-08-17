@@ -5,12 +5,12 @@
 
     <div class="portfoliopost">
 
-        {% for image in post.blogimage_set.all %}
+        {% for portfolioimage in post.blogimage_set.all %}
           {% if forloop.counter == 1 %}
-            <img src="{{image.b_img.url}}" alt="">
+            <img src="{{portfolioimage.b_img.url}}" alt="">
           {% endif %}
         {% endfor %}
-        
+
       <div class="p_post_hide">
         <h3>{{post.title}}</h3>
         <div class="portfoliopost_bg"></div>
