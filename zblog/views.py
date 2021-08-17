@@ -53,8 +53,6 @@ def tagged(request, slug):
 def portfolio(request):
     categories = PortfolioCategory.objects.all().order_by('category_name')
     posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
-
-
     context = {
     'categories': categories,
     'posts': posts,
