@@ -1,7 +1,6 @@
 from django.urls import path, include
 from . import views
 from .views import HomeRedirectView
-from django.conf.urls.static import static
 
 urlpatterns = [
     path((''), HomeRedirectView.as_view(), name='redirect-to-blog'),
@@ -14,6 +13,3 @@ urlpatterns = [
     path('portfolio/<str:slug>/', views.portfoliocat, name='portfoliocat'),
     path('shop', views.shop, name='shop'),
 ]
-urlpatterns = [
-    path('', include('zblog.urls')),
-]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
