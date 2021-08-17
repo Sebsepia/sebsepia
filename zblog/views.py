@@ -51,14 +51,14 @@ def tagged(request, slug):
     return render(request, 'tag.html', context)
 
 def portfolio(request):
-    categories = PortfolioCategory.objects.all().order_by('category_name')
     exclude = ('nsfw', )#'study'
+    categories = PortfolioCategory.objects.all().exclude(tags__name__in=exclude).order_by('category_name')
+    posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
 
-
-    #the order of portfoliocat will be the order of the categories on the website
 
     context = {
     'categories': categories,
+    'posts': posts,
     }
     return render(request, 'portfolio.html', context)
 
