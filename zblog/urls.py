@@ -1,6 +1,7 @@
 from django.urls import path, include
 from . import views
 from .views import HomeRedirectView
+from django.conf.urls.static import static
 
 urlpatterns = [
     path((''), HomeRedirectView.as_view(), name='redirect-to-blog'),
