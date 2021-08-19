@@ -38,7 +38,7 @@
           </div>
           <div class="menu">
               <div class="menutop menuInner">
-                <h2><a class="{% active_link 'portfolio' %}" href="{% url 'portfolio' %}">portfolio</a></h2>
+                <h2><a class="{% active_link 'portfolio' slug='all' %}" href="{% url 'portfolio' slug='all' %}">portfolio</a></h2>
                 <h2><a class="{% active_link 'info' %}" href="{% url 'info' %}">info</a></h2>
                 {#<h2><a class="{% active_link 'shop' %}" href="{% url 'shop' %}">la shop</a></h2>#}
                 <a href="https://www.artstation.com/sebastienbegin" class="menusvg"><img src="{% static 'zblog/svg/artstation.svg' %}" alt=""></a>

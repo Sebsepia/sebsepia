@@ -9,7 +9,6 @@ urlpatterns = [
     path('tag/<str:slug>/', views.tagged, name='tag'),
     path('nsfw', views.nsfw_view, name='nsfw'),
     path('info', views.info_view, name='info'),
-    path('portfolio', views.portfolio, name='portfolio'),
-    path('portfolio/<str:slug>/', views.portfoliocat, name='portfoliocat'),
+    path('portfolio/<str:slug>/', views.portfolio, name='portfolio'),
     path('shop', views.shop, name='shop'),
 ]

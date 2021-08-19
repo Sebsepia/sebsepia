@@ -1,34 +1,83 @@
 {% extends 'base.html' %}
 {% load active_link_tags %}
 
+
 {% block title %}
-portfolio de Seb Bégin
+Portfolio
 {% endblock %}
 
+
 {% block titlecard %}
-  Seb Bégin
+ Seb Bégin
 {%endblock%}
+
 
 {% block navbar %}
   <div class="portfoliomenu">
     <div class="portfoliomenubtn">
-      <a class="{% active_link 'portfolio' %}" href="{% url 'portfolio'%}">All</a>
+      <a  class="{% active_link 'portfolio' slug='all' %}"
+          href="{% url 'portfolio' slug='all' %}">All</a>
     </div>
-    {% for category in categories %}
+    {% for cat in allcategories %}
       <div class="portfoliomenubtn">
-        <a href="{% url 'portfoliocat' slug=category%}">{{category}}</a>
+        <a  class="{% active_link 'portfolio' slug=cat %}"
+            href="{% url 'portfolio' slug=cat %}">{{cat}}</a>
       </div>
     {% endfor %}
   </div>
+
 {% endblock %}
+
 
 {% block main %}
 
-  <div class="contenu">
+{% load static %}
+{% get_media_prefix as MEDIA_URL %}
 
-    <div class="portfolio">
-      {% include 'portfolioposts.html' %}
-    </div>
+ <div class="contenu">
 
-  </div>
+   <div class="portfolio">
+
+    {# checks the slug to see if the portfolio will show all categories, or instead a specific category #}
+    {% if request.resolver_match.kwargs.slug == 'all' %}
+
+      {% for category in allcategories %}
+        {% for post in category.post_set.all %}
+          <div class="portfoliopost">
+            {% for image in post.blogimage_set.all %}
+            {% if forloop.counter == 1 %}
+            <img src="{{ MEDIA_URL }}{{image.b_img}}" alt="">
+           {% endif %}
+           {% endfor %}
+           <div class="p_post_hide">
+           <h3>{{post.title}}</h3>
+           <div class="portfoliopost_bg"></div>
+          </div>
+          </div>
+        {% endfor %}
+      {% endfor %}
+
+    {% else %}
+
+      {% for category in categories %}
+        {% for post in category.post_set.all %}
+          <div class="portfoliopost">
+            {% for image in post.blogimage_set.all %}
+            {% if forloop.counter == 1 %}
+            <img src="{{ MEDIA_URL }}{{image.b_img}}" alt="">
+           {% endif %}
+           {% endfor %}
+           <div class="p_post_hide">
+           <h3>{{post.title}}</h3>
+           <div class="portfoliopost_bg"></div>
+          </div>
+          </div>
+        {% endfor %}
+      {% endfor %}
+
+    {% endif %}
+
+   </div>
+   <div class="repit"></div>
+ </div>
 {% endblock %}

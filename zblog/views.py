@@ -50,11 +50,13 @@ def tagged(request, slug):
     }
     return render(request, 'tag.html', context)
 
-def portfolio(request):
+def portfolio(request, slug):
     model = PortfolioCategory
-    categories = PortfolioCategory.objects.all().order_by('category_name')
+    allcategories = PortfolioCategory.objects.all().order_by('category_name')
+    categories = PortfolioCategory.objects.filter(category_name__in=[slug]).order_by('-id')
     posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
     context = {
+    'allcategories': allcategories,
     'categories': categories,
     'posts': posts,
     }
