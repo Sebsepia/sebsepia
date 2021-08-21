@@ -1,0 +1,85 @@
+
+@media screen and (max-width: 100vh) {
+
+    header {
+      overflow: hidden;
+    }
+    h1{
+      font-size: 1.5em;
+    }
+    h2{
+      font-size: 0.8em;
+      padding-right:2em;
+      margin:0.5em;
+      line-height: 1em;
+      }
+    nav {
+      font-size: 4vw;
+      position: relative;
+      display: block;
+      height: 5em;
+      top: 0;
+      left:1em;
+      }nav.switch{
+        height:24em
+    }
+    .contenu {
+      padding-left: 2vw;
+      padding-top: 5rem;
+      padding-right: 2.5vw;
+      margin:0;
+    }
+
+    .intime p {
+      width: 99%;
+    }.intime img {
+      margin-top:0;
+    }
+
+
+    .menu{
+      font-size: 2em;
+      position: absolute;
+      flex-direction: column;
+      top:2em;
+      right:0;
+      align-items: end;
+      visibility: hidden;
+      }.menu.switch{
+      visibility: visible;
+      }
+    .menusvg{
+      width:0.8em;
+      height:0.8em;
+      line-height: 1;
+      padding-right:2.25em;
+      margin:0.5em;
+
+    }
+    .title {
+      height:8em;
+    }
+    .repit {
+      margin:1.5em;
+    }
+    #hamburgericon {
+      fill: var(--clr-accent-300);
+      height:3em;
+    }
+    #hamburgericon:hover{
+      fill:var(--clr-primary-0);
+      cursor:pointer;}
+
+    #menubtn{
+        visibility: visible;
+        position: absolute;
+        width: 12vw;
+        right:7vw;
+        top:3.5em;
+        padding:0;
+        background-color: transparent;
+        border:none;
+      }
+
+
+}

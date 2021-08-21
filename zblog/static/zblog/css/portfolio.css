@@ -88,11 +88,3 @@ button[name="expand"]{
   display:flex;
   align-self: flex-start;
 }
-@media screen and (max-width: 100vh) {
-  .portfoliopost {
-    width:70vw;
-  }
-  .portfoliointime img{
-
-  }
-}

@@ -1,0 +1,13 @@
+@mixin flexLeft($direction, $position) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: $direction;
+  position: $position;
+}
+
+@mixin fitDiv($width, $height) {
+  object-fit: contain;
+  width: $width;
+  height: $height;
+}

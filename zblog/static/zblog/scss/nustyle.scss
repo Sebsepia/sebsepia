@@ -1,0 +1,125 @@
+@import "./normalize";
+@import "./mixin";
+
+@import url(https://fonts.googleapis.com/css?family=Bitter:300,400,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+
+$logo: #2f2a24;
+$darkAccent: #0f0e0e;
+$midGray: #8f8c88;
+$bgColor: #d5cdc2;
+$outlandish: #5b456f;
+
+@import "./menu";
+@import "./mobile";
+
+$primaryFont: 'Bitter', serif;
+$accentFont: Raleway, sans-serif;
+
+header {
+  font-family: $primaryFont;
+  @include flexLeft(row, relative);
+}
+
+body {
+  background: $bgColor;
+  font-size: 1em;
+}
+
+nav {
+  @include flexLeft(row, relative);
+  margin-top: 3rem;
+}
+a {
+  color: $logo;
+  text-decoration: none;
+  &:hover { color:$darkAccent;}
+}
+h1{
+  font-size: 1em;
+  letter-spacing: 0.2em;
+  margin-top: 1.5em;
+  &:hover{color:$darkAccent;}
+  span{
+    position:relative;
+    color: $logo;
+
+  }
+
+}
+h2 {
+  font-weight: 400;
+  padding-left: 1.15rem;
+  a {
+    font-size: 2.5rem;
+  }
+}
+
+
+img {
+  height:auto;
+}
+
+p {
+  font-size: 1.1em;
+  font-family: $logo;
+  text-align: left;
+  a {
+    color: $outlandish;
+    text-decoration: underline;
+    text-decoration-style: double;
+  }a:hover{color: $darkAccent;
+  }a:visited {color: $midGray;
+  }
+}
+
+
+.contenu {
+  @include flexLeft(column, relative);
+}
+
+.contenu{
+  @include flexLeft(column, relative);
+  padding-left:20vw;
+  padding-top: 15rem;
+  padding-right: 2.5rem;
+  padding-bottom: 1em;
+}
+.date {
+  font-family: $accentFont;
+  color: $midGray;
+  font-size: 0.75em;
+  font-weight: 300;
+}
+
+.intime {
+  font-size: 1.25em;
+  @include flexLeft(column, relative);
+  img{
+    width: clamp(16px, 93vw, 150%);
+    max-height: 90vh;
+    object-fit:contain;
+    object-position: 0 0;
+    margin-bottom:0;
+  }img:not(:first-child){
+    margin-top: 1em;
+    /* Pour pas que ca stack avec la margin que le paragraphe crée    */
+  }
+    p {
+    width: 50vw;
+    margin-top:1em;
+  }
+}
+.pano-image {
+  width: clamp(16px, 90vw, 100%);
+  height:clamp(128px, 70vh, 98vh);
+  position: relative;
+  margin-top: 1em;
+}
+.post {
+  @include flexLeft(Column, relative);
+}
+.repit {
+  margin:4em;
+}

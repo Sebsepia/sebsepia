@@ -1,0 +1,41 @@
+.menu {
+  @include flexLeft(column, relative);
+
+}
+.menutop {
+  @include flexLeft(row, relative);
+
+}
+.menusvg {
+  @include flexLeft(row, relative);
+  align-self:flex-end;
+  height: 2rem;
+  img {
+    @include fitDiv(3.5rem, 2.25rem);
+    margin-top: -.5rem;
+    padding-left: 1rem;
+}
+.menutitle {
+  background-color: $outlandish;
+}
+
+
+}
+#hamburgericon{
+height:0;
+  }
+#menubtn{
+    visibility: hidden;
+    height:0;
+}
+
+#title0 {font-size: 2.5em; top:-0.05em; font-weight: 300;letter-spacing: 0.06em;}
+#title1 {font-size: 1.2em; top:-0.5em; font-weight: 900;letter-spacing: 0.1em;}
+#title2 {font-size: 1.75em; top: 0em; font-weight: 600; letter-spacing: 0.4em;}
+#title3 {font-size: 2em; top:0.4em;font-weight: 700;letter-spacing: 0.05em;}
+#title4 {font-size: 2.4em; top:0.5em;font-weight: 800;letter-spacing: -0.05em;}
+#title5 {font-size: 2em; top:0.25em;font-weight: 400;letter-spacing: 0.1em;}
+#title6 {font-size: 1em; top:0.75em;font-weight: 900;letter-spacing: -0.1em;}
+#title7 {font-size: 1.8em; top:0.66em;font-weight: 300;letter-spacing: 0.1em;}
+#title8 {font-size: 1.1em; top:1em;font-weight: 500;letter-spacing: 0.1em;}
+#title9 {font-size: 0.6em; top:3em;font-weight: 500;letter-spacing: 0em;}

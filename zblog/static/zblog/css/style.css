@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Bitter:200,300,400,500,600,700,900);
+@import url(https://fonts.googleapis.com/css?family=Bitter:200,300,500,700,900);
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
@@ -135,16 +135,7 @@ p a {
 }p a:visited {color: var(--clr-accent-500);
 }
 
-.contenu{
-  position:relative;
-  display:flex;
-  flex-direction: column;
-  padding-left:20vw;
-  padding-top: 15rem;
-  padding-right: 2.5rem;
-  padding-bottom: 1em;
 
-}
 .date {
   font-family: var(--ff-accent);
   color: var(--clr-accent-500);
@@ -175,11 +166,6 @@ p a {
     display:flex;
     flex-direction: column;
     margin-top: 3em;
-  }
-  .menuInner {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
   }
   .menutop {
 

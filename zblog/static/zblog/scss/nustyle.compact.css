@@ -1,0 +1,112 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Bitter:300,400,500,700,900);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+html { font-size: 100%; line-height: 1; -webkit-text-size-adjust: 100%; }
+
+body { margin: 0; padding: 0; }
+
+a { background-color: transparent; }
+
+*, *::before, *::after { box-sizing: content-box; text-decoration: none; }
+
+.menu { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; position: relative; }
+
+.menutop { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: row; position: relative; }
+
+.menusvg { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: row; position: relative; align-self: flex-end; height: 2rem; }
+
+.menusvg img { object-fit: contain; width: 3.5rem; height: 2.25rem; margin-top: -.5rem; padding-left: 1rem; }
+
+.menusvg .menutitle { background-color: #5b456f; }
+
+#hamburgericon { height: 0; }
+
+#menubtn { visibility: hidden; height: 0; }
+
+#title0 { font-size: 2.5em; top: -0.05em; font-weight: 300; letter-spacing: 0.06em; }
+
+#title1 { font-size: 1.2em; top: -0.5em; font-weight: 900; letter-spacing: 0.1em; }
+
+#title2 { font-size: 1.75em; top: 0em; font-weight: 600; letter-spacing: 0.4em; }
+
+#title3 { font-size: 2em; top: 0.4em; font-weight: 700; letter-spacing: 0.05em; }
+
+#title4 { font-size: 2.4em; top: 0.5em; font-weight: 800; letter-spacing: -0.05em; }
+
+#title5 { font-size: 2em; top: 0.25em; font-weight: 400; letter-spacing: 0.1em; }
+
+#title6 { font-size: 1em; top: 0.75em; font-weight: 900; letter-spacing: -0.1em; }
+
+#title7 { font-size: 1.8em; top: 0.66em; font-weight: 300; letter-spacing: 0.1em; }
+
+#title8 { font-size: 1.1em; top: 1em; font-weight: 500; letter-spacing: 0.1em; }
+
+#title9 { font-size: 0.6em; top: 3em; font-weight: 500; letter-spacing: 0em; }
+
+@media screen and (max-width: 100vh) { header { overflow: hidden; }
+  h1 { font-size: 1.5em; }
+  h2 { font-size: 0.8em; padding-right: 2em; margin: 0.5em; line-height: 1em; }
+  nav { font-size: 4vw; position: relative; display: block; height: 5em; top: 0; left: 1em; }
+  nav.switch { height: 24em; }
+  .contenu { padding-left: 2vw; padding-top: 5rem; padding-right: 2.5vw; margin: 0; }
+  .intime p { width: 99%; }
+  .intime img { margin-top: 0; }
+  .menu { font-size: 2em; position: absolute; flex-direction: column; top: 2em; right: 0; align-items: end; visibility: hidden; }
+  .menu.switch { visibility: visible; }
+  .menusvg { width: 0.8em; height: 0.8em; line-height: 1; padding-right: 2.25em; margin: 0.5em; }
+  .title { height: 8em; }
+  .repit { margin: 1.5em; }
+  #hamburgericon { fill: var(--clr-accent-300); height: 3em; }
+  #hamburgericon:hover { fill: var(--clr-primary-0); cursor: pointer; }
+  #menubtn { visibility: visible; position: absolute; width: 12vw; right: 7vw; top: 3.5em; padding: 0; background-color: transparent; border: none; } }
+
+header { font-family: "Bitter", serif; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: row; position: relative; }
+
+body { background: #d5cdc2; font-size: 1em; }
+
+nav { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: row; position: relative; margin-top: 3rem; }
+
+a { color: #2f2a24; text-decoration: none; }
+
+a:hover { color: #0f0e0e; }
+
+h1 { font-size: 1em; letter-spacing: 0.2em; margin-top: 1.5em; }
+
+h1:hover { color: #0f0e0e; }
+
+h1 span { position: relative; color: #2f2a24; }
+
+h2 { font-weight: 400; padding-left: 1.15rem; }
+
+h2 a { font-size: 2.5rem; }
+
+img { height: auto; }
+
+p { font-size: 1.1em; font-family: #2f2a24; text-align: left; }
+
+p a { color: #5b456f; text-decoration: underline; text-decoration-style: double; }
+
+p a:hover { color: #0f0e0e; }
+
+p a:visited { color: #8f8c88; }
+
+.contenu { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; position: relative; }
+
+.contenu { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; position: relative; padding-left: 20vw; padding-top: 15rem; padding-right: 2.5rem; padding-bottom: 1em; }
+
+.date { font-family: Raleway, sans-serif; color: #8f8c88; font-size: 0.75em; font-weight: 300; }
+
+.intime { font-size: 1.25em; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; position: relative; }
+
+.intime img { width: clamp(16px, 93vw, 150%); max-height: 90vh; object-fit: contain; object-position: 0 0; margin-bottom: 0; }
+
+.intime img:not(:first-child) { margin-top: 1em; /* Pour pas que ca stack avec la margin que le paragraphe crée    */ }
+
+.intime p { width: 50vw; margin-top: 1em; }
+
+.pano-image { width: clamp(16px, 90vw, 100%); height: clamp(128px, 70vh, 98vh); position: relative; margin-top: 1em; }
+
+.post { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: Column; position: relative; }
+
+.repit { margin: 4em; }

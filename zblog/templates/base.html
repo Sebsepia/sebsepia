@@ -15,8 +15,9 @@
     {% load static %}
     {% load active_link_tags %}
     <link rel="icon" href="{% static 'zblog/pixel/icon.gif' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'zblog/css/normalize.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'zblog/css/style.css' %}">
+    <!--<link rel="stylesheet" type="text/css" href="{% static 'zblog/css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'zblog/css/style.css' %}">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'zblog/css/nustyle.css' %}">
     <script async src="{% static 'zblog/js/main.js' %}"></script>
     <script defer src="{% static 'zblog/js/panolens.min.js' %}"></script>
 
@@ -37,14 +38,13 @@
             </a></h1>
           </div>
           <div class="menu">
-              <div class="menutop menuInner">
+              <div class="menutop">
                 <h2><a class="{% active_link 'portfolio' slug='all' %}" href="{% url 'portfolio' slug='all' %}">portfolio</a></h2>
                 <h2><a class="{% active_link 'info' %}" href="{% url 'info' %}">info</a></h2>
-                {#<h2><a class="{% active_link 'shop' %}" href="{% url 'shop' %}">la shop</a></h2>#}
                 <a href="https://www.artstation.com/sebastienbegin" class="menusvg"><img src="{% static 'zblog/svg/artstation.svg' %}" alt=""></a>
                 <a href="https://www.instagram.com/sebsepia/"class="menusvg"><img src="{% static 'zblog/svg/insta.svg' %}" alt=""></a>
               </div>
-              <div class="menusub menuInner">
+              <div class="menusub">
                 {% block navbar %}
 
                 {% endblock%}
