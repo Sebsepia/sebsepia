@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load active_link_tags %}
+
+
+{% block title %}
+Portfolio
+{% endblock %}
+
+
+{% block titlecard %}
+ Seb Bégin
+{%endblock%}
+
+
+{% block main %}
+  <div class="sketchbook" id="{{post.slug}}">
+        <div class="intime">
+          {{ post.talkshit_md | safe}}
+        </div>
+        {% for obj in sketchbooks %}
+
+        {% endfor %}
+
+        <div class="repit"></div>
+
+{%endblock%}

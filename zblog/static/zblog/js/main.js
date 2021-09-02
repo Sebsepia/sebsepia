@@ -1,18 +1,8 @@
 $(document).ready(function () {
 
-  $('#collapsebtn').click(function()  {
-   $('.linktree').toggleClass('switch');
-   $('#collapsebtn').toggleClass('switch');
-  });
-
-  $('#mobilecollapsebtn').click(function()  {
-   $('.linktree').toggleClass('switch');
-   $('#collapsebtn').toggleClass('switch');
-  });
-
   $('#menubtn').click(function()  {
    $('.menu').toggleClass('switch');
-   $('nav').toggleClass('switch');
+   $('header').toggleClass('switch');
   });
 
   /*isolates title letters in separate spans*/
@@ -20,7 +10,7 @@ $(document).ready(function () {
     return html.replace(/\S/g, '<span>$&</span>');
   });
   /*gives each span an ID*/
-  titleLetters = $('nav span')
+  titleLetters = $('header span')
   titleLetters.each(function(n) {
     $(this).attr("id", "title" +n);
   });

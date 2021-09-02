@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, RedirectView
-from .models import Post, PortfolioCategory
+from .models import Post, PortfolioCategory, SketchCategory
 from django.utils.text import slugify
 from datetime import datetime, date
 
@@ -38,9 +38,6 @@ def info_view(request):
     context = {}
     return render(request, 'info.html', context)
 
-def contact_view(request):
-    context = {}
-    return render(request, 'contact.html', context)
 
 def tagged(request, slug):
     exclude = ('nsfw', )
@@ -58,28 +55,10 @@ def portfolio(request, slug):
     context = {
     'allcategories': allcategories,
     'categories': categories,
-    'posts': posts,
+
     }
     return render(request, 'portfolio.html', context)
 
-def portfoliocat(request, slug):
-    exclude = ('nsfw', )
-    allcategories = PortfolioCategory.objects.all().order_by('category_name')
-    categories = PortfolioCategory.objects.filter(category_name__in=[slug]).exclude(category_name__in=exclude).order_by('-id')
-    context = {
-        'categories':categories,
-        'allcategories':allcategories,
-    }
-    return render(request, 'portfoliocat.html', context)
-
-def shop(request):
-    shop_catalog = ('objet', )
-    posts = Post.objects.filter(tags__name__in=shop_catalog)
-    context = {
-        'posts':posts,
-        'shop_catalog': shop_catalog,
-    }
-    return render(request, 'shop.html', context)
 
 def nsfw_view(request):
     posts = Post.objects.filter(tags__name="nsfw").order_by('-id')
@@ -87,3 +66,13 @@ def nsfw_view(request):
     'posts':posts,
     }
     return render(request, 'nsfw.html', context)
+
+def sketchbook(request):
+    model = SketchCategory
+    sketchbooks = SketchCategory.objects.all().order_by('-id')
+    posts = Post.objects.exclude(tags__name="nsfw")
+    context = {
+    'sketchbooks': sketchbooks,
+    'posts': posts,
+    }
+    return render(request, 'sketchbook.html', context)

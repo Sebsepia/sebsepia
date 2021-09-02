@@ -24,6 +24,16 @@ a {
   text-decoration: none;
 }
 
+header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  position: absolute;
+  margin-top: 3rem;
+  z-index: 10;
+}
+
 .menu {
   display: flex;
   justify-content: flex-start;
@@ -33,6 +43,14 @@ a {
 }
 
 .menutop {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  position: relative;
+}
+
+.menusub {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -142,54 +160,28 @@ a {
 @media screen and (max-width: 100vh) {
   header {
     overflow: hidden;
-  }
-
-  h1 {
-    font-size: 1.5em;
-  }
-
-  h2 {
-    font-size: 0.8em;
-    padding-right: 2em;
-    margin: 0.5em;
-    line-height: 1em;
-  }
-
-  nav {
-    font-size: 4vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
     position: relative;
-    display: block;
-    height: 5em;
-    top: 0;
-    left: 1em;
+    width: 100%;
+    justify-content: space-between;
   }
-
-  nav.switch {
+  header .switch {
     height: 24em;
-  }
-
-  .contenu {
-    padding-left: 2vw;
-    padding-top: 5rem;
-    padding-right: 2.5vw;
-    margin: 0;
-  }
-
-  .intime p {
-    width: 99%;
-  }
-
-  .intime img {
-    margin-top: 0;
   }
 
   .menu {
     font-size: 2em;
-    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-direction: column;
+    position: relative;
+    align-items: flex-end;
     top: 2em;
     right: 0;
-    align-items: end;
     visibility: hidden;
   }
 
@@ -203,6 +195,15 @@ a {
     line-height: 1;
     padding-right: 2.25em;
     margin: 0.5em;
+  }
+
+  .menutop {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    align-items: flex-end;
   }
 
   .title {
@@ -234,27 +235,60 @@ a {
     border: none;
   }
 }
+.portfolio {
+  width: 79vw;
+  column-count: 3;
+  column-gap: 1em;
+}
+
+.portfoliopost {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.portfoliopost img {
+  display: block;
+  width: 100%;
+}
+.portfoliopost:hover .p_post_hide {
+  visibility: visible;
+}
+
+.p_post_hide {
+  position: absolute;
+  visibility: hidden;
+  width: inherit;
+  text-align: center;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(40, 40, 40, 0.4);
+  overflow: hidden;
+}
+.p_post_hide a {
+  height: 100%;
+  width: 100%;
+  display: inline-block;
+}
+.p_post_hide a:hover {
+  cursor: zoom-in;
+}
+.p_post_hide h3 {
+  color: #f2e7c5;
+  font-family: Raleway, sans-serif;
+  text-align: center;
+  padding-top: 1rem;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+}
+
 header {
   font-family: "Bitter", serif;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: row;
-  position: relative;
 }
 
 body {
   background: #d5cdc2;
   font-size: 1em;
-}
-
-nav {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: row;
-  position: relative;
-  margin-top: 3rem;
 }
 
 a {
@@ -263,6 +297,10 @@ a {
 }
 a:hover {
   color: #0f0e0e;
+}
+
+a.active {
+  color: white;
 }
 
 h1 {
@@ -294,17 +332,6 @@ p {
   font-size: 1.1em;
   font-family: #2f2a24;
   text-align: left;
-}
-p a {
-  color: #5b456f;
-  text-decoration: underline;
-  text-decoration-style: double;
-}
-p a:hover {
-  color: #0f0e0e;
-}
-p a:visited {
-  color: #8f8c88;
 }
 
 .contenu {
@@ -356,6 +383,15 @@ p a:visited {
 .intime p {
   width: 50vw;
   margin-top: 1em;
+  color: #5b456f;
+  text-decoration: underline;
+  text-decoration-style: double;
+}
+.intime a:hover {
+  color: #0f0e0e;
+}
+.intime a:visited {
+  color: #8f8c88;
 }
 
 .pano-image {

@@ -7,8 +7,10 @@ urlpatterns = [
     path('blog', views.home_view, name="home"),
     path('blog/<str:slug>', views.detail_view, name='details'),
     path('tag/<str:slug>/', views.tagged, name='tag'),
-    path('nsfw', views.nsfw_view, name='nsfw'),
     path('info', views.info_view, name='info'),
+    path('nsfw', views.nsfw_view, name='nsfw'),
     path('portfolio/<str:slug>/', views.portfolio, name='portfolio'),
-    path('shop', views.shop, name='shop'),
+    path('sketchbook', views.sketchbook, name='sketchbook'),
+
+
 ]

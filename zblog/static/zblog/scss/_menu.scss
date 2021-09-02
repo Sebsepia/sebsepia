@@ -1,3 +1,9 @@
+header {
+  @include flexLeft(row, absolute);
+  margin-top: 3rem;
+  z-index: 10;
+}
+
 .menu {
   @include flexLeft(column, relative);
 
@@ -5,6 +11,9 @@
 .menutop {
   @include flexLeft(row, relative);
 
+}
+.menusub {
+  @include flexLeft(row, relative);
 }
 .menusvg {
   @include flexLeft(row, relative);
@@ -39,3 +48,67 @@ height:0;
 #title7 {font-size: 1.8em; top:0.66em;font-weight: 300;letter-spacing: 0.1em;}
 #title8 {font-size: 1.1em; top:1em;font-weight: 500;letter-spacing: 0.1em;}
 #title9 {font-size: 0.6em; top:3em;font-weight: 500;letter-spacing: 0em;}
+
+
+@media screen and (max-width: 100vh) {
+
+    header {
+      overflow: hidden;
+      @include flexLeft(row, relative);
+      width: 100%;
+      justify-content: space-between;
+      .switch {
+        height: 24em;
+      }
+    }
+    .menu{
+      font-size: 2em;
+      @include flexLeft(column, relative);
+      align-items: flex-end;
+      top:2em;
+      right:0;
+      visibility: hidden;
+      }.menu.switch{
+      visibility: visible;
+      }
+    .menusvg{
+      width:0.8em;
+      height:0.8em;
+      line-height: 1;
+      padding-right:2.25em;
+      margin:0.5em;
+    }
+    .menutop {
+      @include flexLeft(column, relative);
+      align-items: flex-end;
+
+    }
+    .menusub {
+    }
+    .title {
+      height:8em;
+    }
+    .repit {
+      margin:1.5em;
+    }
+    #hamburgericon {
+      fill: var(--clr-accent-300);
+      height:3em;
+    }
+    #hamburgericon:hover{
+      fill:var(--clr-primary-0);
+      cursor:pointer;}
+
+    #menubtn{
+        visibility: visible;
+        position: absolute;
+        width: 12vw;
+        right:7vw;
+        top:3.5em;
+        padding:0;
+        background-color: transparent;
+        border:none;
+      }
+
+
+}
