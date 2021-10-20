@@ -38,8 +38,8 @@ class Post(models.Model):
     tags = TaggableManager(blank=True)
     title = models.CharField(max_length=100, unique=True)
     title_tag = models.CharField(max_length=100, blank=True, null = True)
-    p_category = models.ForeignKey('PortfolioCategory', on_delete=models.SET_NULL, blank=True, null=True)
-    s_category = models.ForeignKey('SketchCategory', on_delete=models.SET_NULL, blank=True, null=True)
+    portfolio_category = models.ForeignKey('PortfolioCategory', on_delete=models.SET_NULL, blank=True, null=True)
+    sketchbook_category = models.ForeignKey('SketchbookCategory', on_delete=models.SET_NULL, blank=True, null=True)
 
     def get_talkshit_as_markdown(self):
         return mark_safe(markdown(self.talkshit, safe_mode='escape'))
@@ -71,12 +71,20 @@ class Post(models.Model):
 class PortfolioCategory(models.Model):
     category_name = models.CharField(max_length=100, unique=True)
 
+    class Meta:
+        verbose_name = 'Portfolio Category'
+        verbose_name_plural = 'Portfolio Categories'
+
     def __str__(self):
         return self.category_name
 
-class SketchCategory(models.Model):
+class SketchbookCategory(models.Model):
     category_name = models.CharField(max_length=100, unique=True)
     cover = models.BooleanField(null=True, default = False)
+
+    class Meta:
+        verbose_name = 'Sketchbook Category'
+        verbose_name_plural = 'Sketchbook Categories'
 
     def __str__(self):
         return self.category_name

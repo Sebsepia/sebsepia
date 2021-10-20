@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, RedirectView
-from .models import Post, PortfolioCategory, SketchCategory
+from .models import Post, PortfolioCategory, SketchbookCategory
 from django.utils.text import slugify
 from datetime import datetime, date
 
