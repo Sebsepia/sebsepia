@@ -6,7 +6,7 @@ from datetime import datetime, date
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import markdown
-
+#delete this comment
 def home_view(request):
     posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
     #posts = Post.objects.order_by('-id')

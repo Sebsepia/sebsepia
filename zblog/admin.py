@@ -5,7 +5,7 @@ from .models import Post, BlogImage, PanoImage, PortfolioCategory, SketchbookCat
 class BImageInline(admin.TabularInline):
     model = BlogImage
     extra = 0
-
+#delete this comment
 class PImageInline(admin.TabularInline):
     model = PanoImage
     extra = 0

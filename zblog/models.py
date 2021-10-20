@@ -81,7 +81,7 @@ class PortfolioCategory(models.Model):
 class SketchbookCategory(models.Model):
     category_name = models.CharField(max_length=100, unique=True)
     cover = models.BooleanField(null=True, default = False)
-    #ok mais wtf
+    #ok mais wtf!!!!
     class Meta:
         verbose_name = 'Sketchbook Category'
         verbose_name_plural = 'Sketchbook Categories'
