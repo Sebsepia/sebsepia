@@ -6,7 +6,7 @@ from datetime import datetime, date
 
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 import markdown
-#delete this comment
+
 def home_view(request):
     posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
     #posts = Post.objects.order_by('-id')
@@ -27,10 +27,8 @@ class HomeRedirectView(RedirectView):
 def detail_view(request, slug):
     md = markdown.Markdown()
     post = get_object_or_404(Post, slug=slug)
-#    postcontent = md.convert(post.talkshit)
     context = {
         'post':post,
-#        'postcontent':postcontent,
     }
     return render(request, 'details.html', context,)
 

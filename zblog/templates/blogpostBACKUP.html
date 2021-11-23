@@ -1,0 +1,17 @@
+{% load active_link_tags %}
+  <div class="post" id="{{post.slug}}">
+        <div class="intime">
+          <h3><a class="{% active_link 'details' %}" href="{% url 'details' post.slug %}"
+          style="color:{{post.text_color}};"
+          >{{post.title}}</a></h3>
+          <div class="date">{{post.post_date|date:'j | n | Y'}}</div>
+          {{ post.talkshit_md | safe}}
+        </div>
+        {% for pano_image in post.panoimage_set.all %}
+          <script type="text/javascript">
+              var currentPano{{pano_image.order}} = "{{ pano_image.p_img.url }}";
+          </script>
+        {% endfor %}
+        <div class="repit"></div>
+
+      </div>

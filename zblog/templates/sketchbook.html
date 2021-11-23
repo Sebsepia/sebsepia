@@ -3,7 +3,7 @@
 
 
 {% block title %}
-Portfolio
+Sketchbooks
 {% endblock %}
 
 
@@ -16,14 +16,15 @@ Portfolio
 {% endblock %}
 
 {% block main %}
-  <div class="sketchbook" id="{{post.slug}}">
-        <div class="intime">
-          {{ post.talkshit_md | safe}}
-        </div>
-        {% for obj in sketchbooks %}
-
+  <div class="sketchbook">
+    {% for book in sketchbooks %}
+      <img class="sketchbookcover" src="{{MEDIA_URL}}{{book.cover_img}}" alt="{{book.category_name}}">
+      {% for post in book.post_set.all %}
+        {% for blog_image in post.blogimage_set.all %}
+          <img src="{{ MEDIA_URL }}{{blog_image.b_img}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
         {% endfor %}
-
-        <div class="repit"></div>
+      {% endfor %}
+    {% endfor %}
+  </div>
 
 {%endblock%}

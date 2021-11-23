@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r105/three.min.js"></script>
 
     {% load static %}
+    {% get_media_prefix as MEDIA_URL %}
     {% load active_link_tags %}
     <link rel="icon" href="{% static 'zblog/pixel/icon.gif' %}">
     <!--<link rel="stylesheet" type="text/css" href="{% static 'zblog/css/normalize.css' %}">
@@ -42,15 +43,15 @@
           {% endblock%}
 
 
-        </button>
         <button type="button" name="menu" id="menubtn">
           <svg id="hamburgericon" viewBox="0 0 100 80">
             <rect width="100" height="20"></rect>
             <rect y="30" width="100" height="20"></rect>
             <rect y="60" width="100" height="20"></rect>
           </svg>
+        </button>
 
-      </header>
+    </header>
       {% block main %}
       {% endblock %}
   </body>

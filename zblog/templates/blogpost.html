@@ -6,12 +6,19 @@
           >{{post.title}}</a></h3>
           <div class="date">{{post.post_date|date:'j | n | Y'}}</div>
           {{ post.talkshit_md | safe}}
-        </div>
-        {% for pano_image in post.panoimage_set.all %}
-          <script type="text/javascript">
-              var currentPano{{pano_image.order}} = "{{ pano_image.p_img.url }}";
-          </script>
+          {% for blog_image in post.blogimage_set.all %}
+            <img src="{{ MEDIA_URL }}{{blog_image.b_img}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
+            <h6>{{blog_image.b_img_description}}</h6>
+            <p>{{blog_image.b_img_paragraph}}</p>
+          {% endfor %}
+          {% for pano_image in post.panoimage_set.all %}
+            <script type="text/javascript">
+                var currentPano{{pano_image.order}} = "{{ pano_image.p_img.url }}";
+            </script>
+            <h6>{{pano_image.p_img_description}}</h6>
+            <p>{{pano_image.p_img_paragraph}}</p>
         {% endfor %}
-        <div class="repit"></div>
-
       </div>
+    <div class="repit"></div>
+
+  </div>
