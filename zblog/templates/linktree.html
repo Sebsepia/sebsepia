@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% load static %}
+
+  {% block title %}
+    Sebsepia - Linktree
+  {% endblock %}
+
+  {% block titlecard %}
+    Sebsepia!
+  {%endblock%}
+
+
+{% block main %}
+
+
+<div class="linktree">
+  <ul>
+    <li><a href="https://www.artstation.com/sebastienbegin">Artstation</a></li>
+    <li><a href="https://www.behance.net/sebsepia">Behance</a></li>
+    <li><a href="https://www.instagram.com/sebsepia/">Instagram</a></li>
+    <li><a href="www.linkedin.com/in/sebsepia">Linkedin</a></li>
+    <li><a href="https://twitter.com/Sebsepia">Twitter</a></li>
+  </ul>
+</div>
+<!--  <div id="info-list">
+
+    <ul>
+      <li><a class="li-text" href="https://www.artstation.com/sebastienbegin">Artstation</a></li>
+      <li><a class="li-text" href="www.linkedin.com/in/sebsepia">Linkedin</a></li>
+      <li><a class="li-text" href="https://www.instagram.com/sebsepia/">instagram</a></li>
+    </ul>
+    <p></p>
+    <ul>
+      <li><a class="li-symbols"  href="{% url 'tag' slug="digital" %}">&#128394;&#128187;</a></li>
+      <li><a class="li-symbols" href="{% url 'tag' slug="3D" %}">&#128432;</a></li>
+      <li><a class="li-symbols" href="{% url 'tag' slug="bikes" %}">&#128690;</a></li>
+      <li><a class="li-symbols" href="{% url 'tag' slug="observation" %}">&#128065;</a></li>
+
+    </ul>
+  </div>-->
+
+
+{% endblock %}

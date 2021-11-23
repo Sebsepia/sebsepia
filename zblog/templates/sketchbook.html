@@ -11,6 +11,9 @@ Portfolio
  Seb Bégin
 {%endblock%}
 
+{% block navbar %}
+  {% include 'navbar.html' %}
+{% endblock %}
 
 {% block main %}
   <div class="sketchbook" id="{{post.slug}}">

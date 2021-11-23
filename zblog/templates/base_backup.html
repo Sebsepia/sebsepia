@@ -17,7 +17,7 @@
     <link rel="icon" href="{% static 'zblog/pixel/icon.gif' %}">
     <!--<link rel="stylesheet" type="text/css" href="{% static 'zblog/css/normalize.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'zblog/css/style.css' %}">-->
-    <link rel="stylesheet" type="text/css" href="{% static 'zblog/scss/nustyle.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'zblog/css/nustyle.css' %}">
     <script async src="{% static 'zblog/js/main.js' %}"></script>
     <script defer src="{% static 'zblog/js/panolens.min.js' %}"></script>
 
@@ -36,10 +36,19 @@
               {%endblock%}
             </a></h1>
           </div>
+          <nav class="menu">
+              <div class="menutop">
+                <h2><a class="{% active_link 'portfolio' slug='all' %}" href="{% url 'portfolio' slug='all' %}">portfolio</a></h2>
+                <h2><a class="{% active_link 'sketchbook' %}" href="{% url 'sketchbook' %}">sketchbook</a></h2>
+                <h2><a class="{% active_link 'info' %}" href="{% url 'info' %}">info</a></h2>
 
-          {% block navbar %}
+              </div>
+              <div class="menusub">
+                {% block subnavbar %}
 
-          {% endblock%}
+                {% endblock%}
+              </div>
+          </nav>
 
 
         </button>

@@ -38,6 +38,9 @@ def info_view(request):
     context = {}
     return render(request, 'info.html', context)
 
+def linktree(request):
+    context = {}
+    return render(request, 'linktree.html', context)
 
 def tagged(request, slug):
     exclude = ('nsfw', )
@@ -68,8 +71,8 @@ def nsfw_view(request):
     return render(request, 'nsfw.html', context)
 
 def sketchbook(request):
-    model = SketchCategory
-    sketchbooks = SketchCategory.objects.all().order_by('-id')
+    model = SketchbookCategory
+    sketchbooks = SketchbookCategory.objects.all().order_by('-id')
     posts = Post.objects.exclude(tags__name="nsfw")
     context = {
     'sketchbooks': sketchbooks,

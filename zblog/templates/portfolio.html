@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% load active_link_tags %}
 
+{% load active_link_tags %}
 
 {% block title %}
 Portfolio
@@ -13,16 +13,19 @@ Portfolio
 
 
 {% block navbar %}
-    <div class="portfoliomenubtn">
-      <a  class="{% active_link 'portfolio' slug='all' %}"
-          href="{% url 'portfolio' slug='all' %}">All</a>
-    </div>
-    {% for cat in allcategories %}
-      <div class="portfoliomenubtn">
-        <a  class="{% active_link 'portfolio' slug=cat %}"
-            href="{% url 'portfolio' slug=cat %}">{{cat}}</a>
+  {% include 'navbar.html' %}
+      <div class="menusub">
+        <div class="portfoliomenubtn">
+          <a  class="{% active_link 'portfolio' slug='all' %}"
+              href="{% url 'portfolio' slug='all' %}">All</a>
+        </div>
+        {% for cat in allcategories %}
+        <div class="portfoliomenubtn">
+          <a  class="{% active_link 'portfolio' slug=cat %}"
+              href="{% url 'portfolio' slug=cat %}">{{cat}}</a>
+        </div>
       </div>
-    {% endfor %}
+      {% endfor %}
 
 {% endblock %}
 

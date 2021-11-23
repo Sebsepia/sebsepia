@@ -10,7 +10,7 @@ a { background-color: transparent; }
 
 *, *::before, *::after { box-sizing: content-box; text-decoration: none; }
 
-header { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: row; position: absolute; margin-top: 3rem; z-index: 10; }
+header { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: row; position: absolute; margin-top: 3rem; margin-left: 3em; z-index: 10; }
 
 .menu { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; position: relative; }
 
@@ -28,25 +28,25 @@ header { display: flex; justify-content: flex-start; align-items: flex-start; fl
 
 #menubtn { visibility: hidden; height: 0; }
 
-#title0 { font-size: 2.5em; top: -0.05em; font-weight: 300; letter-spacing: 0.06em; }
+#title0 { font-size: 5em; top: -0.05em; font-weight: 300; letter-spacing: -.05em; }
 
-#title1 { font-size: 1.2em; top: -0.5em; font-weight: 900; letter-spacing: 0.1em; }
+#title1 { font-size: 3.25em; top: -0.5em; font-weight: 900; letter-spacing: 0; }
 
-#title2 { font-size: 1.75em; top: 0em; font-weight: 600; letter-spacing: 0.4em; }
+#title2 { font-size: 3.5em; top: -.35em; font-weight: 500; letter-spacing: 0.4em; }
 
-#title3 { font-size: 2em; top: 0.4em; font-weight: 700; letter-spacing: 0.05em; }
+#title3 { font-size: 4.75em; top: 0.4em; font-weight: 700; letter-spacing: 0em; }
 
-#title4 { font-size: 2.4em; top: 0.5em; font-weight: 800; letter-spacing: -0.05em; }
+#title4 { font-size: 2.4em; top: 0.25em; font-weight: 800; letter-spacing: -0.05em; }
 
-#title5 { font-size: 2em; top: 0.25em; font-weight: 400; letter-spacing: 0.1em; }
+#title5 { font-size: 2.75em; top: 0.25em; font-weight: 400; letter-spacing: 0; }
 
-#title6 { font-size: 1em; top: 0.75em; font-weight: 900; letter-spacing: -0.1em; }
+#title6 { font-size: 1.75em; top: 0.75em; font-weight: 900; }
 
-#title7 { font-size: 1.8em; top: 0.66em; font-weight: 300; letter-spacing: 0.1em; }
+#title7 { font-size: 3.25em; top: 0.5em; font-weight: 400; }
 
-#title8 { font-size: 1.1em; top: 1em; font-weight: 500; letter-spacing: 0.1em; }
+#title8 { font-size: 3em; top: .75em; font-weight: 100; letter-spacing: 0.1em; }
 
-#title9 { font-size: 0.6em; top: 3em; font-weight: 500; letter-spacing: 0em; }
+#title9 { font-size: 2.75em; top: .75em; font-weight: 300; letter-spacing: 0em; }
 
 @media screen and (max-width: 100vh) { header { overflow: hidden; display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: row; position: relative; width: 100%; justify-content: space-between; }
   header .switch { height: 24em; }
@@ -76,6 +76,10 @@ header { display: flex; justify-content: flex-start; align-items: flex-start; fl
 
 .p_post_hide h3 { color: #f2e7c5; font-family: Raleway, sans-serif; text-align: center; padding-top: 1rem; text-shadow: 2px 2px rgba(0, 0, 0, 0.5); }
 
+.linktree { font-family: Raleway, sans-serif; font-size: 2.5em; margin: auto; text-align: center; position: relative; top: 30vh; }
+
+.linktree li { list-style-type: none; }
+
 header { font-family: "Bitter", serif; }
 
 body { background: #d5cdc2; font-size: 1em; }
@@ -99,6 +103,8 @@ h2 a { font-size: 2.5rem; }
 img { height: auto; }
 
 p { font-size: 1.1em; font-family: #2f2a24; text-align: left; }
+
+ul { font-size: 1em; }
 
 .contenu { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; position: relative; }
 

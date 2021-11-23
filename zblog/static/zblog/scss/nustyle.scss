@@ -21,6 +21,7 @@ $accentFont: Raleway, sans-serif;
 @import "./menu";
 @import "./mobile";
 @import "./portfolio";
+@import "./linktree";
 
 header {
   font-family: $primaryFont;
@@ -45,7 +46,6 @@ h1{
   span{
     position:relative;
     color: $logo;
-
   }
 
 }
@@ -69,7 +69,9 @@ p {
   font-family: $logo;
   text-align: left;
 }
-
+ul {
+  font-size: 1em;
+}
 
 .contenu {
   @include flexLeft(column, relative);

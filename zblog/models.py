@@ -7,6 +7,7 @@ from django.utils.html import mark_safe
 from taggit.managers import TaggableManager
 #import uuid
 import markdown
+
 from colorfield.fields import ColorField
 
 
@@ -35,6 +36,8 @@ class Post(models.Model):
     slug = models.SlugField(unique=True, max_length=100,blank=True, null = True)
     talkshit = models.TextField(blank=True, null = True)
     talkshit_md = models.TextField(blank=True, null = True)
+
+
     tags = TaggableManager(blank=True)
     title = models.CharField(max_length=100, unique=True)
     title_tag = models.CharField(max_length=100, blank=True, null = True)
@@ -80,7 +83,7 @@ class PortfolioCategory(models.Model):
 
 class SketchbookCategory(models.Model):
     category_name = models.CharField(max_length=100, unique=True)
-    cover = models.BooleanField(null=True, default = False)
+    cover_img = models.ImageField('Blog Image', null=True, blank=True, upload_to="img/sketchbookCover")
     #ok mais wtf!!!!
     class Meta:
         verbose_name = 'Sketchbook Category'
