@@ -22,7 +22,7 @@ class PImageInline(admin.TabularInline):
 
 class PostInline(admin.TabularInline):
     model = Post
-    exclude = ('title_tag','slug','talkshit','talkshit_md','tags')
+    exclude = ('title_tag','slug','tags')
     extra = 0
 
 class PostAdmin(admin.ModelAdmin):

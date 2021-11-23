@@ -5,7 +5,6 @@ from datetime import datetime, date
 from django.utils.text import slugify
 from django.utils.html import mark_safe
 from taggit.managers import TaggableManager
-#import uuid
 import markdown
 
 from colorfield.fields import ColorField
@@ -39,31 +38,14 @@ class PanoImage(models.Model):
 class Post(models.Model):
     post_date = models.DateField(auto_now_add=False,blank=True, null = True)
     slug = models.SlugField(unique=True, max_length=100,blank=True, null = True)
-#    talkshit = models.TextField(blank=True, null = True)
-#    talkshit_md = models.TextField(blank=True, null = True)
-
-
     tags = TaggableManager(blank=True)
     title = models.CharField(max_length=100, unique=True)
     title_tag = models.CharField(max_length=100, blank=True, null = True)
     portfolio_category = models.ForeignKey('PortfolioCategory', on_delete=models.SET_NULL, blank=True, null=True)
     sketchbook_category = models.ForeignKey('SketchbookCategory', on_delete=models.SET_NULL, blank=True, null=True)
 
-    def get_talkshit_as_markdown(self):
-        return mark_safe(markdown(self.talkshit, safe_mode='escape'))
-
     def save(self, *args, **kwargs):
-        # media_path = "/media/img/b/"
-        # pano_path = "/media/img/p/"
-        # self.slug = slugify(self.title)
-        # self.title_tag = self.title
-        # #convert markdown to HTML in .talkshit_md while keeping pure markdown text in .talkshit
-        # md = markdown.Markdown()
-        # text1 = self.talkshit
-        # text1 = text1.replace("<panorama>", "<div class='pano-image'></div>")
-        # text1 = text1.replace("](..", "]("+media_path)
-        # html1 = md.convert(text1)
-        # self.talkshit_md = html1
+
 
         if not self.post_date:
             self.post_date = datetime.now()
