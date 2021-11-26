@@ -9,6 +9,7 @@ Sebsepia!
 {%endblock%}
 
 {% block navbar %}
+
   {% include 'navbar.html' %}
 {% endblock %}
 
@@ -21,9 +22,11 @@ Sebsepia!
 {% if page_obj.has_next %}
 <a class="infinite-more-link" href="?page={{page_obj.next_page_number}}"></a>
 <div class="loader" role="status">
-  <h6>Loading</h6>
+  <h5>Loading...</h5>
 </div>
 {% endif %}
 </div>
+<div class="repit">
 
+</div>
 {% endblock %}

@@ -6,6 +6,7 @@ from django.db import models
 
 class BImageInline(admin.TabularInline):
     model = BlogImage
+    exclude = ('b_img_resize',)
     extra = 1
     formfield_overrides = {
         #models.CharField: {'widget': TextInput(attrs={'size':'20'})},

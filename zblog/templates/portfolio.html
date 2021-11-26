@@ -16,16 +16,19 @@ Portfolio
   {% include 'navbar.html' %}
       <div class="menusub">
         <div class="portfoliomenubtn">
-          <a  class="{% active_link 'portfolio' slug='all' %}"
+          <h3><a  class="{% active_link 'portfolio' slug='all' %}"
               href="{% url 'portfolio' slug='all' %}">All</a>
+          </h3>
         </div>
         {% for cat in allcategories %}
         <div class="portfoliomenubtn">
-          <a  class="{% active_link 'portfolio' slug=cat %}"
+          <h3><a  class="{% active_link 'portfolio' slug=cat %}"
               href="{% url 'portfolio' slug=cat %}">{{cat}}</a>
+          </h3>
         </div>
-      </div>
+
       {% endfor %}
+      </div>
 
 {% endblock %}
 
