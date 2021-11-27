@@ -107,8 +107,8 @@ class PortfolioCategory(models.Model):
         return self.category_name
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title)
-        super(Post, self).save(*args, **kwargs)
+        self.slug = slugify(self.category_name)
+        super(PortfolioCategory, self).save(*args, **kwargs)
 
 class SketchbookCategory(models.Model):
     category_name = models.CharField(max_length=100, unique=True)

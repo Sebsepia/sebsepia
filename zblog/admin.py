@@ -35,7 +35,7 @@ admin.site.register(Post, PostAdmin)
 class PortfolioCatAdmin(admin.ModelAdmin):
     list_display = ('category_name',)
     fields = [('category_name', )]
-    inlines = [PostInline]
+
 admin.site.register(PortfolioCategory, PortfolioCatAdmin)
 
 class SketchbookCatAdmin(admin.ModelAdmin):
