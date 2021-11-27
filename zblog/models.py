@@ -1,9 +1,11 @@
+from django.core.files.storage import FileSystemStorage
 from django.db import models
 from django.contrib.auth.models import User
 from django.urls import reverse
 from datetime import datetime, date
 from django.utils.text import slugify
 from django.utils.html import mark_safe
+import hashlib
 import os
 from io import BytesIO
 import markdown
@@ -24,13 +26,27 @@ def cropper(original_image, filename):
       img_content = ContentFile(img_io.getvalue(), filename)
       return img_content
 
+class MediaFileSystemStorage(FileSystemStorage):
+    def get_available_name(self, name, max_length=None):
+        if max_length and len(name) > max_length:
+            raise(Exception("name's length is greater than max_length"))
+        return name
+
+    def _save(self, name, content):
+        if self.exists(name):
+            # if the file exists, do not call the superclasses _save method
+            return name
+        # if the file is new, DO call it
+        return super(MediaFileSystemStorage, self)._save(name, content)
+
 class BlogImage(models.Model):
-    b_img = models.ImageField('Blog Image', null=True, blank=True, upload_to="img/b")
-    b_img_resize = models.ImageField('Blog Image', null=True, blank=True, upload_to="img/b/r")
+    b_img = models.ImageField('Blog Image', null=True, blank=True, upload_to="img/b", storage=MediaFileSystemStorage)
+    b_img_resize = models.ImageField('Blog Image', null=True, blank=True, upload_to="img/b/r", storage=MediaFileSystemStorage)
     b_img_alt = models.CharField(max_length=255, blank=True, null=True)
-    b_img_description = models.CharField(max_length=255, blank=True, null=True)
-    b_img_paragraph = models.TextField(blank=True, null=True)
-    postimg = models.ForeignKey('Post', on_delete=models.SET_NULL, null=True)
+    b_img_description = models.CharField(max_length=255, blank=True, null=False)
+    b_img_paragraph = models.TextField(blank=True, null=False)
+    postimg = models.ForeignKey('Post', on_delete=models.CASCADE, null=True)
+    md5sum = models.CharField(max_length=36,blank=True)
 
     def __str__(self):
         return self.b_img.name
@@ -39,7 +55,14 @@ class BlogImage(models.Model):
         filename = os.path.basename(self.b_img.name)
         self.b_img_resize = cropper(self.b_img, filename)
         self.b_img_date = datetime.now()
-        super(BlogImage, self).save()
+        if not self.pk:  # file is new
+            md5 = hashlib.md5()
+            for chunk in self.b_img.chunks():
+                md5.update(chunk)
+            self.md5sum = md5.hexdigest()
+        super(BlogImage, self).save(*args, **kwargs)
+
+        #super(BlogImage, self).save()
 
 class PanoImage(models.Model):
     p_img = models.ImageField("Panorama Image", null=True, blank=True, upload_to="img/p")

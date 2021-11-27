@@ -1,22 +1,37 @@
 {% load active_link_tags %}
   <div class="post infinite-item" id="{{post.slug}}">
         <div class="intime">
-          <h3><a class="{% active_link 'details' %}" href="{% url 'details' post.slug %}"
+          <h4><a class="{% active_link 'details' %}" href="{% url 'details' post.slug %}"
           style="color:{{post.text_color}};"
-          >{{post.title}}</a></h3>
+          >{{post.title}}</a></h4>
           <div class="date">{{post.post_date|date:'j | n | Y'}}</div>
           {% for blog_image in post.blogimage_set.all %}
-            <img src="{{ MEDIA_URL }}{{blog_image.b_img}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
-            <h6>{{blog_image.b_img_description}}</h6>
-            <p>{{blog_image.b_img_paragraph}}</p>
+            <img src="{{ MEDIA_URL }}{{blog_image.b_img_resize}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
+            {% if blog_image.b_img_description %}
+              <h5>yup {{blog_image.b_img_description}}</h5>
+            {% endif %}
+            {% if blog_image.b_img_paragraph %}
+              <p>{{blog_image.b_img_paragraph}}</p>
+            {% endif %}
           {% endfor %}
+
           {% for pano_image in post.panoimage_set.all %}
             <script type="text/javascript">
                 var currentPano{{pano_image.order}} = "{{ pano_image.p_img.url }}";
             </script>
-            <h6>{{pano_image.p_img_description}}</h6>
-            <p>{{pano_image.p_img_paragraph}}</p>
+            {% if pano_image.p_img_description %}
+              <h5>yup {{pano_image.p_img_description}}</h5>
+            {% endif %}
+            {% if pano_image.p_img_paragraph %}
+              <p>{{pano_image.p_img_paragraph}}</p>
+            {% endif %}
         {% endfor %}
+      <div class="tags">
+        <h6><b>Tags:</b></h6>
+        {% for tags in post.tags.all %}
+        <h6><a href="{% url 'tag' tags %}">{{tags}}</a></h6>
+        {% endfor %}
+      </div>
       </div>
     <div class="repit"></div>
 

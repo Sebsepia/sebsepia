@@ -5,7 +5,14 @@ $(document).ready(function () {
    $('header').toggleClass('switch');
   });
 
-  /*isolates title letters in separate spans*/
+
+  $('.sketchbook_cover').click(function(){
+    $(this).find('div').toggleClass('switch');
+    });
+  $(".sketchbook .sketchbook_page").click(function(e) {
+      e.stopPropagation();
+   });
+/*  isolates title letters in separate spans*/
    $("#titlecard").html(function(index, html) {
     return html.replace(/\S/g, '<span>$&</span>');
   });

@@ -9,6 +9,10 @@ a { background-color: transparent; }
 
 *, *::before, *::after { box-sizing: content-box; text-decoration: none; }
 
+.linktree { font-family: "Raleway", sans-serif; font-size: 2.5em; margin: auto; text-align: center; position: relative; top: 30vh; }
+
+.linktree li { list-style-type: none; }
+
 header { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: row; position: absolute; margin-top: 1em; margin-left: 3em; z-index: 10; }
 
 .menu { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; position: relative; }
@@ -77,9 +81,15 @@ header { display: flex; justify-content: flex-start; align-items: flex-start; fl
 
 .p_post_hide h3 { color: #f2e7c5; font-family: "Raleway", sans-serif; text-align: center; padding-top: 1rem; text-shadow: 2px 2px rgba(0, 0, 0, 0.5); }
 
-.linktree { font-family: "Raleway", sans-serif; font-size: 2.5em; margin: auto; text-align: center; position: relative; top: 30vh; }
+.sketchbook { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: column; position: relative; padding-top: 15rem; width: 79vw; }
 
-.linktree li { list-style-type: none; }
+.sketchbook_cover { display: inline-flex; flex-direction: row; position: relative; flex-wrap: no-wrap; align-content: flex-start; }
+
+.sketchbook_cover_img { display: inline-flex; transform-origin: left; margin-left: 20vw; }
+
+.sketchbook_page { display: flex; }
+
+.sketchbook_page img { height: 30em; }
 
 header { font-family: "Bitter", serif; }
 
@@ -136,3 +146,5 @@ ul { font-size: 1em; }
 .post { display: flex; justify-content: flex-start; align-items: flex-start; flex-direction: Column; position: relative; }
 
 .repit { margin: 4em; }
+
+.switch { display: none; }

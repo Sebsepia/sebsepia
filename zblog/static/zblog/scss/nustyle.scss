@@ -16,13 +16,15 @@ $outlandish: #5b456f;
 $primaryFont: 'Bitter', serif;
 $accentFont: 'Raleway', sans-serif;
 
+$spacingLeft: 20vw;
 
 @import "./mixin";
 @import "./normalize";
+@import "./linktree";
 @import "./menu";
 @import "./mobile";
 @import "./portfolio";
-@import "./linktree";
+@import "./sketchbook";
 
 header {
   font-family: $primaryFont;
@@ -72,13 +74,10 @@ h3 {
 h4 {
 
 }
-
 h5 {
 
 }
-
 h6 {
-
 }
 img {
   height:auto;
@@ -96,7 +95,7 @@ ul {
 
 .contenu{
   @include flexLeft(column, relative);
-  padding-left:20vw;
+  padding-left:$spacingLeft;
   padding-top: 15rem;
   padding-right: 2.5rem;
   padding-bottom: 1em;
@@ -142,4 +141,8 @@ ul {
 }
 .repit {
   margin:4em;
+}
+
+.switch {
+  display: none;
 }

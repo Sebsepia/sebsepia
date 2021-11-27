@@ -1,0 +1,24 @@
+.sketchbook {
+@include flexLeft(column, relative)
+padding-top: 15rem;
+width: 79vw;
+}
+
+.sketchbook_cover {
+display: inline-flex;
+flex-direction: row;
+position: relative;
+align-items: center;
+}
+
+.sketchbook_cover_img {
+  display: inline-flex;
+  transform-origin: left;
+  margin-left: $spacingLeft;
+}
+.sketchbook_page {
+  display:flex;
+  img {
+    height: 30em;
+  }
+}

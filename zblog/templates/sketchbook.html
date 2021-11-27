@@ -18,12 +18,17 @@ Sketchbooks
 {% block main %}
   <div class="sketchbook">
     {% for book in sketchbooks %}
-      <img class="sketchbookcover" src="{{MEDIA_URL}}{{book.cover_img}}" alt="{{book.category_name}}">
+    <div class="sketchbook_cover">
+
+      <img class="sketchbook_cover_img" src="{{MEDIA_URL}}{{book.cover_img}}" alt="{{book.category_name}}">
       {% for post in book.post_set.all %}
         {% for blog_image in post.blogimage_set.all %}
-          <img src="{{ MEDIA_URL }}{{blog_image.b_img}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
+        <div class="sketchbook_page switch">
+          <img src="{{ MEDIA_URL }}{{blog_image.b_img_resize}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
+        </div>
         {% endfor %}
       {% endfor %}
+    </div>
     {% endfor %}
   </div>
 

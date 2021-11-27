@@ -43,3 +43,8 @@ class SketchbookCatAdmin(admin.ModelAdmin):
     fields = [('category_name', 'cover_img' )]
     inlines = [PostInline]
 admin.site.register(SketchbookCategory, SketchbookCatAdmin)
+
+class BlogImageAdmin(admin.ModelAdmin):
+    list_display = ('b_img', 'b_img_resize')
+    fields = [('b_img', 'b_img_resize')]
+admin.site.register(BlogImage, BlogImageAdmin)
