@@ -48,6 +48,7 @@ def tagged(request, slug):
     }
     return render(request, 'tag.html', context)
 
+
 def portfolio(request, slug):
     model = PortfolioCategory
     allcategories = PortfolioCategory.objects.all().order_by('category_name')

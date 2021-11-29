@@ -18,11 +18,27 @@ align-items: center;
 }
 .sketchbook_page {
   display:flex;
+  margin-right: 2em;
   img {
     height: 30em;
   }
 }
 
 .fullscreen {
-  background-color: rgba(21, 22, 26, 0): 
+
+  position: fixed;
+  display: none; /*mettre a block dans CS*/
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(21, 22, 26, 0.3);
+
+  img {
+    position:fixed;
+    display: block;
+    align-content: center;
+  }
 }

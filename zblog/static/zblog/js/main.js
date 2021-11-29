@@ -12,16 +12,16 @@ $(document).ready(function () {
   $(".sketchbook .sketchbook_page").click(function(e) {
       e.stopPropagation();
    });
-/*  isolates title letters in separate spans*/
+/*  isolates title letters in separate spans
    $("#titlecard").html(function(index, html) {
     return html.replace(/\S/g, '<span>$&</span>');
   });
-  /*gives each span an ID*/
+  /*gives each span an ID
   titleLetters = $('header span')
   titleLetters.each(function(n) {
     $(this).attr("id", "title" +n);
   });
-
+*/
   var infinite = new Waypoint.Infinite({
       element: $('.contenu'),
       handler:function(direction){

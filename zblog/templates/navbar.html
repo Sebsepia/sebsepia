@@ -1,7 +1,14 @@
 {% load active_link_tags %}
 
     <div class="menutop">
-      <h2><a class="{% active_link 'portfolio' slug='all' %}" href="{% url 'portfolio' slug='all' %}">portfolio</a></h2>
+      <h2><a class="{% if request.resolver_match.kwargs.slug == 'all' %}
+          {% active_link 'portfolio' slug='all' %}
+        {% else %}
+        {% for cat in allcategories %}
+          {% active_link 'portfolio' slug=cat %}
+          {% endfor %}
+        {% endif %}"
+        href="{% url 'portfolio' slug='all' %}">portfolio</a></h2>
       <h2><a class="{% active_link 'sketchbook' %}" href="{% url 'sketchbook' %}">sketchbook</a></h2>
       <h2><a class="{% active_link 'info' %}" href="{% url 'info' %}">info</a></h2>
 

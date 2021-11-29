@@ -12,6 +12,13 @@
   height: $height;
 }
 
+@mixin Font($size, $margin) {
+  font-size: $size;
+  margin-top:$margin;
+  margin-bottom:$margin;
+}
+
+
 @mixin contentSize() {
   width: clamp(16px, 93vw, 100%);
   max-height: 90vh;

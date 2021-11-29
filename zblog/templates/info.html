@@ -12,10 +12,12 @@
   {% block navbar %}
     {% include 'navbar.html' %}
   {% endblock %}
-  
+
 {% block main %}
 
-
+<div class="links">
+  {% include 'MyLinks.html' %}
+</div>
 
 <!--  <div id="info-list">
     <p></p>
@@ -35,17 +37,15 @@
   </div>-->
 
     <div class="contenu info">
-      <a href="https://www.artstation.com/sebastienbegin" class="menusvg"><img src="{% static 'zblog/svg/artstation.svg' %}" alt=""></a>
+    <!--  <a href="https://www.artstation.com/sebastienbegin" class="menusvg"><img src="{% static 'zblog/svg/artstation.svg' %}" alt=""></a>
       <a href="https://www.instagram.com/sebsepia/"class="menusvg"><img src="{% static 'zblog/svg/insta.svg' %}" alt=""></a>
-    <div class="description">
+-->    <div class="description">
       <h3>About me</h3>
         <p>
-          Hi there! I'm <b>Seb</b>, a visual artist working in video games, illustration and design.
-          I am interested in nerdy stuff such as indie comics, bikepacking and
-          open source software.
           <br>
-          <br>
-          Contact me for commissions and work opportunities at <a href="contact@sebsepia.org">contact@sebsepia.org</a>
+          Hi there! I'm <b>Seb</b>, a visual artist currently working as a 2D Matte Painter at MPC. <br>
+          I also like Illustration and comics and bikes and capybaras and raccoons and <br>
+          contact me for commissions and work opportunities at <a href="contact@sebsepia.org">contact@sebsepia.org</a>
           <br>
           <br>
           <br>
@@ -55,8 +55,8 @@
         </div>
         <div class="deets">
             I made this website using <a id="django" href="https://www.djangoproject.com/">Django</a> and a <i>lot</i> of trial and error.<br>
-            It's still a work in progress!<br><br>
-            This website and its contents are licensed under a<br>
+            Lemme know if you have feedback!
+            <br>
             <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 Canada License</a><br>
             unless stated otherwise.<br><br>
             <!--<a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">

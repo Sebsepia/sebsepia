@@ -7,9 +7,9 @@
 
 $logo: #2f2a24;
 $darkAccent: #0f0e0e;
-$midGray: #8f8c88;
+$midGray: #63625f;
 $bgColor: #d5cdc2;
-$lightAccent: #f2e7c5;
+$lightAccent: #fff7de;
 $outlandish: #5b456f;
 
 
@@ -26,9 +26,15 @@ $spacingLeft: 20vw;
 @import "./portfolio";
 @import "./sketchbook";
 
+
 header {
-  font-family: $primaryFont;
-}
+    @include flexLeft(row, absolute);
+    margin-top: 1em;
+    margin-left: 3rem;
+    z-index: 10;
+    font-family: $primaryFont;
+  }
+
 
 body {
   background: $bgColor;
@@ -39,14 +45,14 @@ a {
   color: $logo;
   text-decoration: none;
   &:hover { color:$darkAccent;}
-  &:active { color:$lightAccent;}
-}  a.active {color: white;}
+  &:active { color:$outlandish;}
+}  a.active {color: $lightAccent;}
 
 
 h1{
   color: $logo;
-  font-size: .8em;
-  letter-spacing: 0.2em;
+  font-size: 2em;
+  letter-spacing: 0.1em;
   margin-top: 1.5em;
   &:hover { color:$darkAccent;}
   &:active { color:$lightAccent;}
@@ -57,7 +63,7 @@ h1{
 }
 h2 {
   font-family: $accentFont;
-  font-size: 2em;
+  font-size: 1.65em;
   font-weight: 400;
   padding-right: 2.15rem;
   text-decoration: none;
@@ -69,42 +75,53 @@ h2 {
 h3 {
   margin-top:0.5em;
   font-family: $accentFont;
-  font-size: 1.5em;
+  font-size: 1.15em;
 }
 h4 {
-
+  font-family: $primaryFont;
+  @include Font(1.3em, 0.25em)
 }
 h5 {
-
+  font-family: $accentFont;
+  @include Font(0.75em, 0.25em);
+  font-weight: 700;
 }
 h6 {
+  font-family: $primaryFont;
+  font-size: 0.8em;
 }
 img {
   height:auto;
 }
 
 p {
-  font-size: 1.1em;
-  font-family: $logo;
+  @include Font(1.1em, 1em)
+  font-family: $primaryFont;
   text-align: left;
 }
 ul {
   font-size: 1em;
+  padding-left:1rem ;
 }
-
+li{
+    font-family: $accentFont;
+    list-style-type: none;
+}
 
 .contenu{
   @include flexLeft(column, relative);
   padding-left:$spacingLeft;
-  padding-top: 15rem;
+  padding-top: 14rem;
   padding-right: 2.5rem;
   padding-bottom: 1em;
+  flex-wrap: wrap;
 }
 .date {
   font-family: $accentFont;
   color: $midGray;
-  font-size: 0.75em;
+  @include Font(0.8em, 0.1em);
   font-weight: 300;
+  margin-left: 0.5em;
 }
 .infinite-more-link {
   height: 1em;
@@ -114,21 +131,45 @@ ul {
   @include flexLeft(column, relative);
   img{
     @include contentSize();
-
     object-fit:contain;
     object-position: 0 0;
-    margin-bottom:0;
-  }
-    p {
-    width: 50vw;
-    margin-top:1em;
-    color: $outlandish;
-    text-decoration: underline;
-
-    }a:hover{color: $darkAccent;
+    margin-bottom:.5em;
+    margin-top:.5em;
+  }@include Font(1em, 0.5em)
+  a:hover{color: $darkAccent;
     }a:visited {color: $midGray;
 
   }
+}
+.links {
+  position: fixed;
+  display: inline-block;
+  margin-top: 10em;
+  margin-left: 3rem;
+  text-decoration: none;
+  z-index: 1;
+  li {
+      @include Font(1.25em, 1.5em);
+  }
+}
+
+.linktree {
+  @include Font(2.5em, 2em);
+  margin:auto;
+  text-align:center;
+  position:relative;
+  top:30vh;
+      a {
+        text-decoration: underline;
+      }
+
+}
+.portfolio {
+  width: 79vw;
+  margin-right: 1em;
+  column-count: 3;
+  column-gap: 1em;
+  transform: translate(-1em,8em);
 }
 .pano-image {
   @include contentSize();
@@ -142,7 +183,12 @@ ul {
 .repit {
   margin:4em;
 }
-
+.tags {
+  @include flexLeft(Row, relative);
+  h6 {
+      margin-left: 1em;
+  }
+}
 .switch {
   display: none;
 }
