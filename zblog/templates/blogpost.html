@@ -8,10 +8,10 @@
           {% for blog_image in post.blogimage_set.all %}
             <img src="{{ MEDIA_URL }}{{blog_image.b_img_resize}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
             {% if blog_image.b_img_description %}
-              <h5>yup {{blog_image.b_img_description}}</h5>
+              <h5>{{blog_image.b_img_description | safe}}</h5>
             {% endif %}
             {% if blog_image.b_img_paragraph %}
-              <p>{{blog_image.b_img_paragraph}}</p>
+              <p>{{blog_image.b_img_paragraph | safe}}</p>
             {% endif %}
           {% endfor %}
 
@@ -20,10 +20,10 @@
                 var currentPano{{pano_image.order}} = "{{ pano_image.p_img.url }}";
             </script>
             {% if pano_image.p_img_description %}
-              <h5>yup {{pano_image.p_img_description}}</h5>
+              <h5>{{pano_image.p_img_description | safe}}</h5>
             {% endif %}
             {% if pano_image.p_img_paragraph %}
-              <p>{{pano_image.p_img_paragraph}}</p>
+              <p>{{pano_image.p_img_paragraph | safe}}</p>
             {% endif %}
         {% endfor %}
       <div class="tags">
