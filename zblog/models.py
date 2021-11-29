@@ -22,7 +22,7 @@ def cropper(original_image, filename):
 
       resized_img.thumbnail((1700, 1000))
 
-      resized_img.save(img_io, format='JPEG', quality=88)
+      resized_img.save(img_io, format='JPEG', quality=80)
       img_content = ContentFile(img_io.getvalue(), filename)
       return img_content
 
