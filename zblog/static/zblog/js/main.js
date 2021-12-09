@@ -2,7 +2,7 @@ $(document).ready(function () {
 
   $('#menubtn').click(function()  {
    $('.menu').toggleClass('switch');
-   $('header').toggleClass('switch');
+   $('.contenu').toggleClass('switch');
   });
 
 

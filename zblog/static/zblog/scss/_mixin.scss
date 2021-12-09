@@ -1,7 +1,6 @@
 @mixin flexLeft($direction, $position) {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+
   flex-direction: $direction;
   position: $position;
 }
@@ -18,8 +17,9 @@
   margin-bottom:$margin;
 }
 
-
-@mixin contentSize() {
-  width: clamp(16px, 93vw, 100%);
-  max-height: 90vh;
+@mixin contenuSize($x: 79vw, $paddL:20vw, $paddR:2.5rem, $paddT:14rem, $paddB:1rem) {
+padding-top: $paddT;
+padding-right: $paddR;
+padding-left: $paddL;
+padding-bottom: $paddB;
 }
