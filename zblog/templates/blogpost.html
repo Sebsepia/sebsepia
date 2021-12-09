@@ -15,17 +15,32 @@
             {% endif %}
           {% endfor %}
 
-          {% for pano_image in post.panoimage_set.all %}
-            <script type="text/javascript">
-                var currentPano{{pano_image.order}} = "{{ pano_image.p_img.url }}";
-            </script>
-            {% if pano_image.p_img_description %}
-              <h5>{{pano_image.p_img_description | safe}}</h5>
-            {% endif %}
-            {% if pano_image.p_img_paragraph %}
-              <p>{{pano_image.p_img_paragraph | safe}}</p>
-            {% endif %}
-        {% endfor %}
+          {%if post.panoimage_set.all %}
+
+            {% for pano_image in post.panoimage_set.all %}
+              <div class="pano-container" id="{{post.slug}}{{pano_image.order}}">
+              <script type="text/javascript">
+                $(document).ready(function () {
+                container = document.querySelector('#{{post.slug}}{{pano_image.order}}');
+                var panorama, viewer, container, thispano, pano;
+
+                created_pano = new PANOLENS.ImagePanorama('{{ pano_image.p_img.url }}');
+                viewer = new PANOLENS.Viewer({container:container});
+                viewer.add( created_pano );
+
+              });
+              </script>
+              </div>
+              {% if pano_image.p_img_description %}
+                <h5>{{pano_image.p_img_description | safe}}</h5>
+              {% endif %}
+              {% if pano_image.p_img_paragraph %}
+                <p>{{pano_image.p_img_paragraph | safe}}</p>
+              {% endif %}
+          {% endfor %}
+
+        {% endif %}
+
       <div class="tags">
         <h6><b>Tags:</b></h6>
         {% for tags in post.tags.all %}
@@ -33,6 +48,5 @@
         {% endfor %}
       </div>
       </div>
-    <div class="repit"></div>
 
   </div>

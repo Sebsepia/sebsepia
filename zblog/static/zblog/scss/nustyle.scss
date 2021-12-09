@@ -98,6 +98,8 @@ p {
   @include Font(1.1em, 1em)
   font-family: $primaryFont;
   text-align: left;
+  margin-top:1.5em;
+  max-width:33vw;
 }
 ul {
   font-size: 1em;
@@ -134,7 +136,7 @@ li{
     object-fit:contain;
     object-position: 0 0;
     margin-bottom:.5em;
-    margin-top:.5em;
+    margin-top:2em;
   }@include Font(1em, 0.5em)
   a:hover{color: $darkAccent;
     }a:visited {color: $midGray;
@@ -169,13 +171,14 @@ li{
   margin-right: 1em;
   column-count: 3;
   column-gap: 1em;
-  transform: translate(-1em,8em);
 }
-.pano-image {
-  @include contentSize();
-  /*height:clamp(128px, 70vh, 98vh);*/
+.pano-container {
+height:63em;
+max-height: 90vh;
+width:81em;
+max-width:78vw;
   position: relative;
-  margin-top: 1em;
+  margin-top: 2em;
 }
 .post {
   @include flexLeft(Column, relative);
@@ -189,6 +192,18 @@ li{
       margin-left: 1em;
   }
 }
-.switch {
-  display: none;
+
+@media (max-width:100vh) {
+  body {
+
+  }
+  .contenu {
+    padding-left:0;
+  }
+  .pano-container {
+    max-width: 95vw;
+  }
+  .portfolio {width:95vw;
+  transform: translate(1em,8em);}
+
 }
