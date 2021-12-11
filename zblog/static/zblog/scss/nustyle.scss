@@ -30,7 +30,6 @@ $spacingLeft: 20vw;
 header {
     @include flexLeft(row, relative);
     margin-top: 1em;
-    padding-left: 3rem;
     z-index: 10;
     font-family: $primaryFont;
   }
@@ -197,7 +196,7 @@ max-width:78vw;
 
   }
   .contenu {
-    @include contenuSize($paddL:2.5rem, $paddR:2.5rem, $paddT:0);
+    @include contenuSize($paddL:0.75rem, $paddR:1rem, $paddT:0);
   }.contenu.switch {
     padding-top:45rem;
   }

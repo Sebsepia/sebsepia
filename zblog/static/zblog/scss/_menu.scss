@@ -33,6 +33,9 @@
   }
 }
 
+.menutitle {
+  padding-left: 3em;
+}
 #hamburgericon{
 height:0;
   }
@@ -63,6 +66,9 @@ height:0;
       line-height: 1;
       padding-right:2.25em;
       margin:0.5em;
+    }
+    .menusub{
+      flex-direction: column;
     }
     .menutop {
       align-items: flex-end;
