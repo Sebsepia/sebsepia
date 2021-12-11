@@ -195,6 +195,9 @@ max-width:78vw;
   body {
 
   }
+  p {
+    max-width: 82vw;
+  }
   .contenu {
     @include contenuSize($paddL:0.75rem, $paddR:1rem, $paddT:0);
   }.contenu.switch {
