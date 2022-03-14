@@ -39,13 +39,15 @@
               {% endif %}
           {% endfor %}
 
-        {% endif %}
+          {% endif %}
 
       <div class="tags">
+
         <h6><b>Tags:</b></h6>
         {% for tags in post.tags.all %}
         <h6><a href="{% url 'tag' tags %}">{{tags}}</a></h6>
         {% endfor %}
+
       </div>
       </div>
 

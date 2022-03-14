@@ -1,64 +1,56 @@
-
-
 @import url(https://fonts.googleapis.com/css?family=Bitter:200,300,400,500,700,800,900);
 @import url(https://fonts.googleapis.com/css?family=Raleway);
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
+/*Colors*/
+  $logo: #2f2a24;
+  $darkAccent: #0f0e0e;
+  $midGray: #63625f;
+  $bgColor: #d5cdc2;
+  $lightAccent: #fff7de;
+  $outlandish: #5b456f;
+  $darkOverlay: rgba(0, 0, 0, 0.3);
 
-$logo: #2f2a24;
-$darkAccent: #0f0e0e;
-$midGray: #63625f;
-$bgColor: #d5cdc2;
-$lightAccent: #fff7de;
-$outlandish: #5b456f;
+/*Fonts*/
+  $primaryFont: 'Bitter', serif;
+  $accentFont: 'Raleway', sans-serif;
 
-
-$primaryFont: 'Bitter', serif;
-$accentFont: 'Raleway', sans-serif;
-
-$spacingLeft: 20vw;
+/*Base spacing*/
+  $spacingLeft: 20vw;
+  $contentSize: 80vh;
 
 @import "./mixin";
-@import "./normalize";
-@import "./linktree";
-@import "./menu";
-@import "./mobile";
-@import "./portfolio";
-@import "./sketchbook";
-
+  @import "./normalize";
+  @import "./linktree";
+  @import "./menu";
+  @import "./mobile";
+  @import "./portfolio";
+  @import "./sketchbook";
 
 header {
-    @include flexLeft(row, relative);
-    margin-top: 1em;
-    z-index: 10;
-    font-family: $primaryFont;
+  @include flexLeft(row);
+  margin: 2em 0;
+  z-index: 10;
   }
-
-
 body {
   background: $bgColor;
   font-size: 1em;
 }
-
 a {
   color: $logo;
   text-decoration: none;
   &:hover { color:$darkAccent;}
   &:active { color:$outlandish;}
 }  a.active {color: $lightAccent;}
-
-
 h1{
-  color: $logo;
+  font-family: $primaryFont;
   font-size: 2em;
   letter-spacing: 0.1em;
+  color: $logo;
   margin-top: 1.5em;
   &:hover { color:$darkAccent;}
   &:active { color:$lightAccent;}
   a.active {color: inherit;}
-  span{
-    position:relative;
-  }
 }
 h2 {
   font-family: $accentFont;
@@ -67,9 +59,7 @@ h2 {
   padding-right: 2.15rem;
   text-decoration: none;
   text-decoration-style: solid;
-  .active {
-    text-decoration: underline;
-  }
+  .active {text-decoration: underline;}
 }
 h3 {
   margin-top:0.5em;
@@ -78,12 +68,14 @@ h3 {
 }
 h4 {
   font-family: $primaryFont;
-  @include Font(1.3em, 0.25em)
+  font-size:1.3em;
+  margin: 0.25em 0;
 }
 h5 {
   font-family: $accentFont;
-  @include Font(0.75em, 0.25em);
+  font-size:0.75em;
   font-weight: 700;
+  margin: 0.25em 0;
 }
 h6 {
   font-family: $primaryFont;
@@ -92,12 +84,11 @@ h6 {
 img {
   height:auto;
 }
-
 p {
-  @include Font(1.1em, 1em)
+  font-size:1.1em;
+  margin: 1.25em 0;
   font-family: $primaryFont;
   text-align: left;
-  margin-top:1.5em;
   max-width:33vw;
 }
 ul {
@@ -108,37 +99,31 @@ li{
     font-family: $accentFont;
     list-style-type: none;
 }
-
 .contenu{
-  @include flexLeft(column, relative);
-  @include contenuSize();
-
+  @include flexLeft();
+  padding : 7em 2.5rem 1rem 20vw;
 }
 .date {
   font-family: $accentFont;
   color: $midGray;
-  @include Font(0.8em, 0.1em);
+  font-size:0.8em;
+  margin: 0.1em 0;
   font-weight: 300;
-  margin-left: 0.5em;
 }
-.infinite-more-link {
-  height: 1em;
-}
+.infinite-more-link {height: 0.1em;}
 .intime {
+  @include flexLeft();
   font-size: 1.25em;
-  @include flexLeft(column, relative);
+  margin: 0.5em 0;
   img{
     width: clamp(16px, 93vw, 100%);
-    max-height: 90vh;
+    max-height: $contentSize;
     object-fit:contain;
     object-position: 0 0;
-    margin-bottom:.5em;
-    margin-top:2em;
-  }@include Font(1em, 0.5em)
-  a:hover{color: $darkAccent;
-    }a:visited {color: $midGray;
-
-  }
+    margin-top:1.5em;
+    margin-bottom:0;
+  }a:hover{color: $darkAccent;}
+  a:visited {color: $midGray;}
 }
 .links {
   position: fixed;
@@ -148,21 +133,56 @@ li{
   text-decoration: none;
   z-index: 1;
   li {
-      @include Font(1.25em, 1.5em);
+      font-size: 1.25em;
+      margin: 1.5em 0;
   }
 }
-
 .linktree {
-  @include Font(2.5em, 2em);
-  margin:auto;
+  font-size: 2.5em;
+  margin: 2em auto;
   text-align:center;
   position:relative;
   top:30vh;
-      a {
-        text-decoration: underline;
-      }
-
+  a{text-decoration: underline;}
 }
+.menutitle {
+  padding-left: 3em;
+  }
+  .menu {@include flexLeft();}
+  .menutop {
+    @include flexLeft(row);
+    padding-top:2em;
+    padding-left: 5em;
+  }
+  .menusub {
+    @include flexLeft(row);
+    padding-left:5em;
+    .portfoliomenubtn {padding-left: 2em;}
+  }
+  .menusvg{
+    width:0.8em;
+    height:0.8em;
+    line-height: 1;
+    padding-right:2.25em;
+    margin:0.5em;
+  }
+  #menutoggle{
+    display: none;
+    position: absolute;
+    width: 12vw;
+    right:7vw;
+    top:3.5em;
+    padding:0;
+    background-color: transparent;
+    border:none
+    }
+  #hamburgericon {
+    fill: $darkAccent;
+    height:3em;
+    &:hover{
+      fill: $outlandish;
+      cursor:pointer;}
+  }
 .portfolio {
   width: 79vw;
   margin-right: 1em;
@@ -170,43 +190,59 @@ li{
   column-gap: 1em;
 }
 .pano-container {
-@include fitDiv(81em, 63em)
-
-max-height: 90vh;
-
-max-width:78vw;
+  @include fitDiv(81em, 63em)
+  max-height: $contentSize;
+  max-width:78vw;
   position: relative;
-  margin-top: 2em;
+  margin-top: 1.5em;
 }
 .post {
-  @include flexLeft(Column, relative);
+  margin: 2em 0;
 }
-.repit {
-  margin:4em;
+.repit {margin:4em;}
+.sketchbook_cover {
+  display: inline-flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  }
+
+  .sketchbook_cover_img {
+    display: inline-flex;
+  }
+  .sketchbook_page {
+    margin-right: 2em;
+    display: none;
+  img {
+    height: 30em;
+  }
 }
+.switch {display: flex !important;}
 .tags {
-  @include flexLeft(Row, relative);
-  h6 {
-      margin-left: 1em;
-  }
-}
-
+  @include flexLeft(row);
+  flex-wrap: wrap;
+}.tags h6:not(:first-child){margin-left: 0.75em;}
 @media (max-width:100vh) {
-  body {
-
-  }
+  body {}
   p {
-    max-width: 82vw;
+    max-width: 80vw;
   }
   .contenu {
-    @include contenuSize($paddL:0.75rem, $paddR:1rem, $paddT:0);
-  }.contenu.switch {
-    padding-top:45rem;
+    padding:0 0.75rem;
   }
+  .menu {
+    display:none;
+  }.switch {display: flex;}
+  .menutop {
+    @include flexLeft();
+    align-items: flex-end;
+    margin-top: 5em;
+  }
+  #menutoggle {display: flex;}
   .pano-container {
-    width: 95vw;
-  }
-  .portfolio {width:95vw;
-  transform: translate(1em,8em);}
-
+    max-width: 95vw;
+    max-height:75vh;}
+  .portfolio {
+    width:95vw;
+    transform: translate(1em,8em);}
 }

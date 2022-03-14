@@ -1,6 +1,5 @@
-@mixin flexLeft($direction, $position) {
+@mixin flexLeft($direction: column, $position: relative) {
   display: flex;
-
   flex-direction: $direction;
   position: $position;
 }
@@ -9,17 +8,4 @@
   object-fit: contain;
   width: $width;
   height: $height;
-}
-
-@mixin Font($size, $margin) {
-  font-size: $size;
-  margin-top:$margin;
-  margin-bottom:$margin;
-}
-
-@mixin contenuSize($x: 79vw, $paddL:20vw, $paddR:2.5rem, $paddT:14rem, $paddB:1rem) {
-padding-top: $paddT;
-padding-right: $paddR;
-padding-left: $paddL;
-padding-bottom: $paddB;
 }

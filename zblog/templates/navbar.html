@@ -1,6 +1,7 @@
 {% load active_link_tags %}
 
     <div class="menutop">
+      {# make sure the porfolio is still shown as the active link regardless of what portfolio category is chosen #}
       <h2><a class="{% if request.resolver_match.kwargs.slug == 'all' %}
           {% active_link 'portfolio' slug='all' %}
         {% else %}

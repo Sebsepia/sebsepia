@@ -1,44 +1,13 @@
 
+/*
 
-.menu {
-  @include flexLeft(column, relative);
-}
 
-.menutop {
-  @include flexLeft(row, relative);
-  padding-top:2em;
-  padding-left: 5em;
 
-}
-.menusub {
-  @include flexLeft(row, relative);
-  padding-left:5em;
-  .portfoliomenubtn {
-    padding-left: 2em;
 
-  }
-}
 
-.menusvg {
-  @include flexLeft(row, relative);
-  align-self:flex-end;
-  height: 2rem;
-  img {
-    @include fitDiv(3.5rem, 2.25rem);
-    margin-top: -.5rem;
-    padding-left: 1rem;
-  }
-  .menutitle {
-  background-color: $outlandish;
-  }
-}
 
-.menutitle {
-  padding-left: 3em;
-}
-#hamburgericon{
-height:0;
-  }
+
+
 #menubtn{
     visibility: hidden;
     height:0;
@@ -60,13 +29,7 @@ height:0;
       }.menu.switch{
       visibility: visible;
       }
-    .menusvg{
-      width:0.8em;
-      height:0.8em;
-      line-height: 1;
-      padding-right:2.25em;
-      margin:0.5em;
-    }
+
     .menusub{
       flex-direction: column;
     }
@@ -110,3 +73,4 @@ height:0;
 
 
 }
+*/

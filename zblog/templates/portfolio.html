@@ -38,6 +38,9 @@ Portfolio
 {% load static %}
 {% get_media_prefix as MEDIA_URL %}
 
+<div id="p_overlay">
+
+</div>
  <div class="contenu">
 
    <div class="portfolio">
@@ -45,26 +48,29 @@ Portfolio
     {# checks the slug to see if the portfolio will show all categories, or instead a specific category #}
     {% if request.resolver_match.kwargs.slug == 'all' %}
 
+      {# specific category #}
       {% for category in allcategories %}
         {% for post in category.post_set.all %}
           <div class="portfoliopost">
+            {# take the first image of each post #}
             {% for image in post.blogimage_set.all %}
-            {% if forloop.counter == 1 %}
-            <img src="{{ MEDIA_URL }}{{image.b_img}}" alt="">
-           {% endif %}
+              {% if forloop.counter == 1 %}
+              <img src="{{ MEDIA_URL }}{{image.b_img}}" alt="">
+             {% endif %}
            {% endfor %}
-           <a href="{% url 'details' post.slug %}">
-             <div class="p_post_hide">
+            <a href="{% url 'details' post.slug %}">
+              <div class="p_post_hide">
                <h3>{{post.title}}</h3>
               <div class="portfoliopost_bg"></div>
             </a>
+
           </div>
           </div>
         {% endfor %}
       {% endfor %}
 
     {% else %}
-
+      {# all categories #}
       {% for category in categories %}
         {% for post in category.post_set.all %}
           <div class="portfoliopost">
@@ -78,7 +84,8 @@ Portfolio
                <h3>{{post.title}}</h3>
               <div class="portfoliopost_bg"></div>
             </a>
-          </div>
+            </div>
+
           </div>
         {% endfor %}
       {% endfor %}

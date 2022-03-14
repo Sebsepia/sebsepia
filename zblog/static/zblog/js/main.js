@@ -1,8 +1,13 @@
 $(document).ready(function () {
 
-  $('#menubtn').click(function()  {
+  $('#menutoggle').click(function()  {
    $('.menu').toggleClass('switch');
-   $('.contenu').toggleClass('switch');
+/*   $('.contenu').toggleClass('switch');*/
+  });
+
+  $('#p_overlay').click(function()  {
+   $('#p_overlay').toggleClass('switch');
+/*   $('.contenu').toggleClass('switch');*/
   });
 
 
