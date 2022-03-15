@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, RedirectView
 from .models import Post, PortfolioCategory, SketchbookCategory
+from django.core.paginator import Paginator
 from django.utils.text import slugify
 from datetime import datetime, date
 
@@ -54,10 +55,13 @@ def portfolio(request, slug):
     allcategories = PortfolioCategory.objects.all().order_by('category_name')
     categories = PortfolioCategory.objects.filter(category_name__in=[slug]).order_by('-id')
     posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
+    p = Paginator(posts, 1)
+    page = request.GET.get('page')
+    currentPost = p.get_page(page)
     context = {
     'allcategories': allcategories,
     'categories': categories,
-
+    'currentPost': currentPost,
     }
     return render(request, 'portfolio.html', context)
 
