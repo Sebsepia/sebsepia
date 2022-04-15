@@ -49,19 +49,21 @@ def tagged(request, slug):
     }
     return render(request, 'tag.html', context)
 
-
 def portfolio(request, slug):
     model = PortfolioCategory
-    allcategories = PortfolioCategory.objects.all().order_by('category_name')
-    categories = PortfolioCategory.objects.filter(category_name__in=[slug]).order_by('-id')
-    posts = Post.objects.exclude(tags__name="nsfw").order_by('-post_date', '-id')
+    menu_categories = PortfolioCategory.objects.all().order_by('category_name')
+
+    if slug == 'all':
+        posts = PortfolioCategory.objects.all().order_by('category_name')
+    else :
+        posts = PortfolioCategory.objects.filter(category_name__in=[slug]).order_by('-id')
     p = Paginator(posts, 1)
     page = request.GET.get('page')
-    currentPost = p.get_page(page)
+    portfolio_posts = p.get_page(page)
     context = {
-    'allcategories': allcategories,
-    'categories': categories,
-    'currentPost': currentPost,
+    'posts':posts,
+    'portfolio_posts': portfolio_posts,
+    'menu_categories':menu_categories,
     }
     return render(request, 'portfolio.html', context)
 

@@ -151,6 +151,10 @@ li { font-family: "Raleway", sans-serif; list-style-type: none; }
 
 .date { font-family: "Raleway", sans-serif; color: #63625f; font-size: 0.8em; margin: 0.1em 0; font-weight: 300; }
 
+.fullsizeBtn { font-size: .75em; position: absolute; left: -1.5em; top: 2em; }
+
+.imgBox { position: relative; }
+
 .infinite-more-link { height: 0.1em; }
 
 .intime { display: flex; flex-direction: column; position: relative; font-size: 1.25em; margin: 0.5em 0; }
@@ -169,7 +173,7 @@ li { font-family: "Raleway", sans-serif; list-style-type: none; }
 
 .linktree a { text-decoration: underline; }
 
-.menutitle { padding-left: 3em; }
+.menutitle { padding-left: 5em; }
 
 .menu { display: flex; flex-direction: column; position: relative; }
 
@@ -211,6 +215,7 @@ li { font-family: "Raleway", sans-serif; list-style-type: none; }
 
 @media (max-width: 100vh) { p { max-width: 80vw; }
   .contenu { padding: 0 0.75rem; }
+  .fullsizeBtn { display: none; }
   .menu { display: none; }
   .switch { display: flex; }
   .menutop { display: flex; flex-direction: column; position: relative; align-items: flex-end; margin-top: 5em; }

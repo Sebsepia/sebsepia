@@ -110,6 +110,16 @@ li{
   margin: 0.1em 0;
   font-weight: 300;
 }
+.fullsizeBtn {
+  font-size: .75em;
+  position:absolute;
+  left:-1.5em;
+  top:2em;
+
+}
+.imgBox{
+  position:relative;
+}
 .infinite-more-link {height: 0.1em;}
 .intime {
   @include flexLeft();
@@ -146,7 +156,7 @@ li{
   a{text-decoration: underline;}
 }
 .menutitle {
-  padding-left: 3em;
+  padding-left: 5em;
   }
   .menu {@include flexLeft();}
   .menutop {
@@ -230,9 +240,13 @@ li{
   .contenu {
     padding:0 0.75rem;
   }
+  .fullsizeBtn{
+    display: none;
+  }
   .menu {
     display:none;
-  }.switch {display: flex;}
+  }
+  .switch {display: flex;}
   .menutop {
     @include flexLeft();
     align-items: flex-end;

@@ -6,7 +6,11 @@
           >{{post.title}}</a></h4>
           <div class="date">{{post.post_date|date:'j | n | Y'}}</div>
           {% for blog_image in post.blogimage_set.all %}
-            <img src="{{ MEDIA_URL }}{{blog_image.b_img_resize}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
+            <div class="imgBox">
+
+              <img src="{{ MEDIA_URL }}{{blog_image.b_img_resize}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
+              <a  class ="fullsizeBtn" title="full size image" href="{{ MEDIA_URL }}{{blog_image.b_img}}">[+]</a>
+            </div>
             {% if blog_image.b_img_description %}
               <h5>{{blog_image.b_img_description | safe}}</h5>
             {% endif %}
@@ -17,7 +21,7 @@
 
           {%if post.panoimage_set.all %}
 
-            {% for pano_image in post.panoimage_set.all %}
+          {% for pano_image in post.panoimage_set.all %}
               <div class="pano-container" id="{{post.slug}}{{pano_image.order}}">
               <script type="text/javascript">
                 $(document).ready(function () {

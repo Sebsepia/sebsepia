@@ -5,7 +5,7 @@
       <h2><a class="{% if request.resolver_match.kwargs.slug == 'all' %}
           {% active_link 'portfolio' slug='all' %}
         {% else %}
-        {% for cat in allcategories %}
+        {% for cat in menu_categories %}
           {% active_link 'portfolio' slug=cat %}
           {% endfor %}
         {% endif %}"

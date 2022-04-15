@@ -1,0 +1,54 @@
+{% load active_link_tags %}
+  <div class="post infinite-item" id="{{post.slug}}">
+        <div class="intime">
+          <h4><a class="{% active_link 'details' %}" href="{% url 'details' post.slug %}"
+          style="color:{{post.text_color}};"
+          >{{post.title}}</a></h4>
+          <div class="date">{{post.post_date|date:'j | n | Y'}}</div>
+          {% for blog_image in post.blogimage_set.all %}
+            <img src="{{ MEDIA_URL }}{{blog_image.b_img_resize}}" alt="{{blog_image.b_img_alt}}"title="{{blog_image.b_img_alt}}">
+            {% if blog_image.b_img_description %}
+              <h5>{{blog_image.b_img_description | safe}}</h5>
+            {% endif %}
+            {% if blog_image.b_img_paragraph %}
+              <p>{{blog_image.b_img_paragraph | safe}}</p>
+            {% endif %}
+          {% endfor %}
+
+          {%if post.panoimage_set.all %}
+
+            {% for pano_image in post.panoimage_set.all %}
+              <div class="pano-container" id="{{post.slug}}{{pano_image.order}}">
+              <script type="text/javascript">
+                $(document).ready(function () {
+                container = document.querySelector('#{{post.slug}}{{pano_image.order}}');
+                var panorama, viewer, container, thispano, pano;
+
+                created_pano = new PANOLENS.ImagePanorama('{{ pano_image.p_img.url }}');
+                viewer = new PANOLENS.Viewer({container:container});
+                viewer.add( created_pano );
+
+              });
+              </script>
+              </div>
+              {% if pano_image.p_img_description %}
+                <h5>{{pano_image.p_img_description | safe}}</h5>
+              {% endif %}
+              {% if pano_image.p_img_paragraph %}
+                <p>{{pano_image.p_img_paragraph | safe}}</p>
+              {% endif %}
+          {% endfor %}
+
+          {% endif %}
+
+      <div class="tags">
+
+        <h6><b>Tags:</b></h6>
+        {% for tags in post.tags.all %}
+        <h6><a href="{% url 'tag' tags %}">{{tags}}</a></h6>
+        {% endfor %}
+
+      </div>
+      </div>
+
+  </div>
