@@ -20,12 +20,9 @@
   $contentSize: 80vh;
 
 @import "./mixin";
-  @import "./normalize";
-  @import "./linktree";
-  @import "./menu";
-  @import "./mobile";
-  @import "./portfolio";
-  @import "./sketchbook";
+@import "./normalize";
+/*Other imports at the end to load after*/
+
 
 header {
   @include flexLeft(row);
@@ -56,7 +53,6 @@ h2 {
   font-family: $accentFont;
   font-size: 1.65em;
   font-weight: 400;
-  padding-right: 2.15rem;
   text-decoration: none;
   text-decoration-style: solid;
   .active {text-decoration: underline;}
@@ -232,6 +228,8 @@ li{
   @include flexLeft(row);
   flex-wrap: wrap;
 }.tags h6:not(:first-child){margin-left: 0.75em;}
+
+
 @media (max-width:100vh) {
   body {}
   p {
@@ -248,9 +246,15 @@ li{
   }
   .switch {display: flex;}
   .menutop {
-    @include flexLeft();
-    align-items: flex-end;
-    margin-top: 5em;
+    position: absolute;
+    display: block;
+    text-align: right;
+    width: 12vw;
+    right: 7vw;
+    top: 6.5em;
+    padding: 0;
+    background-color: transparent;
+    border: none;
   }
   #menutoggle {display: flex;}
   .pano-container {
@@ -260,3 +264,10 @@ li{
     width:95vw;
     transform: translate(1em,8em);}
 }
+
+@import "./info";
+@import "./linktree";
+@import "./menu";
+@import "./mobile";
+@import "./portfolio";
+@import "./sketchbook";

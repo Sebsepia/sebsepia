@@ -1,0 +1,17 @@
+.description {
+  @include flexLeft(column);
+  margin-right: 15vw;
+}
+
+.deets {
+  font-family: $primaryFont;
+  font-size: 1em;
+}
+.info {
+  @include flexLeft(row);
+}
+#info-me {
+  width: 20vw;
+  height: auto;
+  padding-top: 35vh;
+}

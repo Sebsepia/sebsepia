@@ -53,6 +53,7 @@ def portfolio(request, slug):
     model = PortfolioCategory
     menu_categories = PortfolioCategory.objects.all().order_by('category_name')
 
+    #check the slug for the category of posts to show. if slug is all, shows everthing
     if slug == 'all':
         posts = PortfolioCategory.objects.all().order_by('category_name')
     else :
