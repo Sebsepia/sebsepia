@@ -14,21 +14,6 @@ Portfolio
 
 {% block navbar %}
   {% include 'navbar.html' %}
-      <div class="menusub">
-        <div class="portfoliomenubtn">
-          <h3><a  class="{% active_link 'portfolio' slug='all' %}"
-              href="{% url 'portfolio' slug='all' %}">All</a>
-          </h3>
-        </div>
-        {% for cat in menu_categories %}
-        <div class="portfoliomenubtn">
-          <h3><a  class="{% active_link 'portfolio' slug=cat %}"
-              href="{% url 'portfolio' slug=cat %}">{{cat}}</a>
-          </h3>
-        </div>
-
-      {% endfor %}
-      </div>
 
 {% endblock %}
 
@@ -37,6 +22,21 @@ Portfolio
 
   {% load static %}
   {% get_media_prefix as MEDIA_URL %}
+  <div class="menusub">
+    <div class="portfoliomenubtn">
+      <h3><a  class="{% active_link 'portfolio' slug='all' %}"
+        href="{% url 'portfolio' slug='all' %}">All</a>
+      </h3>
+    </div>
+    {% for cat in menu_categories %}
+    <div class="portfoliomenubtn">
+      <h3><a  class="{% active_link 'portfolio' slug=cat %}"
+        href="{% url 'portfolio' slug=cat %}">{{cat}}</a>
+      </h3>
+    </div>
+
+    {% endfor %}
+  </div>
 
   <div id="p_overlay">
 

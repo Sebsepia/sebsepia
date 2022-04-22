@@ -1,17 +1,31 @@
 .description {
-  @include flexLeft(column);
+  margin-left: 2em;
   margin-right: 15vw;
 }
-
-.deets {
-  font-family: $primaryFont;
-  font-size: 1em;
-}
 .info {
-  @include flexLeft(row);
+  @include flexLeft(column);
+
 }
 #info-me {
-  width: 20vw;
+  width: 30vw;
   height: auto;
-  padding-top: 35vh;
+  margin-top:2em;
+  margin-left: 45vw;
+}
+@media (max-width:100vh) {
+
+  .description {p{
+
+    font-size: 1.5em;
+    line-height:1.2;
+  }h3{
+    font-size: 1.5em;
+  }}
+  .info {
+    align-items: center;
+  }
+  #info-me {
+    width: 50vw;
+    margin-left:1em;
+  }
 }

@@ -15,38 +15,30 @@
 
 {% block main %}
 
-<div class="links">
-  {% include 'mylinks.html' %}
-</div>
 
-    <div class="contenu info">
+<div class="contenu info">
+  <div class="links">
+    {% include 'mylinks.html' %}
+  </div>
     <div class="description">
         <h3>About me</h3>
         <p>
           <br>
-          Hi! I'm <b>Seb</b>, a visual artist currently employed at <a href="https://www.mpcvfx.com/">MPC Montreal</a> as a Matte Painter. <br>
-          I am also a freelance illustrator and photographer.<br>
-          And since I made this website myself, I technically qualify as a full stack developer.<br>
+          Hi! I'm <b>Seb</b>, a visual artist currently employed at <a href="https://www.mpcvfx.com/">MPC Montreal</a> as a Matte Painter.
+          I am also a freelance illustrator and photographer.
+          And since I made this website myself, I technically qualify as a full stack developer.
           <br>
           say hi at <a href="contact@sebsepia.org">contact@sebsepia.org</a>
-          <br>
-          <br>
-          <br>
+          <br><br><br>
           ^^
+          <br><br>
+          all the material on this website is under a<br>
+          <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 license</a><br>
+          unless stated otherwise.<br><br>
         </p>
-          <div class="deets">
-            every media on this website is under a<br>
-            <a rel="license" href="http://creativecommons.org/licenses/by/2.5/ca/">Creative Commons Attribution 2.5 license</a><br>
-            unless stated otherwise.<br><br>
-          </div>
         </div>
 
       <img src="{% static 'zblog/pixel/me-info.png' %}" alt="me, a biker" id="info-me">
 
-
-
-
-    <br>
-    <br>
 </div>
 {% endblock %}

@@ -20,28 +20,26 @@
           {% endfor %}
 
           {%if post.panoimage_set.all %}
+            {% for pano_image in post.panoimage_set.all %}
+                <div class="pano-container" id="{{post.slug}}{{pano_image.order}}">
+                <script type="text/javascript">
+                  $(document).ready(function () {
+                  container = document.querySelector('#{{post.slug}}{{pano_image.order}}');
+                  var panorama, viewer, container, thispano, pano;
+                  created_pano = new PANOLENS.ImagePanorama('{{ pano_image.p_img.url }}');
+                  viewer = new PANOLENS.Viewer({container:container});
+                  viewer.add( created_pano );
 
-          {% for pano_image in post.panoimage_set.all %}
-              <div class="pano-container" id="{{post.slug}}{{pano_image.order}}">
-              <script type="text/javascript">
-                $(document).ready(function () {
-                container = document.querySelector('#{{post.slug}}{{pano_image.order}}');
-                var panorama, viewer, container, thispano, pano;
-
-                created_pano = new PANOLENS.ImagePanorama('{{ pano_image.p_img.url }}');
-                viewer = new PANOLENS.Viewer({container:container});
-                viewer.add( created_pano );
-
-              });
-              </script>
-              </div>
-              {% if pano_image.p_img_description %}
-                <h5>{{pano_image.p_img_description | safe}}</h5>
-              {% endif %}
-              {% if pano_image.p_img_paragraph %}
-                <p>{{pano_image.p_img_paragraph | safe}}</p>
-              {% endif %}
-          {% endfor %}
+                });
+                </script>
+                </div>
+                {% if pano_image.p_img_description %}
+                  <h5>{{pano_image.p_img_description | safe}}</h5>
+                {% endif %}
+                {% if pano_image.p_img_paragraph %}
+                  <p>{{pano_image.p_img_paragraph | safe}}</p>
+                {% endif %}
+            {% endfor %}
 
           {% endif %}
 

@@ -135,8 +135,8 @@ li{
 .links {
   position: fixed;
   display: inline-block;
-  margin-top: 10em;
-  margin-left: 3rem;
+  margin-top: 4em;
+  margin-left: -15vw;
   text-decoration: none;
   z-index: 1;
   li {
@@ -163,7 +163,7 @@ li{
   }
   .menusub {
     @include flexLeft(row);
-    padding-left:5em;
+    margin-left:5em;
     .portfoliomenubtn {padding-left: 2em;}
   }
   .menusvg{
@@ -232,30 +232,53 @@ li{
 
 
 @media (max-width:100vh) {
+  header {
+    @include flexLeft();
+  }
   body {}
+  h2 {
+    margin-right: 1em;
+}
+  nav {
+    display: block;
+    height:20em;
+  }
   p {
     max-width: 80vw;
   }
   .contenu {
     padding:0 0.75rem;
   }
+
   .fullsizeBtn{
     display: none;
   }
+
+  .links{
+    @include flexLeft(row);
+    margin:0;
+    li {
+      margin-top: 0;
+      display: inline;
+      margin-right: 1em;
+    }
+  }
   .menu {
     display:none;
+    align-items: flex-end;
+    margin-right: 7vw;
+
   }
   .switch {display: flex;}
+  .menusub {margin-left:9vw;
+    flex-wrap: wrap;
+  align-items: center;}
   .menutop {
+    display: flex;
+    flex-direction: column;
     position: absolute;
-    display: block;
-    text-align: right;
-    width: 12vw;
-    right: 7vw;
-    top: 6.5em;
-    padding: 0;
-    background-color: transparent;
-    border: none;
+    align-items: end;
+    margin-right: auto;
   }
   #menutoggle {display: flex;}
   .pano-container {
