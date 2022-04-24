@@ -59,7 +59,7 @@ Portfolio
             {# take the first image of each post #}
             {% for image in post.blogimage_set.all %}
               {% if forloop.counter == 1 %}
-                <img src="{{ MEDIA_URL }}{{image.b_img}}" alt="">
+                <img src="{{ MEDIA_URL }}{{image.b_img_resize}}" alt="">
                {% endif %}
 
             <a href="{% url 'details' post.slug %}">

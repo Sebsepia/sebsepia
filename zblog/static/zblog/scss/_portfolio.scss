@@ -3,9 +3,11 @@
   display:inline-block;
   position: relative;
   width:100%;
+  margin-bottom: .5em;
   img {
     display:block;
     width: 100%;
+
   }&:hover {
     .p_post_hide { visibility:visible;}
   }
@@ -39,7 +41,7 @@
     }
   }
   h3 {
-    color: $lightAccent;
+    color: $lighter;
     font-family: $accentFont;
     text-align: center;
     padding-top: 1rem;

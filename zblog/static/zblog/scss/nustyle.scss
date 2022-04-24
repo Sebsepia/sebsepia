@@ -3,12 +3,14 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 /*Colors*/
-  $logo: #2f2a24;
-  $darkAccent: #0f0e0e;
+  $logo: #42392d;
+  $darkAccent: #0a0909;
   $midGray: #63625f;
-  $bgColor: #d5cdc2;
-  $lightAccent: #fff7de;
-  $outlandish: #5b456f;
+  $bgColor: #fcefd8;
+  $lightAccent: #f17917;
+  $lighter: #f7f0e4;
+  $outlandish: #7335ab;
+
   $darkOverlay: rgba(0, 0, 0, 0.3);
 
 /*Fonts*/
@@ -59,8 +61,10 @@ h2 {
   .active {text-decoration: underline;}
 }
 h3 {
-  margin-top:0.5em;
+  color: $lightAccent;
   font-family: $accentFont;
+  margin-top:0.5em;
+
   font-size: 1.15em;
 }
 h4 {
@@ -83,10 +87,14 @@ img {
 }
 p {
   font-size:1.1em;
+  line-height: 1.2;
   margin: 1.25em 0;
   font-family: $primaryFont;
   text-align: left;
-  max-width:33vw;
+  max-width:40vw;
+  a{  text-decoration: underline;
+    color: $logo;
+}
 }
 ul {
   font-size: 1em;
@@ -135,7 +143,6 @@ li{
 .links {
   position: fixed;
   display: inline-block;
-  margin-top: 4em;
   margin-left: -15vw;
   text-decoration: none;
   z-index: 1;
@@ -247,7 +254,7 @@ li{
     max-width: 80vw;
   }
   .contenu {
-    padding:0 0.75rem;
+    padding:0 0.55rem;
   }
 
   .fullsizeBtn{
@@ -282,11 +289,12 @@ li{
   }
   #menutoggle {display: flex;}
   .pano-container {
-    max-width: 95vw;
+    max-width: 96vw;
     max-height:75vh;}
   .portfolio {
-    width:95vw;
-    transform: translate(1em,8em);}
+    column-gap: 2vw;
+    width:96vw;
+    transform: translate(0em,5em);}
 }
 
 @import "./info";
