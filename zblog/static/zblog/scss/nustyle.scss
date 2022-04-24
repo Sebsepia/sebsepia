@@ -3,8 +3,8 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto);
 
 /*Colors*/
-  $logo: #42392d;
-  $darkAccent: #0a0909;
+  $midBrown: #42392d;
+  $darkBrown: #0a0909;
   $midGray: #63625f;
   $bgColor: #fcefd8;
   $lightAccent: #f17917;
@@ -36,18 +36,18 @@ body {
   font-size: 1em;
 }
 a {
-  color: $logo;
+  color: $midBrown;
   text-decoration: none;
-  &:hover { color:$darkAccent;}
+  &:hover { color:$darkBrown;}
   &:active { color:$outlandish;}
 }  a.active {color: $lightAccent;}
 h1{
   font-family: $primaryFont;
   font-size: 2em;
   letter-spacing: 0.1em;
-  color: $logo;
+  color: $midBrown;
   margin-top: 1.5em;
-  &:hover { color:$darkAccent;}
+  &:hover { color:$darkBrown;}
   &:active { color:$lightAccent;}
   a.active {color: inherit;}
 }
@@ -93,7 +93,7 @@ p {
   text-align: left;
   max-width:40vw;
   a{  text-decoration: underline;
-    color: $logo;
+    color: $midBrown;
 }
 }
 ul {
@@ -137,7 +137,7 @@ li{
     object-position: 0 0;
     margin-top:1.5em;
     margin-bottom:0;
-  }a:hover{color: $darkAccent;}
+  }a:hover{color: $darkBrown;}
   a:visited {color: $midGray;}
 }
 .links {
@@ -166,7 +166,7 @@ li{
   .menutop {
     @include flexLeft(row);
     padding-top:2em;
-    padding-left: 5em;
+    padding-left: 7em;
   }
   .menusub {
     @include flexLeft(row);
@@ -191,7 +191,7 @@ li{
     border:none
     }
   #hamburgericon {
-    fill: $darkAccent;
+    fill: $darkBrown;
     height:3em;
     &:hover{
       fill: $outlandish;

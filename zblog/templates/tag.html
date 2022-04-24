@@ -8,6 +8,11 @@ posts with tag {{request.resolver_match.kwargs.slug}}
 SebBégin
 {%endblock%}
 
+{% block navbar %}
+
+  {% include 'navbar.html' %}
+{% endblock %}
+
 {% block main %}
 <div class="contenu">
   {% for post in posts%}
