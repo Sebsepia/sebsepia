@@ -15,21 +15,21 @@ a { background-color: transparent; }
 /*Other imports at the end to load after*/
 header { display: flex; flex-direction: row; position: relative; margin: 2em 0; z-index: 10; }
 
-body { background: #d5cdc2; font-size: 1em; }
+body { background: #fcefd8; font-size: 1em; }
 
-a { color: #2f2a24; text-decoration: none; }
+a { color: #42392d; text-decoration: none; }
 
-a:hover { color: #0f0e0e; }
+a:hover { color: #0a0909; }
 
-a:active { color: #5b456f; }
+a:active { color: #7335ab; }
 
-a.active { color: #fff7de; }
+a.active { color: #f17917; }
 
-h1 { font-family: "Bitter", serif; font-size: 2em; letter-spacing: 0.1em; color: #2f2a24; margin-top: 1.5em; }
+h1 { font-family: "Bitter", serif; font-size: 2em; letter-spacing: 0.1em; color: #42392d; margin-top: 1.5em; }
 
-h1:hover { color: #0f0e0e; }
+h1:hover { color: #0a0909; }
 
-h1:active { color: #fff7de; }
+h1:active { color: #f17917; }
 
 h1 a.active { color: inherit; }
 
@@ -37,7 +37,7 @@ h2 { font-family: "Raleway", sans-serif; font-size: 1.65em; font-weight: 400; ma
 
 h2 .active { text-decoration: underline; }
 
-h3 { margin-top: 0.5em; font-family: "Raleway", sans-serif; font-size: 1.15em; }
+h3 { color: #f17917; font-family: "Raleway", sans-serif; margin-top: 0.5em; font-size: 1.15em; }
 
 h4 { font-family: "Bitter", serif; font-size: 1.3em; margin: 0.25em 0; }
 
@@ -47,7 +47,9 @@ h6 { font-family: "Bitter", serif; font-size: 0.8em; }
 
 img { height: auto; }
 
-p { font-size: 1.1em; margin: 1.25em 0; font-family: "Bitter", serif; text-align: left; max-width: 33vw; }
+p { font-size: 1.1em; line-height: 1.2; margin: 1.25em 0; font-family: "Bitter", serif; text-align: left; max-width: 40vw; }
+
+p a { text-decoration: underline; color: #42392d; }
 
 ul { font-size: 1em; padding-left: 1rem; }
 
@@ -67,11 +69,11 @@ li { font-family: "Raleway", sans-serif; list-style-type: none; }
 
 .intime img { width: clamp(16px, 93vw, 100%); max-height: 80vh; object-fit: contain; object-position: 0 0; margin-top: 1.5em; margin-bottom: 0; }
 
-.intime a:hover { color: #0f0e0e; }
+.intime a:hover { color: #0a0909; }
 
 .intime a:visited { color: #63625f; }
 
-.links { position: fixed; display: inline-block; margin-top: 4em; margin-left: -15vw; text-decoration: none; z-index: 1; }
+.links { position: fixed; display: inline-block; margin-left: -15vw; text-decoration: none; z-index: 1; }
 
 .links li { font-size: 1.25em; margin: 1.5em 0; }
 
@@ -79,13 +81,15 @@ li { font-family: "Raleway", sans-serif; list-style-type: none; }
 
 .linktree a { text-decoration: underline; }
 
+.logo img { width: 8em; }
+
 .menutitle { padding-left: 5em; }
 
 .menu { display: flex; flex-direction: column; position: relative; }
 
-.menutop { display: flex; flex-direction: row; position: relative; padding-top: 2em; padding-left: 5em; }
+.menutop { display: flex; flex-direction: row; position: relative; padding-top: 4em; padding-left: 7em; }
 
-.menusub { display: flex; flex-direction: row; position: relative; margin-left: 5em; }
+.menusub { display: flex; flex-direction: row; position: relative; margin-left: 27em; }
 
 .menusub .portfoliomenubtn { padding-left: 2em; }
 
@@ -93,11 +97,28 @@ li { font-family: "Raleway", sans-serif; list-style-type: none; }
 
 #menutoggle { display: none; position: absolute; width: 12vw; right: 7vw; top: 3.5em; padding: 0; background-color: transparent; border: none; }
 
-#hamburgericon { fill: #0f0e0e; height: 3em; }
+#hamburgericon { fill: #0a0909; height: 3em; }
 
-#hamburgericon:hover { fill: #5b456f; cursor: pointer; }
+#hamburgericon:hover { fill: #7335ab; cursor: pointer; }
 
+/*PORTFOLIO*/
 .portfolio { width: 79vw; margin-right: 1em; column-count: 3; column-gap: 1em; }
+
+.portfoliopost { display: inline-block; position: relative; width: 100%; max-height: 25vw; overflow: hidden; margin-bottom: .5em; }
+
+.portfoliopost img { object-position: 50% 50%; object-fit: cover; width: 100%; height: 100%; }
+
+.portfoliopost:hover .p_post_hide { visibility: visible; }
+
+#p_overlay { position: absolute; display: none; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); z-index: 10; }
+
+.p_post_hide { position: absolute; visibility: hidden; width: 100%; text-align: center; height: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.3); overflow: hidden; }
+
+.p_post_hide a { height: 100%; width: 100%; display: inline-block; }
+
+.p_post_hide a:hover { cursor: zoom-in; }
+
+.p_post_hide h3 { color: #f7f0e4; font-family: "Raleway", sans-serif; text-align: center; padding-top: 1rem; text-shadow: 2px 2px rgba(0, 0, 0, 0.5); }
 
 .pano-container { object-fit: contain; width: 81em; height: 63em; max-height: 80vh; max-width: 78vw; position: relative; margin-top: 1.5em; }
 
@@ -123,7 +144,7 @@ li { font-family: "Raleway", sans-serif; list-style-type: none; }
   h2 { margin-right: 1em; }
   nav { display: block; height: 20em; }
   p { max-width: 80vw; }
-  .contenu { padding: 0 0.75rem; }
+  .contenu { padding: 0 0.55rem; }
   .fullsizeBtn { display: none; }
   .links { display: flex; flex-direction: row; position: relative; margin: 0; }
   .links li { margin-top: 0; display: inline; margin-right: 1em; }
@@ -132,110 +153,19 @@ li { font-family: "Raleway", sans-serif; list-style-type: none; }
   .menusub { margin-left: 9vw; flex-wrap: wrap; align-items: center; }
   .menutop { display: flex; flex-direction: column; position: absolute; align-items: end; margin-right: auto; }
   #menutoggle { display: flex; }
-  .pano-container { max-width: 95vw; max-height: 75vh; }
-  .portfolio { width: 95vw; transform: translate(1em, 8em); } }
+  .pano-container { max-width: 96vw; max-height: 75vh; }
+  .portfolio { column-gap: 2vw; width: 96vw; transform: translate(0em, 5em); } }
 
 .description { margin-left: 2em; margin-right: 15vw; }
 
 .info { display: flex; flex-direction: column; position: relative; }
 
-#info-me { width: 30vw; height: auto; margin-top: 2em; margin-left: 45vw; }
+#info-me { width: 25vw; height: auto; margin-top: -10em; margin-left: 45vw; }
 
 @media (max-width: 100vh) { .description p { font-size: 1.5em; line-height: 1.2; }
   .description h3 { font-size: 1.5em; }
   .info { align-items: center; }
-  #info-me { width: 50vw; margin-left: 1em; } }
-
-/*
-
-
-
-
-
-
-
-
-#menubtn{
-    visibility: hidden;
-    height:0;
-}
-
-@media (max-width: 100vh) {
-
-    header {
-      width: 85vw;
-      justify-content: space-between;
-    }
-    .menu{
-      font-size: 2em;
-      flex-direction:column;
-      top:2em;
-      right:0;
-      visibility: hidden;
-      margin-left: auto;
-      }.menu.switch{
-      visibility: visible;
-      }
-
-    .menusub{
-      flex-direction: column;
-    }
-    .menutop {
-      align-items: flex-end;
-      flex-direction:column;
-      right: 3rem;
-      padding-left: 0;
-
-      h2 {padding-right: 0;
-        font-size:1.25em
-      }
-    }
-
-    .menusub {
-    }
-    .title {
-      height:8em;
-    }
-    .repit {
-      margin:1.5em;
-    }
-    #hamburgericon {
-      fill: var(--clr-accent-300);
-      height:3em;
-    }
-    #hamburgericon:hover{
-      fill:var(--clr-primary-0);
-      cursor:pointer;}
-
-    #menubtn{
-        visibility: visible;
-        position: absolute;
-        width: 12vw;
-        right:7vw;
-        top:3.5em;
-        padding:0;
-        background-color: transparent;
-        border:none;
-      }
-
-
-}
-*/
-.portfoliopost { display: inline-block; position: relative; width: 100%; }
-
-.portfoliopost img { display: block; width: 100%; }
-
-.portfoliopost:hover .p_post_hide { visibility: visible; }
-
-#p_overlay { position: absolute; display: none; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.3); z-index: 10; }
-
-.p_post_hide { position: absolute; visibility: hidden; width: 100%; text-align: center; height: 100%; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: rgba(0, 0, 0, 0.3); overflow: hidden; }
-
-.p_post_hide a { height: 100%; width: 100%; display: inline-block; }
-
-.p_post_hide a:hover { cursor: zoom-in; }
-
-.p_post_hide h3 { color: #fff7de; font-family: "Raleway", sans-serif; text-align: center; padding-top: 1rem; text-shadow: 2px 2px rgba(0, 0, 0, 0.5); }
+  #info-me { width: 50vw; margin: 1em; } }
 
 .fullscreen { position: fixed; display: none; /*mettre a block dans CS*/ height: 100vh; width: 100vw; top: 0; left: 0; right: 0; bottom: 0; background-color: rgba(21, 22, 26, 0.3); }
 

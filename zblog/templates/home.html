@@ -1,11 +1,15 @@
 {% extends 'base.html' %}
+{% load static %}
+
 
 {% block title %}
 Sebsepia!
 {% endblock %}
 
 {% block titlecard %}
-Sebsepia!
+<div class="logo">
+  <img src="{% static 'zblog/pixel/sebsepialogo1.png' %}">
+</div>
 {%endblock%}
 
 {% block navbar %}

@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
 posts with tag {{request.resolver_match.kwargs.slug}}
 {% endblock %}
 
 {% block titlecard %}
-SebBégin
+<div class="logo">
+  <img src="{% static 'zblog/pixel/sebsepialogo4.png' %}">
+</div>
 {%endblock%}
 
 {% block navbar %}
