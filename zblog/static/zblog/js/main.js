@@ -9,7 +9,7 @@ $(document).ready(function () {
    $('#p_overlay').toggleClass('switch');
 /*   $('.contenu').toggleClass('switch');*/
   });
-
+/*csdc*/
 
   $('.sketchbook_cover').click(function(){
     $(this).find('div').toggleClass('switch');
