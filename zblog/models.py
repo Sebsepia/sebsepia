@@ -20,9 +20,9 @@ def cropper(original_image, filename):
       original_image = Image.open(original_image).convert('RGB')
       resized_img = original_image
 
-      resized_img.thumbnail((2700, 1700))
+      resized_img.thumbnail((2700, 1800))
 
-      resized_img.save(img_io, format='JPEG', quality=70)
+      resized_img.save(img_io, format='JPEG', quality=80)
       img_content = ContentFile(img_io.getvalue(), filename)
       return img_content
 
@@ -86,7 +86,8 @@ class Post(models.Model):
     def save(self, *args, **kwargs):
         if not self.post_date:
             self.post_date = datetime.now()
-        self.slug = slugify(self.title)
+        if not self.slug:
+            self.slug = slugify(self.title)
         super(Post, self).save(*args, **kwargs)
 
     def __str__(self):
